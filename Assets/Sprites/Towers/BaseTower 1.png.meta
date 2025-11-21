@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7fc4511090d904d4ab533cf6e5933883
+guid: 1efa42a0a0707424db253d1c8b316bcb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8286090209173775992
-    second: TowerPlaceholder_0
+      213: -4771355605542055716
+    second: BaseTower 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TowerPlaceholder_0
+      name: BaseTower 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 87625a6c42b1ef270800000000000000
-      internalID: 8286090209173775992
+      spriteID: cd0d8924b5db8cdb0800000000000000
+      internalID: -4771355605542055716
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TowerPlaceholder_0: 8286090209173775992
+      BaseTower 1_0: -4771355605542055716
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

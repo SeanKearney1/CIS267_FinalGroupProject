@@ -2,7 +2,7 @@
 - Project name: CIS267_FinalGroupProject
 - Unity version: Unity 6000.2.9f1
 - Active game object:
-  - Name: PlacedTowerPlaceholder (1) Variant
+  - Name: PlacedTowerPlaceholder
   - Tag: Untagged
   - Layer: Default
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

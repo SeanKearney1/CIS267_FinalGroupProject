@@ -8,9 +8,10 @@ using static UnityEditor.FilePathAttribute;
 public class TilePlacment : MonoBehaviour
 {
     
-    public Tilemap tileMap;
-    public TileBase towerTile;//replaces the tile on the tilemaps with a tower tile, this has no visual effect as the physical scripted tower will be placed above it
-    public TileBase grassTile;//The tile it checks the tile map for and allows placement only on it
+    public Tilemap buildingLayer;
+
+    public TileBase BarrierTile;//replaces the tile on the tilemaps with a tower tile, this has no visual effect as the physical scripted tower will be placed above it
+    //public TileBase buildableTile; tower objects need to set the tile back to buildable when they die
 
     // this takes the tiles in the tile folder with the purple icon to their side
 
@@ -30,7 +31,7 @@ public class TilePlacment : MonoBehaviour
             // get the position of the cursor
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             // convert the cursor location to a grid location
-            Vector3Int cellPos = tileMap.WorldToCell(mousePos);
+            Vector3Int cellPos = buildingLayer.WorldToCell(mousePos);
 
             placeTower(cellPos);
 
@@ -40,11 +41,11 @@ public class TilePlacment : MonoBehaviour
     }
     private void placeTower(Vector3Int cellPos)
     {
-        TileBase tile = tileMap.GetTile(cellPos);
-        Vector3 placePos = tileMap.GetCellCenterWorld(cellPos);//get centre of the cell
-        if (tile == grassTile)// if the selected tile can be placed on
+        TileBase tile = buildingLayer.GetTile(cellPos);
+        Vector3 placePos = buildingLayer.GetCellCenterWorld(cellPos);//get centre of the cell
+        if (tile != BarrierTile)// if the selected tile can be placed on
         {
-            tileMap.SetTile(cellPos, towerTile);
+            buildingLayer.SetTile(cellPos, BarrierTile);
             Instantiate(TowerToPlace[selection], placePos, Quaternion.identity);//create the physical tile
         }
         
