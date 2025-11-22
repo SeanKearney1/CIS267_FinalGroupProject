@@ -46,6 +46,9 @@ public class TilePlacment : MonoBehaviour
         {
             tileMap.SetTile(cellPos, towerTile);
             Instantiate(TowerToPlace[selection], placePos, Quaternion.identity);//create the physical tile
+            //this is throwing an error for array out of bounds on level 3
+            //I just copied and pasted most of the tilemap over from level 1
+            //still works fine on level 1 though. Would a List<> work better than an array here? 
         }
         
     }
