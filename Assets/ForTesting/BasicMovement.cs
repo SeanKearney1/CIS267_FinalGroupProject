@@ -32,7 +32,7 @@ public class BasicMovement : MonoBehaviour
     {
         if(collision.transform.tag == "PlayerWeapon")
         {
-            wHandler.AddWeaponToInventory(collision.gameObject);
+            wHandler.addWeaponToInventory(collision.gameObject.name);
             Destroy(collision.gameObject);
         }
     }

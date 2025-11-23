@@ -1,5 +1,7 @@
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 /*
  
@@ -25,6 +27,9 @@ public class GameManagerLogic : MonoBehaviour
     private GameObject LevelUIPrefabGameObject;
     private GameObject PauseMenuGameObject;
 
+    // For weapon handling 
+    private List<WeaponObject> playerWeaponInventory;
+    private GameObject equippedWeapon;
 
     //=====================================================
     //=====================================================
@@ -121,6 +126,24 @@ public class GameManagerLogic : MonoBehaviour
     }
 
 
+    //==Getter and Setters for the player weapon inventory==//
+    public List<WeaponObject> getPlayerWeaponInventory()
+    {
+        return playerWeaponInventory;
+    }
+    public void setPlayerWeaponInventory(List<WeaponObject> weaponList)
+    {
+        playerWeaponInventory = weaponList;
+    }
+    //==Getter and Setters for the equipped player weapon==//
+    public GameObject getEquippedWeapon()
+    {
+        return equippedWeapon;
+    }
+    public void setEquippedWeapon(GameObject weapon)
+    {
+        equippedWeapon = weapon;
+    }
 
     //================
     //================

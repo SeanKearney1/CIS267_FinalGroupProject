@@ -6,19 +6,34 @@ using System.Collections.Generic;
 
 public class UI_Hotbar : MonoBehaviour
 {
+    public static UI_Hotbar hbInstance {  get; private set; }
+    
 
 
     [Header("--Hotbar Slots--")]
-    public List<GameObject> listOfQuickSlots;
+    public List<GameObject> quickSlotList;
+    private List<WeaponObject> weaponObjInventoryList;
+    private int selectedSlot;
 
-    private List<GameObject> listOfInventory;
+
+    private void Awake()
+    {
+        if (hbInstance != null && hbInstance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        hbInstance = this;
+        weaponObjInventoryList = new List<WeaponObject>();
+    }
 
     void Start()
     {
-        listOfInventory = new List<GameObject>();
-
-        // could maybe be place else where 
-        ResetHotBar();
+        //gets the weapon inventory on load and update the hotbar
+        selectedSlot = 6;
+        setListOfInventory(GameManagerLogic.Instance.getPlayerWeaponInventory());
+        updateQuickSlots();
+        highlightSelectedWeapon(1);
     }
 
     void Update()
@@ -27,44 +42,48 @@ public class UI_Hotbar : MonoBehaviour
     }
 
     //used to update the quick slots when a new item is picked up
-    private void UpdateQuickSlots()
+    private void updateQuickSlots()
     {
-        if(listOfInventory != null)
+        if(weaponObjInventoryList != null)
         {
-            for(int i = 0; i <  listOfInventory.Count; i++)
+            for(int i = 0; i <  weaponObjInventoryList.Count; i++)
             {
-                Sprite tempSprite = listOfInventory[i].GetComponent<SpriteRenderer>().sprite;
-                Image quickSlot = listOfQuickSlots[i].GetComponent<Image>();
+                Sprite tempSprite = weaponObjInventoryList[i].weaponSprite;
+                Image quickSlot = quickSlotList[i].GetComponent<Image>();
                 Color tempC = quickSlot.color; //next 3 lines are for adjusting the color.alpha  
-                tempC.a = 1f;                  
-                quickSlot.color = tempC; 
-                quickSlot.sprite = tempSprite;
+                tempC.a = 1f;                  //when alpha = 1 and no sprite the background is default white
+                quickSlot.color = tempC;       //so alpha is set to 0 until a weapon is in that slot
+                quickSlot.sprite = tempSprite; //this doesn't reset back to 0 since we keep the weapon
                 quickSlot.preserveAspect = true;
-                Debug.Log("updated quick slots");
+                //Debug.Log("updatedQuickSlots");
             }
         }
     }
 
-
-    // Used to reset the quickslots on a new load or restart
-    private void ResetHotBar()
+    public void highlightSelectedWeapon(int sel)
     {
-        if(listOfQuickSlots != null )
+        //selectedSlot = sel;
+        if (sel != selectedSlot)
         {
-            foreach(GameObject go in listOfQuickSlots)
-            {
-                Color tempC = go.GetComponent<Image>().color;
-                tempC.a = 0f;
-                go.GetComponent<Image>().color = tempC;
-                go.GetComponent<Image>().sprite = null;
-            }
+            // reset the color.alpha for the previous selected weapon slot
+            Image slotImg = quickSlotList[selectedSlot - 1].transform.parent.GetComponentInParent<Image>();
+            Color tempC = slotImg.color;
+            tempC.a = .11f;
+            slotImg.color = tempC;
+
+            // increase the color.alpha for the selected weapon slot
+            slotImg = quickSlotList[sel - 1].transform.parent.GetComponentInParent<Image>();
+            tempC = slotImg.color;
+            tempC.a = .48f;
+            slotImg.color = tempC;
+            selectedSlot = sel;
         }
     }
 
-    public void SetListOfInventroy(List<GameObject> list)
+    public void setListOfInventory(List<WeaponObject> list)
     {
-        listOfInventory = list;
-        Debug.Log("list count: " + listOfQuickSlots.Count);
-        UpdateQuickSlots();
+        weaponObjInventoryList = list;
+        updateQuickSlots();
+        //Debug.Log("setListOfInventory.count: " + quickSlotList.Count);
     }
 }

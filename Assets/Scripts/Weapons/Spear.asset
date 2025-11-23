@@ -19,4 +19,5 @@ MonoBehaviour:
   weaponRange: 2
   weaponSound: {fileID: 0}
   weaponPrefab: {fileID: 3839521470843020759, guid: a365f409dcc99bf45b92663f082ec6dc, type: 3}
+  weaponSprite: {fileID: 5917468925858475733, guid: c4b78e06e2d8e7645b8f7bcfe90ecd95, type: 3}
   weaponCost: 0

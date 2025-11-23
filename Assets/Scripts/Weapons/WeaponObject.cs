@@ -12,6 +12,7 @@ public class WeaponObject : ScriptableObject
     public float weaponRange;
     public AudioClip weaponSound;
     public GameObject weaponPrefab;
+    public Sprite weaponSprite;
 
     // only if we are able to buy weapons // if weapons are only picked up then this can be deleted
     public int weaponCost; 
