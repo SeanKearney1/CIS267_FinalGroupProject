@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 037ec24d2f0eaec4ea4ac2da3db6847b, type: 3}
+  m_Name: Staff
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponObject
+  weaponName: Staff
+  weaponType: Ranged
+  weaponDmg: 3
+  attackSpeed: 2
+  weaponRange: 3
+  weaponSound: {fileID: 0}
+  weaponPrefab: {fileID: 0}
+  weaponSprite: {fileID: 177031622830169255, guid: c4b78e06e2d8e7645b8f7bcfe90ecd95, type: 3}
+  weaponCost: 0
