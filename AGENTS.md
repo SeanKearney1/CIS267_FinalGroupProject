@@ -2,7 +2,7 @@
 - Project name: CIS267_FinalGroupProject
 - Unity version: Unity 6000.2.9f1
 - Active game object:
-  - Name: ExplosionField
+  - Name: invisibleBarrierMap
   - Tag: Untagged
-  - Layer: Default
+  - Layer: WorldMap
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->

@@ -48,16 +48,16 @@ public class TilePlacment : MonoBehaviour
             buildingLayer.SetTile(cellPos, BarrierTile);
             Instantiate(TowerToPlace[selection], placePos, Quaternion.identity);//create the physical tile
         }
-        
     }
-
     public void switchSelection(int index)//probably place this on ui buttons onclick
     {
         if (index >= 0 && index < TowerToPlace.Length)
+        {
             selection = index;
+        } 
         else
+        {
             Debug.LogWarning("Invalid tile index!");
+        }   
     }
-
-
 }
