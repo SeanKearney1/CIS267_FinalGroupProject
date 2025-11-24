@@ -12,6 +12,10 @@ public class UI_Hotbar : MonoBehaviour
 
     [Header("--Hotbar Slots--")]
     public List<GameObject> quickSlotList;
+    public Sprite darkHighlighedSlot;
+    public Sprite darkNormalSlot;
+    public Sprite lightHighlightedSlot;
+    public Sprite lightNormalSlot;
     private List<WeaponObject> weaponObjInventoryList;
     private int selectedSlot;
 
@@ -32,7 +36,6 @@ public class UI_Hotbar : MonoBehaviour
         //gets the weapon inventory on load and update the hotbar
         selectedSlot = 6;
         setListOfInventory(GameManagerLogic.Instance.getPlayerWeaponInventory());
-        updateQuickSlots();
         highlightSelectedWeapon(1);
     }
 
@@ -62,20 +65,17 @@ public class UI_Hotbar : MonoBehaviour
 
     public void highlightSelectedWeapon(int sel)
     {
-        //selectedSlot = sel;
+        // only using the dark slot for now but added a light one for the heck of it
         if (sel != selectedSlot)
         {
-            // reset the color.alpha for the previous selected weapon slot
+            // reset the sprite to the normal slot
             Image slotImg = quickSlotList[selectedSlot - 1].transform.parent.GetComponentInParent<Image>();
-            Color tempC = slotImg.color;
-            tempC.a = .11f;
-            slotImg.color = tempC;
+            slotImg.sprite = darkNormalSlot; //
 
-            // increase the color.alpha for the selected weapon slot
+
+            // set the sprite to the highlighted spot
             slotImg = quickSlotList[sel - 1].transform.parent.GetComponentInParent<Image>();
-            tempC = slotImg.color;
-            tempC.a = .48f;
-            slotImg.color = tempC;
+            slotImg.sprite = darkHighlighedSlot;
             selectedSlot = sel;
         }
     }

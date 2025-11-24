@@ -22,12 +22,15 @@ public class GameManagerLogic : MonoBehaviour
     public static GameManagerLogic Instance { get; private set; }
 
 
-
     // PRIVATE
     private GameObject LevelUIPrefabGameObject;
     private GameObject PauseMenuGameObject;
 
+
     // For weapon handling 
+    //==PUBLIC==//
+    public WeaponObject defaultWeapon;
+    //==PRIVATE==//
     private List<WeaponObject> playerWeaponInventory;
     private GameObject equippedWeapon;
 
@@ -143,6 +146,10 @@ public class GameManagerLogic : MonoBehaviour
     public void setEquippedWeapon(GameObject weapon)
     {
         equippedWeapon = weapon;
+    }
+    public WeaponObject getDefaultWeapon()
+    {
+        return defaultWeapon;
     }
 
     //================

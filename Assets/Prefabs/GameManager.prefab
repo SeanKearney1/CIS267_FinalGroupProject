@@ -45,3 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManagerLogic
   LevelUIPrefab: {fileID: 8691529298349017958, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+  defaultWeapon: {fileID: 11400000, guid: a76ff54b1520c3f459645c7a7f258b68, type: 2}

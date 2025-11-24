@@ -224,11 +224,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c4f8ce020027f3478e8e3d04af5f4e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TilePlacment
-  buildingLayer: {fileID: 0}
-  BarrierTile: {fileID: 0}
+  buildingLayer: {fileID: 1442905328}
+  BarrierTile: {fileID: 11400000, guid: 31ca6d2fc7761c14999ccffac6014ff4, type: 2}
   TowerToPlace:
-  - {fileID: 3276606718043264035, guid: 7bfce5fc11ac2a14aab738dcf2840c2e, type: 3}
-  - {fileID: 9035093240389935617, guid: 8e7fd7f5c6ab7534ea94bb50e8fb6d67, type: 3}
+  - {fileID: 2456532839775338748, guid: ac1e907fde95f164ba490cba6ab06d25, type: 3}
+  - {fileID: 7798106345068246147, guid: da755a4eba375ec4dbda3c28d6381371, type: 3}
 --- !u!1 &445268503
 GameObject:
   m_ObjectHideFlags: 0
@@ -2606,7 +2606,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5249623730702007846, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
       propertyPath: m_Color.a
-      value: 0.11764706
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5249623730702007846, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
       propertyPath: m_Color.b

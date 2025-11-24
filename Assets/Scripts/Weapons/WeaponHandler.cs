@@ -59,9 +59,9 @@ public class WeaponHandler : MonoBehaviour
         // then using game manager or ui_hotbar to keep track of the equipped weapon
         // so if the player dies and respawns the previous 
         // weapon inventory is reload with the player. 
-        addWeaponToInventory("Cutlass");
-        initializeWeapon(weaponInventoryList[0]);
-        //spawn default weapon function here?
+        WeaponObject defWeapon = GameManagerLogic.Instance.getDefaultWeapon();
+        addWeaponToInventory(defWeapon.weaponName);
+        initializeWeapon(defWeapon);
     }
 
     private void Update()
