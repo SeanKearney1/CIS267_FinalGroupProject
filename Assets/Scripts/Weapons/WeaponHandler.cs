@@ -33,6 +33,7 @@ public class WeaponHandler : MonoBehaviour
 
     //===Weapon data for the currently equipped weapon===//
     private WeaponObject currentWeapon;
+    // might not need these vars if we access the data via currentWeapon.weaponName etc...
     private string currWeaponName;
     private string currWeaponType;
     private int currWeaponDamage;
@@ -42,8 +43,6 @@ public class WeaponHandler : MonoBehaviour
 
     private List<WeaponObject> weaponInventoryList;
     private GameObject initWeapon;
-
-    private int hbSelection;
 
 
     private void Awake()
@@ -96,8 +95,8 @@ public class WeaponHandler : MonoBehaviour
         }
     }
 
-    // Initializes and returns the default weapon
-    // Used to spawn the default weapon at the start of the level
+    // Initializes the passed weapon scriptable object into the game world
+    // Spawning the weapon into the player's "hands" 
     private GameObject initializeWeapon(WeaponObject weapon)
     {
         if(weapon != null)
@@ -135,9 +134,10 @@ public class WeaponHandler : MonoBehaviour
         // This checks to see if weapon is already in the players inventory
         if(!weaponInventoryList.Contains(tempObj))
         {
-            Debug.Log("addWeaponToInventroy.weaponName: " + tempObj.name);
-            // I see the weapons having 2 colliders 1 for pick up and 2 for detecting a hit
-            // this disables the collider used to collect the 
+            //Debug.Log("addWeaponToInventroy.weaponName: " + tempObj.name);
+            // I see the weapons having 2 colliders 1st for pick up and 2nd for detecting a hit
+            // this disables the 1st collider used to collect the weapon
+            tempObj.weaponPrefab.GetComponent<CapsuleCollider2D>().enabled = false;
             weaponInventoryList.Add(tempObj);
             GameManagerLogic.Instance.setPlayerWeaponInventory(weaponInventoryList);
             UI_Hotbar.hbInstance.setListOfInventory(weaponInventoryList);

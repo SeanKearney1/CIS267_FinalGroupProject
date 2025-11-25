@@ -6,22 +6,24 @@ using System.Collections.Generic;
 
 public class UI_Hotbar : MonoBehaviour
 {
+    // UI_Hotbar Singleton 
     public static UI_Hotbar hbInstance {  get; private set; }
     
-
-
+    //==PUBLIC==//
     [Header("--Hotbar Slots--")]
-    public List<GameObject> quickSlotList;
+    public List<GameObject> quickSlotList; //maybe this could be an array since its a static 6 slots
     public Sprite darkHighlighedSlot;
     public Sprite darkNormalSlot;
     public Sprite lightHighlightedSlot;
     public Sprite lightNormalSlot;
+
+    //==PRIVATE==//
     private List<WeaponObject> weaponObjInventoryList;
     private int selectedSlot;
 
-
+   
     private void Awake()
-    {
+    {   // Ensuring this hbInstance is the only one
         if (hbInstance != null && hbInstance != this)
         {
             Destroy(gameObject);
@@ -33,8 +35,8 @@ public class UI_Hotbar : MonoBehaviour
 
     void Start()
     {
-        //gets the weapon inventory on load and update the hotbar
         selectedSlot = 6;
+        //gets the weapon inventory on load and update the hotbar
         setListOfInventory(GameManagerLogic.Instance.getPlayerWeaponInventory());
         highlightSelectedWeapon(1);
     }
