@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 2278235419036609508}
   - component: {fileID: 8015373536445066340}
   - component: {fileID: 7920293972051457013}
+  - component: {fileID: 5990516224846009080}
   m_Layer: 0
   m_Name: CannonTower
   m_TagString: Untagged
@@ -245,6 +246,25 @@ MonoBehaviour:
   CannonballExplosion: {fileID: 4111901499546697014, guid: e948f696bdf39ce41be00790a7e8cafd, type: 3}
   rate: 4
   towerHead: {fileID: 259160915695648979}
+--- !u!114 &5990516224846009080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2456532839775338748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4df3f0617931cb4086f2825e44fcc0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerData
+  towerName: Cannon
+  towerType: LongRange
+  towerHeadSprite: {fileID: 7482667652216324306, guid: 43269f500e3c4c1458ef787319a6c2cb, type: 3}
+  towerDamage: 2
+  towerHealth: 2
+  towerFireRate: 2
+  towerRange: 2
 --- !u!1 &9071538709320104816
 GameObject:
   m_ObjectHideFlags: 0

@@ -57,6 +57,7 @@ public class GameManagerLogic : MonoBehaviour
     }
     void OnEnable()
     {
+        Debug.Log(SceneManager.GetActiveScene());
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 

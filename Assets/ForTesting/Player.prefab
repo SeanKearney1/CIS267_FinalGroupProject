@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: -1438410991524652992}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -314,12 +314,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5b89dd3df6cbd5341aaa7327a88c5e28, type: 2}
   - {fileID: 11400000, guid: ab6582fbaa2fa3d4da0b5ea2aa1ec7ac, type: 2}
   - {fileID: 11400000, guid: 9d8bd89366d2a9e449f72c7da82aa889, type: 2}
-  swordObj: {fileID: 11400000, guid: 4cfe63a4bdc3145419bb3be2f6a8e792, type: 2}
-  cutlassObj: {fileID: 11400000, guid: a76ff54b1520c3f459645c7a7f258b68, type: 2}
-  spearObj: {fileID: 11400000, guid: d3db25eb38c994a4f9ac0f79d215ad7b, type: 2}
-  staffObj: {fileID: 11400000, guid: 5b89dd3df6cbd5341aaa7327a88c5e28, type: 2}
-  clubObj: {fileID: 11400000, guid: ab6582fbaa2fa3d4da0b5ea2aa1ec7ac, type: 2}
-  bowObj: {fileID: 11400000, guid: 9d8bd89366d2a9e449f72c7da82aa889, type: 2}
   weaponSpawnLocation: {fileID: 7904127584196818449}
 --- !u!1 &7904127584196818449
 GameObject:
