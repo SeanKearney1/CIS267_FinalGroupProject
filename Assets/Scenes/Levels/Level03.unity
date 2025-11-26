@@ -911,7 +911,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 829559257187317240, guid: 11495f51f0154bb4586c0da46b570fe9, type: 3}
       propertyPath: isAllAtOnce
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 829559257187317240, guid: 11495f51f0154bb4586c0da46b570fe9, type: 3}
       propertyPath: baseEnemyCnt

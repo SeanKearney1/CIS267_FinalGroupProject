@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PlayerWeapon
   - enemy
+  - TilePlacement
   layers:
   - Default
   - TransparentFX
