@@ -56,11 +56,11 @@ public class TilePlacment : MonoBehaviour
         if (index >= 0 && index < TowerToPlace.Length)
         {
             selection = index;
-        } 
+        }
         else
         {
             Debug.LogWarning("Invalid tile index!");
+        }
+
     }
-
-
 }
