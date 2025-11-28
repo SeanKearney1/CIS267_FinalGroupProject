@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 4213340294240242452}
   - component: {fileID: 9210413740853621689}
   - component: {fileID: 7288345379976912666}
+  - component: {fileID: 2320556464035745873}
   m_Layer: 0
   m_Name: MusketTower
   m_TagString: Untagged
@@ -245,6 +246,25 @@ MonoBehaviour:
   arrowProjectile: {fileID: 2468307652810817502, guid: 7b8f746d4a0e31d4cac0e6365023c759, type: 3}
   rate: 5
   towerHead: {fileID: 2841193721164572864}
+--- !u!114 &2320556464035745873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9163717347500566352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4df3f0617931cb4086f2825e44fcc0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerData
+  towerName: Musket
+  towerType: Ranged
+  towerHeadSprite: {fileID: -8940198679668421409, guid: bc919154e90a53849a157627a1fb6920, type: 3}
+  towerDamage: 2
+  towerHealth: 2
+  towerFireRate: 2
+  towerRange: 2
 --- !u!1001 &440625293408044911
 PrefabInstance:
   m_ObjectHideFlags: 0

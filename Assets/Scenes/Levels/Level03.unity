@@ -387,9 +387,12 @@ MonoBehaviour:
   buildingLayer: {fileID: 1008780597}
   BarrierTile: {fileID: 11400000, guid: 31ca6d2fc7761c14999ccffac6014ff4, type: 2}
   TowerToPlace:
+  - {fileID: 2870820750470725616, guid: 9cf011eacb4555f4d898f90b89930448, type: 3}
+  - {fileID: 4834165455890354665, guid: 7d67f5f1c5220d048af38892ccddfd7c, type: 3}
+  - {fileID: 9163717347500566352, guid: 8a3cc3895c5a1e94fa69ba6249336a7c, type: 3}
   - {fileID: 2456532839775338748, guid: ac1e907fde95f164ba490cba6ab06d25, type: 3}
   - {fileID: 7798106345068246147, guid: da755a4eba375ec4dbda3c28d6381371, type: 3}
-  - {fileID: 7798106345068246147, guid: da755a4eba375ec4dbda3c28d6381371, type: 3}
+  - {fileID: 5148810376317303988, guid: ef97e162ef4bccb43b5fa35a30a7eda7, type: 3}
 --- !u!1001 &413285136
 PrefabInstance:
   m_ObjectHideFlags: 0

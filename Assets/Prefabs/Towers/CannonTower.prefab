@@ -259,8 +259,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
   towerName: Cannon
-  towerType: LongRange
-  towerHeadSprite: {fileID: 7482667652216324306, guid: 43269f500e3c4c1458ef787319a6c2cb, type: 3}
+  towerType: Ranged
+  towerHeadSprite: {fileID: 4683682284548472383, guid: c794c21c504223b448cd5bcd12ad908d, type: 3}
   towerDamage: 2
   towerHealth: 2
   towerFireRate: 2

@@ -7,23 +7,25 @@ using Unity.VisualScripting;
 
 public class UI_Sidebar : MonoBehaviour
 {
-    public static UI_Sidebar sbInstance {  get; private set; }
-
-    // Might be better to just get and use the TMP_Text when the button itself is changed
-    // Then the extra textList wouldn't be needed
-
-    [Header("--Select Tower Type Buttons--")]
-    public List<Button> selTowerTypeBtnList; // might not need this
+    //==PUBLIC==//
+    public static UI_Sidebar sbInstance { get; private set; }
+    [Header("--Tower Type Buttons--")]
     public List<TMP_Text> towerTypeTextList;
 
     [Header("--Tower Slots--")]
-    public List<Button> towerSelectBtnList; 
+    public List<Button> towerSelectBtnList;
     public List<TMP_Text> towerBtnTextList;
 
     [Header("--Usable Tower Lists--")]
     public List<GameObject> orcUsableTowerList;
     public List<GameObject> elvenUsabelTowerList;
     public List<GameObject> dwarvenUsableTowerList;
+
+    //==PRIVATE==//
+    private TilePlacment placementScript;
+    private bool isOrcSelected;
+    private bool isDwarvenSelected;
+    private bool isElvenSelected;
 
 
 
@@ -39,13 +41,26 @@ public class UI_Sidebar : MonoBehaviour
 
     void Start()
     {
-        //set/add default tower
+        placementScript = FindAnyObjectByType<TilePlacment>();
         orcTowersSelected();
     }
-
-    void Update()
+    public void towerSelection(int index)
     {
-        
+        if (isOrcSelected)
+        {
+            Debug.Log("Testing Orc: " + index);
+            placementScript.switchSelection(index);
+        }
+        else if (isDwarvenSelected)
+        {
+            Debug.Log("Testing Dwarven: " + (index + orcUsableTowerList.Count));
+            placementScript.switchSelection(index + orcUsableTowerList.Count);
+        }
+        else if (isElvenSelected)
+        {
+            Debug.Log("Testing Elven: " + (index + orcUsableTowerList.Count + dwarvenUsableTowerList.Count));
+            placementScript.switchSelection(index + orcUsableTowerList.Count + dwarvenUsableTowerList.Count);
+        }
     }
     public void orcTowersSelected()
     {
@@ -54,6 +69,9 @@ public class UI_Sidebar : MonoBehaviour
         towerTypeTextList[2].color = Color.white;
         if (orcUsableTowerList != null)
         {
+            isOrcSelected = true;
+            isDwarvenSelected = false;
+            isElvenSelected = false;
             for (int i = 0; i < orcUsableTowerList.Count; i++)
             {
                 Sprite towerSprite = orcUsableTowerList[i].GetComponent<TowerData>().getTowerHeadSprite();
@@ -75,6 +93,9 @@ public class UI_Sidebar : MonoBehaviour
         towerTypeTextList[2].color = Color.white;
         if (dwarvenUsableTowerList != null)
         {
+            isOrcSelected = false;
+            isDwarvenSelected = true;
+            isElvenSelected = false;
             for (int i = 0; i < dwarvenUsableTowerList.Count; i++)
             {
                 Sprite towerSprite = dwarvenUsableTowerList[i].GetComponent<TowerData>().getTowerHeadSprite();
@@ -96,6 +117,9 @@ public class UI_Sidebar : MonoBehaviour
         towerTypeTextList[2].color = Color.red;
         if (elvenUsabelTowerList != null)
         {
+            isOrcSelected = false;
+            isDwarvenSelected = false;
+            isElvenSelected = true;
             for (int i = 0; i < elvenUsabelTowerList.Count; i++)
             {
                 Sprite towerSprite = elvenUsabelTowerList[i].GetComponent<TowerData>().getTowerHeadSprite();

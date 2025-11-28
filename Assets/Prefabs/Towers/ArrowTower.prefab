@@ -340,7 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
   towerName: Arrow
-  towerType: MedRange
+  towerType: Ranged
   towerHeadSprite: {fileID: 1872902720071270251, guid: 5fdd0c661494b6e4f9abd6f5c6de68a3, type: 3}
   towerDamage: 2
   towerHealth: 2

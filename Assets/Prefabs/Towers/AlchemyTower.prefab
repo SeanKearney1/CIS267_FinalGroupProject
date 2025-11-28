@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 4433929251893209456}
   - component: {fileID: 4605841668558513939}
   - component: {fileID: 4373009851423422149}
+  - component: {fileID: 6528434387958551921}
   m_Layer: 0
   m_Name: AlchemyTower
   m_TagString: Untagged
@@ -245,6 +246,25 @@ MonoBehaviour:
   arrowProjectile: {fileID: 2862463482350598350, guid: 24af0d0ff12f86c458dcc11db9f9c8e4, type: 3}
   rate: 5
   towerHead: {fileID: 2094381834534917663}
+--- !u!114 &6528434387958551921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5148810376317303988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4df3f0617931cb4086f2825e44fcc0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerData
+  towerName: Alchemy
+  towerType: Ranged
+  towerHeadSprite: {fileID: 6659309773499815561, guid: 7b20aec21213c974286addf92db15f11, type: 3}
+  towerDamage: 2
+  towerHealth: 2
+  towerFireRate: 2
+  towerRange: 2
 --- !u!1001 &7317396446207659663
 PrefabInstance:
   m_ObjectHideFlags: 0

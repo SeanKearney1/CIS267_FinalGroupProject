@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 8345600921911093607}
   - component: {fileID: 967516859583461998}
   - component: {fileID: 4757265279284223686}
+  - component: {fileID: 2035451055650920950}
   m_Layer: 0
   m_Name: ClubTower
   m_TagString: Untagged
@@ -245,6 +246,25 @@ MonoBehaviour:
   CannonballExplosion: {fileID: 7359467935524200764, guid: 9ba65ae6a06077f41ae4ccb30ff20ee9, type: 3}
   rate: 3
   towerHead: {fileID: 14117166961448953}
+--- !u!114 &2035451055650920950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2870820750470725616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4df3f0617931cb4086f2825e44fcc0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerData
+  towerName: Club
+  towerType: Ranged
+  towerHeadSprite: {fileID: 6640111971853735880, guid: 6abf0c8baab5d0a4c8f22bf60fb93682, type: 3}
+  towerDamage: 2
+  towerHealth: 2
+  towerFireRate: 2
+  towerRange: 2
 --- !u!1001 &2628697268714500341
 PrefabInstance:
   m_ObjectHideFlags: 0
