@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class AreaEnemySpawner : MonoBehaviour
+public class AreaSpawner : MonoBehaviour
 {
     //this spawns enemies or objects in an area set in the inspector
     //not fully finished yet but could be used for the creep spawns

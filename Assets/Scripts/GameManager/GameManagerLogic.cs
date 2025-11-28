@@ -18,21 +18,31 @@ public class GameManagerLogic : MonoBehaviour
     //=====================================================
 
     // PUBLIC 
-    public GameObject LevelUIPrefab;
     public static GameManagerLogic Instance { get; private set; }
-
-
+    public GameObject LevelUIPrefab;
     // PRIVATE
     private GameObject LevelUIPrefabGameObject;
     private GameObject PauseMenuGameObject;
 
 
-    // For weapon handling 
+
+    //==FOR WEAPON HANDLING AND PASSING DATA BETWEEN SCENES==// 
+
     //==PUBLIC==//
+    [Header("--Default Weapon Object--")]
     public WeaponObject defaultWeapon;
+    [Header("--Weapon Scriptable Object List--")]
+    public List<WeaponObject> weaponScriptObjList;
+    [Header("--Repair Hammer--")]
+    public WeaponHandler repairHammerObj;
+
     //==PRIVATE==//
     private List<WeaponObject> playerWeaponInventory;
     private GameObject equippedWeapon;
+
+    //used if we make the hammer a reward rather than already owned
+    private bool hasRepairHammer;
+
 
     //=====================================================
     //=====================================================
@@ -130,7 +140,12 @@ public class GameManagerLogic : MonoBehaviour
     }
 
 
+
+    //=======================
+    //  GETTER AND SETTERS
+    //=======================
     //==Getter and Setters for the player weapon inventory==//
+
     public List<WeaponObject> getPlayerWeaponInventory()
     {
         return playerWeaponInventory;
@@ -139,7 +154,6 @@ public class GameManagerLogic : MonoBehaviour
     {
         playerWeaponInventory = weaponList;
     }
-    //==Getter and Setters for the equipped player weapon==//
     public GameObject getEquippedWeapon()
     {
         return equippedWeapon;
@@ -152,7 +166,18 @@ public class GameManagerLogic : MonoBehaviour
     {
         return defaultWeapon;
     }
-
+    public List<WeaponObject> getWeaponScriptObjList()
+    {
+        return weaponScriptObjList;
+    }
+    public void setHasRepairHammer(bool h)
+    {
+        hasRepairHammer = h;
+    }
+    public bool getHasRepairHammer()
+    {
+        return hasRepairHammer;
+    }
     //================
     //================
     //================

@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 8620843773417470706}
   - component: {fileID: 6507644675364798570}
   m_Layer: 0
-  m_Name: OrcLevel3Grid
+  m_Name: OrcLevelGrid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -44,9 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45047fa853d8e54d8950626629b6ee2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AreaEnemySpawner
-  meleeEnemy: {fileID: 5180739013252321792, guid: ff7baaa5a1a6eb64c9579d60990a298c, type: 3}
-  rangedEnemy: {fileID: 5180739013252321792, guid: ff7baaa5a1a6eb64c9579d60990a298c, type: 3}
-  bossEnemy: {fileID: 5180739013252321792, guid: ff7baaa5a1a6eb64c9579d60990a298c, type: 3}
+  spawnableObjList: []
   areaSpawner: {fileID: 2818749528708669153}
   spawnDelay: 2
+  baseEnemyCnt: 0
+  isAllAtOnce: 0
+  baseCooldownRate: 0
   areaSize: 6

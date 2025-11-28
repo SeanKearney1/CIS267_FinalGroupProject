@@ -16,8 +16,8 @@ public class WeaponHandler : MonoBehaviour
     // Scriptable Objects for each weapon
     // Each hold the data for that weapon
     // I just added some random types for now
-    [Header("--Weapon Objects--")]
-    public List<WeaponObject> listOfWeaponScriptObject;
+    //[Header("--Weapon Objects--")]
+    //public List<WeaponObject> listOfWeaponScriptObject;
 
 
     // gameObject where the weapon will spawn in at
@@ -40,9 +40,10 @@ public class WeaponHandler : MonoBehaviour
     private float currWeaponAttackSpeed;
     private float currWeaponRange;
 
-
+    private List<WeaponObject> listOfWeaponScriptObject;
     private List<WeaponObject> weaponInventoryList;
     private GameObject initWeapon;
+    private bool hasHammer;
 
 
     private void Awake()
@@ -58,6 +59,8 @@ public class WeaponHandler : MonoBehaviour
         // then using game manager or ui_hotbar to keep track of the equipped weapon
         // so if the player dies and respawns the previous 
         // weapon inventory is reload with the player. 
+        listOfWeaponScriptObject = new List<WeaponObject>();
+        listOfWeaponScriptObject = GameManagerLogic.Instance.getWeaponScriptObjList();
         WeaponObject defWeapon = GameManagerLogic.Instance.getDefaultWeapon();
         addWeaponToInventory(defWeapon.weaponName);
         initializeWeapon(defWeapon);
@@ -145,8 +148,6 @@ public class WeaponHandler : MonoBehaviour
     }
 
     // Initializes the equipped weapon data
-    // could also just pass the Scriptable Object with a getter
-    // then just access the data through that when its needed
     private void initWeaponData(WeaponObject wObj)
     {
         currWeaponName = wObj.weaponName;
@@ -156,16 +157,10 @@ public class WeaponHandler : MonoBehaviour
         currWeaponRange = wObj.weaponRange;
     }
 
-    //this could be used instead of the above function (initWeaponData)
     public WeaponObject getEquippedWeaponObj()
     {
         return currentWeapon;
     }
 
-    // could probably pass this to game manager
-    // to help keep track of the weapon inventroy in between levels
-    //public List<GameObject> getListOfWeaponInventory()
-    //{
-    //    return weaponInventoryList;
-    //}
+
 }
