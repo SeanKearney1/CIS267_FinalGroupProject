@@ -18,16 +18,17 @@ public class BasicMovement : MonoBehaviour
     }
     void Update()
     {
-        PlayerMovement();
+        playerMovement();
     }
     private void FixedUpdate()
     {
         rb.linearVelocity = moveVelocity;
     }
-    private void PlayerMovement()
+    private void playerMovement()
     {
         float xPos = Input.GetAxisRaw("Horizontal");
         float yPos = Input.GetAxisRaw("Vertical");
+        flipPlayerSprite(xPos);
         Vector2 pMove = new Vector2(xPos, yPos).normalized;
         moveVelocity = pMove * speed;
     }
@@ -42,6 +43,17 @@ public class BasicMovement : MonoBehaviour
         {
             GameManagerLogic.Instance.setHasRepairHammer(true);
             Destroy(collision.gameObject);
+        }
+    }
+    private void flipPlayerSprite(float moveX)
+    {
+        if (moveX > 0)
+        {
+            transform.eulerAngles = new Vector3(0, 0, 0);
+        }
+        else if (moveX < 0)
+        {
+            transform.eulerAngles = new Vector3(0, 180, 0);
         }
     }
 }
