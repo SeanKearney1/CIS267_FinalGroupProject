@@ -67,4 +67,8 @@ public class HealthController : MonoBehaviour
     {
         onFire = true;
     }
+    public int getHealth()
+    {
+        return curHP;
+    }
 }

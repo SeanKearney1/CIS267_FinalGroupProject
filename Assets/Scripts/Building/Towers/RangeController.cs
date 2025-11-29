@@ -47,6 +47,12 @@ public class RangeController : MonoBehaviour
     {
         return enemiesInRange[0].transform.position;
     }
+    public Vector3 randEnemyPosition()
+    {
+        int rand = Random.Range(0, enemiesInRange.Count);
+
+        return enemiesInRange[rand].transform.position;
+    }
     public bool isAnEnemyInRange()
     {
         if (enemiesInRange.Count > 0)
