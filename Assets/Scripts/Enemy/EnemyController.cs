@@ -78,6 +78,16 @@ public class EnemyController : MonoBehaviour
             collision.gameObject.GetComponent<HealthController>().takeDamage(damage);
             Destroy(gameObject);
         }
+        else if (collision.gameObject.CompareTag("Player"))
+        {
+            //add damage to player here?
+            Destroy(gameObject);
+        }
+        else if(collision.gameObject.CompareTag("CityGate"))
+        {
+            //add damage to city gate here
+            Destroy(gameObject);
+        }
     }
     public void setDefaultTarget(GameObject gate)
     {

@@ -11,6 +11,7 @@ TagManager:
   - RepairHammer
   - Tower
   - Waypoint
+  - CityGate
   layers:
   - Default
   - TransparentFX

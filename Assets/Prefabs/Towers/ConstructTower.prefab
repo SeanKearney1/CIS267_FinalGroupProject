@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7594511923759877082}
   - component: {fileID: 188593526410307454}
   - component: {fileID: 7221658681204656328}
+  - component: {fileID: 755445252527475954}
   m_Layer: 8
   m_Name: ConstructTower
   m_TagString: Tower
@@ -154,6 +155,20 @@ MonoBehaviour:
   baseHP: 20
   resistance: 0
   vitality: 1
+--- !u!114 &755445252527475954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570570017137599816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4df3f0617931cb4086f2825e44fcc0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerData
+  towerName: Construct
+  towerHeadSprite: {fileID: -8045846326204813637, guid: 7d6a288ff7f7d004d9d6dddd2748582c, type: 3}
 --- !u!1001 &1774007423558813462
 PrefabInstance:
   m_ObjectHideFlags: 0

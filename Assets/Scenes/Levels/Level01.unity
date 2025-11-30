@@ -1103,8 +1103,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c4f8ce020027f3478e8e3d04af5f4e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TilePlacment
-  buildingLayer: {fileID: 0}
-  BarrierTile: {fileID: 0}
+  buildingLayer: {fileID: 175280008}
+  BarrierTile: {fileID: 11400000, guid: 31ca6d2fc7761c14999ccffac6014ff4, type: 2}
   TowerToPlace:
   - {fileID: 2870820750470725616, guid: 9cf011eacb4555f4d898f90b89930448, type: 3}
   - {fileID: 2083082780957328547, guid: 4c3d543f0f1386d47af30beac1cf1542, type: 3}
@@ -1113,7 +1113,7 @@ MonoBehaviour:
   - {fileID: 9163717347500566352, guid: 8a3cc3895c5a1e94fa69ba6249336a7c, type: 3}
   - {fileID: 2456532839775338748, guid: ac1e907fde95f164ba490cba6ab06d25, type: 3}
   - {fileID: 3172249434157229315, guid: c07363860da3c194cb9b19cf111fbe94, type: 3}
-  - {fileID: 0}
+  - {fileID: 570570017137599816, guid: bdb73180d65cc5d45a5feb4a34b9a985, type: 3}
   - {fileID: 7798106345068246147, guid: da755a4eba375ec4dbda3c28d6381371, type: 3}
   - {fileID: 5148810376317303988, guid: ef97e162ef4bccb43b5fa35a30a7eda7, type: 3}
   - {fileID: 4366055668365829673, guid: ddd0c46a1f9472d48b1389163bec3fd1, type: 3}
