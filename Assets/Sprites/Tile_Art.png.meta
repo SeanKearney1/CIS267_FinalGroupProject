@@ -2370,6 +2370,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      Tile_Art_0: 830879444
+      Tile_Art_1: -2111565425
       dwarf_lavaborder01: 1324488491
       dwarf_lavaborder02: -26766077
       dwarf_lavaborder03: -899087761
@@ -2386,6 +2388,10 @@ TextureImporter:
       dwarf_lavaborder14: 1640195231
       dwarf_lavaborder15: 382336914
       dwarf_lavaborder16: -1617710180
+      dwarf_lavaborder16a: -1752159694
+      dwarf_lavaborder16b: 370583961
+      dwarf_lavaborder16c: -681214857
+      dwarf_lavaborder16d: -223770357
       elvin_waterborder01: 312709123
       elvin_waterborder02: 1443998633
       elvin_waterborder03: 1184139838
@@ -2402,6 +2408,10 @@ TextureImporter:
       elvin_waterborder14: -2108345190
       elvin_waterborder15: 241977630
       elvin_waterborder16: -737992126
+      elvin_waterborder16a: 2103482275
+      elvin_waterborder16b: 1263810457
+      elvin_waterborder16c: -666350243
+      elvin_waterborder16d: -753481993
       orc_waterborder01: -607170177
       orc_waterborder02: -594291674
       orc_waterborder03: 2061659469
@@ -2418,6 +2428,10 @@ TextureImporter:
       orc_waterborder14: -218991706
       orc_waterborder15: 2007941092
       orc_waterborder16: 627703053
+      orc_waterborder16a: 887070484
+      orc_waterborder16b: 1175552233
+      orc_waterborder16c: -1552342537
+      orc_waterborder16d: 1954488920
       path_dwarf_EW: 1450020607
       path_dwarf_NE: 1550991982
       path_dwarf_NS: 711180823
