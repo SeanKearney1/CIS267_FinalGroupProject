@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7534888013330247329}
   - component: {fileID: 1296236315971252950}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 4757265279284223686}
   - component: {fileID: 2035451055650920950}
   - component: {fileID: 7475276923801625660}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ClubTower
   m_TagString: Tower
   m_Icon: {fileID: 0}
@@ -260,12 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
   towerName: Club
-  towerType: Ranged
   towerHeadSprite: {fileID: 6640111971853735880, guid: 6abf0c8baab5d0a4c8f22bf60fb93682, type: 3}
-  towerDamage: 2
-  towerHealth: 2
-  towerFireRate: 2
-  towerRange: 2
 --- !u!114 &7475276923801625660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,6 +331,10 @@ PrefabInstance:
     - target: {fileID: 6054694215812091538, guid: 2b9ee708727f92f4bb95d73d34829391, type: 3}
       propertyPath: m_Name
       value: Range
+      objectReference: {fileID: 0}
+    - target: {fileID: 6054694215812091538, guid: 2b9ee708727f92f4bb95d73d34829391, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

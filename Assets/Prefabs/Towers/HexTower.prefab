@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8857014193392782280}
   - component: {fileID: 178462488241006757}
   - component: {fileID: -7055719207805913951}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: HexTower
   m_TagString: Tower
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2501787235611479765}
   - component: {fileID: 6827274165404836509}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,7 +329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6054694215812091538, guid: 2b9ee708727f92f4bb95d73d34829391, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

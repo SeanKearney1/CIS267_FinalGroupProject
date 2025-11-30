@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7133593121230297943}
   - component: {fileID: 7635728401371260208}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 7917242133488191544}
   - component: {fileID: 5774746248366936063}
   - component: {fileID: 7881909528662645569}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BrambleTower
   m_TagString: Tower
   m_Icon: {fileID: 0}
@@ -246,6 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BrambleTower
   scaledBramble: {fileID: 7002984849608183179}
   regenDelay: 1
+  damageBubble: {fileID: 5190596332117508894, guid: ffd7f8d54a5a9f3479ebd8258a6c3da1, type: 3}
 --- !u!114 &5774746248366936063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,12 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
   towerName: Bramble
-  towerType: 
   towerHeadSprite: {fileID: 5707208263573514126, guid: f67cbd8f62468b24e9843013e90a94f0, type: 3}
-  towerDamage: 2
-  towerHealth: 2
-  towerFireRate: 2
-  towerRange: 2
 --- !u!1 &7002984849608183179
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +287,7 @@ GameObject:
   - component: {fileID: 8694882364766573612}
   - component: {fileID: 7369808380573004346}
   - component: {fileID: 8190374225895894747}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bramble_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,7 +397,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

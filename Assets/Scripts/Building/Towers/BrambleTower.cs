@@ -7,12 +7,13 @@ public class BrambleTower : MonoBehaviour
     private float scale=0;
     public int regenDelay;
     private float regenTime;
+    public GameObject damageBubble;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         healthController = this.gameObject.GetComponent<HealthController>();
-        healthController.takeDamage(80);//set base hp to 20 with max to 100
     }
 
     // Update is called once per frame
@@ -38,6 +39,8 @@ public class BrambleTower : MonoBehaviour
         {
             healthController.rejuvinate(Mathf.RoundToInt(scale * 1f));
             regenTime = 0;
+            GameObject spawnedBubble = Instantiate(damageBubble, transform.position,transform.rotation);
+            spawnedBubble.transform.localScale = new Vector3(scale, scale , 1f);
         }
         else 
         {

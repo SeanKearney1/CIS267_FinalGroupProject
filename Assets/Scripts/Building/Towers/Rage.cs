@@ -16,7 +16,6 @@ public class Rage : MonoBehaviour
     {
         healthController = this.gameObject.GetComponent<HealthController>();
         rangeController = GetComponentInChildren<RangeController>();
-        healthController.takeDamage(45); // commented this out so tower doesn't instantlly get destory
     }
 
     // Update is called once per frame
