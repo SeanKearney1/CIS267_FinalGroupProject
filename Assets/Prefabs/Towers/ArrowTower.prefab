@@ -184,9 +184,10 @@ GameObject:
   - component: {fileID: 9137443281605311685}
   - component: {fileID: 8534822474541622367}
   - component: {fileID: 1690426350882121786}
+  - component: {fileID: 8061242499507525880}
   m_Layer: 8
   m_Name: ArrowTower
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -340,9 +341,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
   towerName: Arrow
-  towerType: Ranged
   towerHeadSprite: {fileID: 1872902720071270251, guid: 5fdd0c661494b6e4f9abd6f5c6de68a3, type: 3}
-  towerDamage: 2
-  towerHealth: 2
-  towerFireRate: 2
-  towerRange: 2
+--- !u!114 &8061242499507525880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7798106345068246147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad464dc39390fa4d9f3cdb7b55e8249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthController
+  baseHP: 10
+  resistance: 0
+  vitality: 1

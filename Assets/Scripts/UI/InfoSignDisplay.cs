@@ -21,14 +21,14 @@ public class InfoSignDisplay : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.transform.tag == "Player")
+        if(collision.gameObject.CompareTag("Player"))
         {
             infoDisplayCanvas.SetActive(true);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.transform.tag == "Player")
+        if(collision.gameObject.CompareTag("Player"))
         {
             infoDisplayCanvas.SetActive(false);
         }

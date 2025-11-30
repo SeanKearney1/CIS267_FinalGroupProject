@@ -78,7 +78,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -921370766043575945, guid: 23866ff9421d9e641bce460bf55bc2b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -102,9 +102,11 @@ GameObject:
   - component: {fileID: 6766163830101626843}
   - component: {fileID: 6025929836778856}
   - component: {fileID: 8297820340220587274}
+  - component: {fileID: 881225875340898449}
+  - component: {fileID: 2795547794552894498}
   m_Layer: 8
   m_Name: NetTower
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,7 +174,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 5075230056192899191, guid: 2daf9b2093a340b4ea6db3b542419166, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -245,6 +247,35 @@ MonoBehaviour:
   CannonballExplosion: {fileID: 1562067039070868946, guid: dbf24bb4b0700774ebd887a034453436, type: 3}
   rate: 1
   towerHead: {fileID: 3376749944378461504}
+--- !u!114 &881225875340898449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5136960227651405293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4df3f0617931cb4086f2825e44fcc0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerData
+  towerName: Net
+  towerHeadSprite: {fileID: -921370766043575945, guid: 23866ff9421d9e641bce460bf55bc2b6, type: 3}
+--- !u!114 &2795547794552894498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5136960227651405293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad464dc39390fa4d9f3cdb7b55e8249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthController
+  baseHP: 10
+  resistance: 0
+  vitality: 1
 --- !u!1001 &7550122041826276850
 PrefabInstance:
   m_ObjectHideFlags: 0

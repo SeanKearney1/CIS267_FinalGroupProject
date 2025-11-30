@@ -15,6 +15,7 @@ public class UI_Sidebar : MonoBehaviour
     [Header("--Tower Slots--")]
     public List<Button> towerSelectBtnList;
     public List<TMP_Text> towerBtnTextList;
+    public List<TMP_Text> towerSelKeyTextList;
 
     [Header("--Usable Tower Lists--")]
     public List<GameObject> orcUsableTowerList;
@@ -26,6 +27,8 @@ public class UI_Sidebar : MonoBehaviour
     private bool isOrcSelected;
     private bool isDwarvenSelected;
     private bool isElvenSelected;
+    private int previousSelection;
+    private int typeSelection;
 
 
 
@@ -42,7 +45,16 @@ public class UI_Sidebar : MonoBehaviour
     void Start()
     {
         placementScript = FindAnyObjectByType<TilePlacment>();
+        typeSelection = 0;
         orcTowersSelected();
+    }
+    private void Update()
+    {
+        if(Input.anyKeyDown)
+        {
+            towerSelKeyBindings();
+            towerTypeKeyBindings();
+        }
     }
     public void towerSelection(int index)
     {
@@ -62,6 +74,8 @@ public class UI_Sidebar : MonoBehaviour
             placementScript.switchSelection(index + orcUsableTowerList.Count + dwarvenUsableTowerList.Count);
         }
     }
+    //======These following functions are used to populate the Sidebar==//
+    //======depending on the type selected=============================//
     public void orcTowersSelected()
     {
         towerTypeTextList[0].color = Color.red;
@@ -134,6 +148,43 @@ public class UI_Sidebar : MonoBehaviour
             }
         }
     }
+    //================================================//
+    private int towerSelKeyBindings()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            towerSelKeyTextList[previousSelection].color = Color.white;
+            if (Input.GetKeyDown(KeyCode.F1 + i))
+            {
+                previousSelection = i;
+                Debug.Log("SideBar Sel: " + i);
+                towerSelectBtnList[i].onClick.Invoke();
+                towerSelKeyTextList[i].color = Color.red;
+                return i;
+            }
+        }
+        return 0;
+    }
 
+    private void towerTypeKeyBindings()
+    {
+        if(Input.GetKeyDown(KeyCode.Tab))
+        {
+            typeSelection++;
+            if(typeSelection == 0)
+            {
+                orcTowersSelected();
+            }
+            else if(typeSelection == 1)
+            {
+                dwarvenTowersSelected();
+            }
+            else if(typeSelection == 2)
+            {
+                elvenTowersSelected();
+                typeSelection = -1;
+            }
+        }
+    }
 
 }

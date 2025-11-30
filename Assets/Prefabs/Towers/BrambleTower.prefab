@@ -103,9 +103,10 @@ GameObject:
   - component: {fileID: 8419606345219658589}
   - component: {fileID: 7917242133488191544}
   - component: {fileID: 5774746248366936063}
+  - component: {fileID: 7881909528662645569}
   m_Layer: 0
   m_Name: BrambleTower
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -260,6 +261,25 @@ MonoBehaviour:
   baseHP: 100
   resistance: 0
   vitality: 1
+--- !u!114 &7881909528662645569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2310533865948163699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4df3f0617931cb4086f2825e44fcc0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerData
+  towerName: Bramble
+  towerType: 
+  towerHeadSprite: {fileID: 5707208263573514126, guid: f67cbd8f62468b24e9843013e90a94f0, type: 3}
+  towerDamage: 2
+  towerHealth: 2
+  towerFireRate: 2
+  towerRange: 2
 --- !u!1 &7002984849608183179
 GameObject:
   m_ObjectHideFlags: 0

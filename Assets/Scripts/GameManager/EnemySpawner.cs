@@ -1,6 +1,7 @@
 using UnityEngine;
+using System.Collections.Generic;
 
-public class EmenySpawner : MonoBehaviour
+public class EnemySpawner : MonoBehaviour
 {
     [Header("--Spawners--")]
     public GameObject negativeSideSpawner;
@@ -8,6 +9,7 @@ public class EmenySpawner : MonoBehaviour
     public bool isVerticalSpawner;
 
     [Header("Spawner Width: 1 should = 1 square")]
+
     [Range(1, 10)]
     public int maxSpawnerWidth;
 
@@ -16,12 +18,11 @@ public class EmenySpawner : MonoBehaviour
     public GameObject rangedEnemy;
     public GameObject bossEnemy;
 
-    //should this be here or somewhere else
-    //planning to pass this to enemies as they spawn 
-    //using it as their defaut target until a tower is in range
-    //then it becomes a secondary target
-    [Header("--Gatehouse--")]
+
+    [Header("--Gatehouse and Path Waypoints Points--")]
     public GameObject cityGates;
+    public List<GameObject> waypointList;
+
 
     //could set other spawn delays here too for differnt enemy types
     [Header("--Spawn Data--")]
@@ -68,6 +69,8 @@ public class EmenySpawner : MonoBehaviour
     {
         Vector2 spawnPos = getSpawnerType();
         GameObject tempMelee = Instantiate(meleeEnemy);
+        tempMelee.GetComponent<EnemyController>().setDefaultTarget(cityGates);
+        tempMelee.GetComponent<EnemyController>().setPathWaypoints(waypointList);
         tempMelee.transform.position = spawnPos;
     }
     

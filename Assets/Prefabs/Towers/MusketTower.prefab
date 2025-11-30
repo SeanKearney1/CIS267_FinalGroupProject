@@ -103,9 +103,10 @@ GameObject:
   - component: {fileID: 9210413740853621689}
   - component: {fileID: 7288345379976912666}
   - component: {fileID: 2320556464035745873}
+  - component: {fileID: 8730091504018009843}
   m_Layer: 0
   m_Name: MusketTower
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -259,12 +260,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
   towerName: Musket
-  towerType: Ranged
   towerHeadSprite: {fileID: -8940198679668421409, guid: bc919154e90a53849a157627a1fb6920, type: 3}
-  towerDamage: 2
-  towerHealth: 2
-  towerFireRate: 2
-  towerRange: 2
+--- !u!114 &8730091504018009843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9163717347500566352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad464dc39390fa4d9f3cdb7b55e8249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthController
+  baseHP: 10
+  resistance: 0
+  vitality: 1
 --- !u!1001 &440625293408044911
 PrefabInstance:
   m_ObjectHideFlags: 0

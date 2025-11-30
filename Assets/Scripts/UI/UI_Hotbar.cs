@@ -41,11 +41,6 @@ public class UI_Hotbar : MonoBehaviour
         highlightSelectedWeapon(1);
     }
 
-    void Update()
-    {
-        
-    }
-
     //used to update the quick slots when a new item is picked up
     private void updateQuickSlots()
     {
@@ -87,5 +82,17 @@ public class UI_Hotbar : MonoBehaviour
         weaponObjInventoryList = list;
         updateQuickSlots();
         //Debug.Log("setListOfInventory.count: " + quickSlotList.Count);
+    }
+    public int hotbarSelection()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha0 + i))
+            {
+                Debug.Log("hotbarSel: " + i);
+                return i;
+            }
+        }
+        return 0;
     }
 }

@@ -70,21 +70,11 @@ public class WeaponHandler : MonoBehaviour
     {
         if(Input.anyKeyDown)
         {
-            hotbarSelection();
+            weaponSelect(UI_Hotbar.hbInstance.hotbarSelection());
 
         }
     }
-    private void hotbarSelection()
-    {
-        for (int i = 0; i < 10; i++)
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha0 + i))
-            {
-                Debug.Log("hotbarSel: " + i);
-                weaponSelect(i);
-            }
-        }
-    }
+
 
     //used to switch from the old equipped weapon to the new one
     private void weaponSelect(int sel)

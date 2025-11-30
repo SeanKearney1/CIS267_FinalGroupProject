@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 7011179353440554232}
   - component: {fileID: 8833299311759485377}
   - component: {fileID: 6691192097954505709}
+  - component: {fileID: 8159984776472448992}
+  - component: {fileID: 1039418085814703131}
   m_Layer: 8
   m_Name: CatapultTower
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,7 +83,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 5075230056192899191, guid: 2daf9b2093a340b4ea6db3b542419166, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -108,6 +110,35 @@ MonoBehaviour:
   arrowProjectile: {fileID: 1855414661328696351, guid: 86439033406c1754d80c8fe2276e36e7, type: 3}
   rate: 2
   towerHead: {fileID: 4190408656103959257}
+--- !u!114 &8159984776472448992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083082780957328547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4df3f0617931cb4086f2825e44fcc0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerData
+  towerName: Catapult
+  towerHeadSprite: {fileID: 5288215809875120788, guid: f9acb6f07d5c3554086d3de8d1bdf157, type: 3}
+--- !u!114 &1039418085814703131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083082780957328547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad464dc39390fa4d9f3cdb7b55e8249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthController
+  baseHP: 10
+  resistance: 0
+  vitality: 1
 --- !u!1 &4190408656103959257
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,7 +217,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 5288215809875120788, guid: f9acb6f07d5c3554086d3de8d1bdf157, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

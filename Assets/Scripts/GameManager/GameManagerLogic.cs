@@ -34,7 +34,7 @@ public class GameManagerLogic : MonoBehaviour
     [Header("--Weapon Scriptable Object List--")]
     public List<WeaponObject> weaponScriptObjList;
     [Header("--Repair Hammer--")]
-    public WeaponHandler repairHammerObj;
+    public WeaponObject repairHammerObj;
 
     //==PRIVATE==//
     private List<WeaponObject> playerWeaponInventory;

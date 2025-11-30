@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 6277853072406554943}
   - component: {fileID: 7736624962974877699}
   - component: {fileID: 8857014193392782280}
+  - component: {fileID: 178462488241006757}
+  - component: {fileID: -7055719207805913951}
   m_Layer: 6
   m_Name: HexTower
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,6 +156,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HexFiring
   CannonballExplosion: {fileID: 2583011061527937247, guid: abd86aa9c00b4684c92b2e8b9be613d6, type: 3}
   rate: 0.5
+--- !u!114 &178462488241006757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4366055668365829673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4df3f0617931cb4086f2825e44fcc0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerData
+  towerName: Hex
+  towerHeadSprite: {fileID: 5241007651882620668, guid: 09aac1c7c76f27f41b088b4c7354d442, type: 3}
+--- !u!114 &-7055719207805913951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4366055668365829673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad464dc39390fa4d9f3cdb7b55e8249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthController
+  baseHP: 10
+  resistance: 0
+  vitality: 1
 --- !u!1 &6208868915393375240
 GameObject:
   m_ObjectHideFlags: 0

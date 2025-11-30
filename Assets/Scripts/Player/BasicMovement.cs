@@ -34,12 +34,12 @@ public class BasicMovement : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.transform.tag == "PlayerWeapon")
+        if(collision.gameObject.CompareTag("PlayerWeapon"))
         {
             wHandler.addWeaponToInventory(collision.gameObject.name);
             Destroy(collision.gameObject);
         }
-        else if (collision.transform.tag == "RepairHammer") // should repair hammer be static or a reward??
+        else if (collision.gameObject.CompareTag("RepairHammer")) // should repair hammer be static or a reward??
         {
             GameManagerLogic.Instance.setHasRepairHammer(true);
             Destroy(collision.gameObject);

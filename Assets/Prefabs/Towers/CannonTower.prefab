@@ -103,9 +103,10 @@ GameObject:
   - component: {fileID: 8015373536445066340}
   - component: {fileID: 7920293972051457013}
   - component: {fileID: 5990516224846009080}
+  - component: {fileID: 6319580886925305892}
   m_Layer: 0
   m_Name: CannonTower
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -259,12 +260,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
   towerName: Cannon
-  towerType: Ranged
   towerHeadSprite: {fileID: 4683682284548472383, guid: c794c21c504223b448cd5bcd12ad908d, type: 3}
-  towerDamage: 2
-  towerHealth: 2
-  towerFireRate: 2
-  towerRange: 2
+--- !u!114 &6319580886925305892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2456532839775338748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad464dc39390fa4d9f3cdb7b55e8249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthController
+  baseHP: 10
+  resistance: 0
+  vitality: 1
 --- !u!1 &9071538709320104816
 GameObject:
   m_ObjectHideFlags: 0

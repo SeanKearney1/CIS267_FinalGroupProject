@@ -103,9 +103,10 @@ GameObject:
   - component: {fileID: 967516859583461998}
   - component: {fileID: 4757265279284223686}
   - component: {fileID: 2035451055650920950}
+  - component: {fileID: 7475276923801625660}
   m_Layer: 0
   m_Name: ClubTower
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,7 +174,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 5075230056192899191, guid: 2daf9b2093a340b4ea6db3b542419166, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -265,6 +266,21 @@ MonoBehaviour:
   towerHealth: 2
   towerFireRate: 2
   towerRange: 2
+--- !u!114 &7475276923801625660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2870820750470725616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad464dc39390fa4d9f3cdb7b55e8249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthController
+  baseHP: 10
+  resistance: 0
+  vitality: 1
 --- !u!1001 &2628697268714500341
 PrefabInstance:
   m_ObjectHideFlags: 0

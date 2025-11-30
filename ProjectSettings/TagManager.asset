@@ -7,6 +7,10 @@ TagManager:
   - PlayerWeapon
   - enemy
   - TilePlacement
+  - HitBox
+  - RepairHammer
+  - Tower
+  - Waypoint
   layers:
   - Default
   - TransparentFX

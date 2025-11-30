@@ -103,9 +103,10 @@ GameObject:
   - component: {fileID: 4605841668558513939}
   - component: {fileID: 4373009851423422149}
   - component: {fileID: 6528434387958551921}
+  - component: {fileID: -8223590694128787271}
   m_Layer: 0
   m_Name: AlchemyTower
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -259,12 +260,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
   towerName: Alchemy
-  towerType: Ranged
   towerHeadSprite: {fileID: 6659309773499815561, guid: 7b20aec21213c974286addf92db15f11, type: 3}
-  towerDamage: 2
-  towerHealth: 2
-  towerFireRate: 2
-  towerRange: 2
+--- !u!114 &-8223590694128787271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5148810376317303988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad464dc39390fa4d9f3cdb7b55e8249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthController
+  baseHP: 10
+  resistance: 0
+  vitality: 1
 --- !u!1001 &7317396446207659663
 PrefabInstance:
   m_ObjectHideFlags: 0

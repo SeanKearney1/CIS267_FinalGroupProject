@@ -34,7 +34,7 @@ RectTransform:
   m_Children:
   - {fileID: 458479052780303533}
   - {fileID: 2953305748511289598}
-  - {fileID: 8812501697027033947}
+  - {fileID: 8812308368923439728}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -331,7 +331,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6387596562911898110, guid: 00319fee6cda59548a18676f90a2c904, type: 3}
   m_PrefabInstance: {fileID: 8095628066241173760}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &8400166724911061823
+--- !u!1001 &8400536561138115092
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -339,98 +339,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5166909969437280248}
     m_Modifications:
-    - target: {fileID: 553936664326270487, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 553936664326270487, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 553936664326270487, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 9162357792679501983}
-    - target: {fileID: 553936664326270487, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 553936664326270487, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: towerSelection
-      objectReference: {fileID: 0}
-    - target: {fileID: 553936664326270487, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UI_Sidebar, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 553936664326270487, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 723216954667917581, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 723216954667917581, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 723216954667917581, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 9162357792679501983}
-    - target: {fileID: 723216954667917581, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 723216954667917581, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: towerSelection
-      objectReference: {fileID: 0}
-    - target: {fileID: 723216954667917581, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UI_Sidebar, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 723216954667917581, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 723216954667917581, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 843396882965265312, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: orcUsableTowerList.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 843396882965265312, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: elvenUsabelTowerList.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 843396882965265312, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: 'orcUsableTowerList.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2870820750470725616, guid: 9cf011eacb4555f4d898f90b89930448, type: 3}
-    - target: {fileID: 843396882965265312, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: 'orcUsableTowerList.Array.data[1]'
-      value: 
-      objectReference: {fileID: 4834165455890354665, guid: 7d67f5f1c5220d048af38892ccddfd7c, type: 3}
-    - target: {fileID: 843396882965265312, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: dwarvenUsableTowerList.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 843396882965265312, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: 'elvenUsabelTowerList.Array.data[1]'
-      value: 
-      objectReference: {fileID: 5148810376317303988, guid: ef97e162ef4bccb43b5fa35a30a7eda7, type: 3}
-    - target: {fileID: 843396882965265312, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: 'dwarvenUsableTowerList.Array.data[0]'
-      value: 
-      objectReference: {fileID: 9163717347500566352, guid: 8a3cc3895c5a1e94fa69ba6249336a7c, type: 3}
-    - target: {fileID: 843396882965265312, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: 'dwarvenUsableTowerList.Array.data[1]'
-      value: 
-      objectReference: {fileID: 2456532839775338748, guid: ac1e907fde95f164ba490cba6ab06d25, type: 3}
     - target: {fileID: 1071620020191334500, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -511,104 +419,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 3272167374850285304, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3272167374850285304, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3272167374850285304, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 9162357792679501983}
-    - target: {fileID: 3272167374850285304, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3272167374850285304, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: towerSelection
-      objectReference: {fileID: 0}
-    - target: {fileID: 3272167374850285304, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UI_Sidebar, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3272167374850285304, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3272167374850285304, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 4811768610193084676, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
       propertyPath: m_Name
       value: SideBar_UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 7009220775099421196, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7009220775099421196, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7009220775099421196, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976107269528204527, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976107269528204527, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976107269528204527, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 9162357792679501983}
-    - target: {fileID: 7976107269528204527, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976107269528204527, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: towerSelection
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976107269528204527, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UI_Sidebar, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976107269528204527, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7976107269528204527, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
---- !u!224 &8812501697027033947 stripped
+--- !u!224 &8812308368923439728 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1071620020191334500, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-  m_PrefabInstance: {fileID: 8400166724911061823}
+  m_PrefabInstance: {fileID: 8400536561138115092}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9162357792679501983 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 843396882965265312, guid: 6b24937b9fc93fb4ab6c63b4491d3914, type: 3}
-  m_PrefabInstance: {fileID: 8400166724911061823}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da2cb2e0ffbd2a74ca5c46958d8ab5c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UI_Sidebar

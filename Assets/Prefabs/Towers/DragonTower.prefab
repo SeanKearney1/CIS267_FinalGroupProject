@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 6552637558205139783}
   - component: {fileID: 7166201921998741676}
   - component: {fileID: 3032508747183828437}
+  - component: {fileID: 8789592904905144410}
+  - component: {fileID: -9019470019329116650}
   m_Layer: 8
   m_Name: DragonTower
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,6 +157,35 @@ MonoBehaviour:
   arrowProjectile: {fileID: 4968016144927873842, guid: 57bc49fbce3375c4a9e89cd35ac5e672, type: 3}
   rate: 0.25
   towerHead: {fileID: 4596607231405173946}
+--- !u!114 &8789592904905144410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3172249434157229315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4df3f0617931cb4086f2825e44fcc0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TowerData
+  towerName: Dragon
+  towerHeadSprite: {fileID: -5212064822851398009, guid: fbf74d05fea055943a185698207d4f5e, type: 3}
+--- !u!114 &-9019470019329116650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3172249434157229315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad464dc39390fa4d9f3cdb7b55e8249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthController
+  baseHP: 10
+  resistance: 0
+  vitality: 1
 --- !u!1 &4596607231405173946
 GameObject:
   m_ObjectHideFlags: 0
