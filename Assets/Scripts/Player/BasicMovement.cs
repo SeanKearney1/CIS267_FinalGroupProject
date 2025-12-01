@@ -47,11 +47,11 @@ public class BasicMovement : MonoBehaviour
     }
     private void flipPlayerSprite(float moveX)
     {
-        if (moveX > 0)
+        if (moveX < 0)
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
-        else if (moveX < 0)
+        else if (moveX > 0)
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
