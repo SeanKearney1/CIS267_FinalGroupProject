@@ -25,7 +25,7 @@ public class TilePlacment : MonoBehaviour
 
     public void placeTileOnMousePoint()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && UI_Sidebar.sbInstance.getIsTowerSelected())
         {
             // get the position of the cursor
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -34,7 +34,11 @@ public class TilePlacment : MonoBehaviour
 
             placeTower(cellPos);
 
-
+            //used to deselect the tower after placement
+            //false = no longer able to build
+            UI_Sidebar.sbInstance.setIsTowerSelected(false);
+            //used to reset the button text color
+            UI_Sidebar.sbInstance.resetTowerSelText();
 
         }
     }

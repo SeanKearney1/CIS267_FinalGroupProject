@@ -22,8 +22,9 @@ public class WeaponHandler : MonoBehaviour
 
     // gameObject where the weapon will spawn in at
     // likly located on the players hand
-    [Header("--Weapon Spawn--")]
+    [Header("--Weapon/Shield Spawn--")]
     public GameObject weaponSpawnLocation;
+    public GameObject shieldSpawnLocation;
 
 
 
@@ -33,6 +34,8 @@ public class WeaponHandler : MonoBehaviour
 
     //===Weapon data for the currently equipped weapon===//
     private WeaponObject currentWeapon;
+    private WeaponObject currentShield;
+
     // might not need these vars if we access the data via currentWeapon.weaponName etc...
     private string currWeaponName;
     private string currWeaponType;
@@ -43,6 +46,7 @@ public class WeaponHandler : MonoBehaviour
     private List<WeaponObject> listOfWeaponScriptObject;
     private List<WeaponObject> weaponInventoryList;
     private GameObject initWeapon;
+    private GameObject initShield;
     private bool hasHammer;
 
 
@@ -90,22 +94,64 @@ public class WeaponHandler : MonoBehaviour
 
     // Initializes the passed weapon scriptable object into the game world
     // Spawning the weapon into the player's "hands" 
-    private GameObject initializeWeapon(WeaponObject weapon)
+    private void initializeWeapon(WeaponObject weapon)
     {
-        if(weapon != null)
-        {        
+        if (weapon != null)
+        {
             GameObject tempWeapon = weapon.weaponPrefab;
             currentWeapon = weapon;
+            weaponTypeCheck(weapon);
             initWeaponData(currentWeapon);
             float x = weaponSpawnLocation.transform.position.x;
             float y = weaponSpawnLocation.transform.position.y;
             Vector3 pos = new Vector3(x, y, 0f);
             initWeapon = Instantiate(tempWeapon, pos, Quaternion.identity, weaponSpawnLocation.transform);
+            Vector3 newRotation = new Vector3(0f, 0f, 0f);
+            Vector3 oldRotation = initWeapon.transform.rotation.eulerAngles;
+            initWeapon.transform.localRotation = Quaternion.FromToRotation(oldRotation, newRotation);
             initWeapon.name = weapon.weaponName;
             GameManagerLogic.Instance.setEquippedWeapon(initWeapon);
-            return initWeapon;
+            //return initWeapon;
         }
-        return null;
+        //return null;
+    }
+    private void initializeShield(WeaponObject shield)
+    {
+        GameObject tempShield = shield.weaponPrefab;
+        currentShield = shield;
+        float x = shieldSpawnLocation.transform.position.x;
+        float y = shieldSpawnLocation.transform.position.y;
+        Vector3 pos = new Vector3(x, y, 0f);
+        initShield = Instantiate(tempShield, pos, Quaternion.identity, shieldSpawnLocation.transform);
+        Vector3 newRotation = new Vector3(0f, 0f, 0f);
+        Vector3 oldRotation = new Vector3(0f, 0f, 0f);
+        initShield.transform.localRotation = Quaternion.FromToRotation(oldRotation, newRotation);
+        initShield.name = shield.weaponName;
+    }
+    private void weaponTypeCheck(WeaponObject wObj)
+    {
+        if (shieldSpawnLocation.transform.childCount > 0)
+        {
+            GameObject shield = shieldSpawnLocation.transform.GetChild(0).gameObject;
+            Destroy(shield);
+        }
+        if (wObj.weaponType == "1H") // spawn shield if 1 handed weapon
+        {
+            initializeShield(GameManagerLogic.Instance.getDefaultShield());
+        }
+        else if(wObj.weaponType == "2H")
+        {
+
+        }
+        //else // every other weapon type
+        //{
+        //    //check if player has a shield equipped already - if so destroy it
+        //    if (shieldSpawnLocation.transform.childCount > 0)
+        //    {
+        //        GameObject shield = shieldSpawnLocation.transform.GetChild(0).gameObject;
+        //        Destroy(shield);
+        //    }
+        //}
     }
 
     private WeaponObject convertWeaponNameToObject(string name)
@@ -138,16 +184,24 @@ public class WeaponHandler : MonoBehaviour
     }
 
     // Initializes the equipped weapon data
+    // Might not need this
     private void initWeaponData(WeaponObject wObj)
     {
         currWeaponName = wObj.weaponName;
-        currWeaponType = wObj.weaponType;
+        //currWeaponType = wObj.weaponType;
         currWeaponDamage = wObj.weaponDmg;
         currWeaponAttackSpeed = wObj.attackSpeed;
         currWeaponRange = wObj.weaponRange;
     }
+    //private void initShieldData(WeaponObject sObj)
+    //{
 
-    public WeaponObject getEquippedWeaponObj()
+    //}
+    public WeaponObject getCurrentShieldObj()
+    {
+        return currentShield;
+    }
+    public WeaponObject getCurrentWeaponObj()
     {
         return currentWeapon;
     }

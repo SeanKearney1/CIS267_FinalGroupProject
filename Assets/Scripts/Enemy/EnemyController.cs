@@ -70,6 +70,7 @@ public class EnemyController : MonoBehaviour
         {
             waypointList.Remove(collision.gameObject);
         }
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -88,6 +89,12 @@ public class EnemyController : MonoBehaviour
             //add damage to city gate here
             Destroy(gameObject);
         }
+        else if (collision.gameObject.CompareTag("HitBox"))
+        {
+            //damage to the enemy health
+            Destroy(gameObject);
+        }
+
     }
     public void setDefaultTarget(GameObject gate)
     {

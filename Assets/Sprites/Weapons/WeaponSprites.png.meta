@@ -152,12 +152,12 @@ TextureImporter:
       name: WeaponSprites_0
       rect:
         serializedVersion: 2
-        x: 25
+        x: 21
         y: 410
         width: 21
         height: 61
       alignment: 9
-      pivot: {x: 0.3135747, y: 0.2222593}
+      pivot: {x: 0.69521624, y: 0.22226003}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -306,12 +306,12 @@ TextureImporter:
       name: WeaponSprites_7
       rect:
         serializedVersion: 2
-        x: 272
+        x: 268
         y: 405
         width: 41
         height: 41
       alignment: 9
-      pivot: {x: 0.13444929, y: 0.13280283}
+      pivot: {x: 0.86102444, y: 0.13649099}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -328,12 +328,12 @@ TextureImporter:
       name: WeaponSprites_8
       rect:
         serializedVersion: 2
-        x: 26
+        x: 93
         y: 328
         width: 18
         height: 50
       alignment: 9
-      pivot: {x: 0.888055, y: 0.5}
+      pivot: {x: 0.1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -350,12 +350,12 @@ TextureImporter:
       name: WeaponSprites_9
       rect:
         serializedVersion: 2
-        x: 50
+        x: 63
         y: 328
         width: 24
         height: 50
       alignment: 9
-      pivot: {x: 0.9179173, y: 0.5}
+      pivot: {x: 0.07, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -372,12 +372,12 @@ TextureImporter:
       name: WeaponSprites_10
       rect:
         serializedVersion: 2
-        x: 83
+        x: 20
         y: 327
         width: 34
         height: 50
       alignment: 9
-      pivot: {x: 0.9442437, y: 0.5}
+      pivot: {x: 0.05, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -394,7 +394,7 @@ TextureImporter:
       name: WeaponSprites_11
       rect:
         serializedVersion: 2
-        x: 128
+        x: 134
         y: 342
         width: 46
         height: 12

@@ -29,8 +29,9 @@ public class GameManagerLogic : MonoBehaviour
     //==FOR WEAPON HANDLING AND PASSING DATA BETWEEN SCENES==// 
 
     //==PUBLIC==//
-    [Header("--Default Weapon Object--")]
+    [Header("--Default Weapon/Shield Objects--")]
     public WeaponObject defaultWeapon;
+    public WeaponObject defaultShield;
     [Header("--Weapon Scriptable Object List--")]
     public List<WeaponObject> weaponScriptObjList;
     [Header("--Repair Hammer--")]
@@ -165,6 +166,10 @@ public class GameManagerLogic : MonoBehaviour
     public WeaponObject getDefaultWeapon()
     {
         return defaultWeapon;
+    }
+    public WeaponObject getDefaultShield()
+    {
+        return defaultShield;
     }
     public List<WeaponObject> getWeaponScriptObjList()
     {

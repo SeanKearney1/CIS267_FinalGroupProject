@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sword
   m_EditorClassIdentifier: Assembly-CSharp::WeaponObject
   weaponName: Sword
-  weaponType: Melee
+  weaponType: 1H
   weaponDmg: 2
   attackSpeed: 2
   weaponRange: 1

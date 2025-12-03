@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 037ec24d2f0eaec4ea4ac2da3db6847b, type: 3}
-  m_Name: Club
+  m_Name: Shield
   m_EditorClassIdentifier: Assembly-CSharp::WeaponObject
-  weaponName: Club
-  weaponType: 2H
+  weaponName: Shield
+  weaponType: Shield
   weaponDmg: 3
-  attackSpeed: 1
-  weaponRange: 2
+  attackSpeed: 0
+  weaponRange: 0
   weaponSound: {fileID: 0}
-  weaponPrefab: {fileID: 5984024264399462998, guid: e0bcc35a34471794487370160a516034, type: 3}
-  weaponSprite: {fileID: 2006588274417896851, guid: 05a41d6e739dbed42b0e160d8b745fd8, type: 3}
+  weaponPrefab: {fileID: 6913347528095436708, guid: 5291fdc4e6fbd9d4eaa8c9ae9fa08290, type: 3}
+  weaponSprite: {fileID: 1373434878, guid: 4b950550eaa49944a83eae0f8d89bb37, type: 3}
   weaponCost: 0

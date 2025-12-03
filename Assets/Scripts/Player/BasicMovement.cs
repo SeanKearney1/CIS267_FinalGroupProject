@@ -10,27 +10,65 @@ public class BasicMovement : MonoBehaviour
     private Rigidbody2D rb;
     private WeaponHandler wHandler;
     private Vector2 moveVelocity;
+    private Animator animator;
+    private bool isSwinging;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
         wHandler = GetComponent<WeaponHandler>();
+        isSwinging = false;
+
     }
     void Update()
     {
         playerMovement();
+        playerAttack();
+        rb.linearVelocity = moveVelocity;
+        if (rb.linearVelocity != Vector2.zero)
+        {
+            animator.SetBool("isWalking", true);
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
     }
     private void FixedUpdate()
     {
-        rb.linearVelocity = moveVelocity;
+        //rb.linearVelocity = moveVelocity;
+        //if (rb.linearVelocity != Vector2.zero)
+        //{
+        //    animator.SetBool("isWalking", true);
+        //}
+        //else
+        //{
+        //    animator.SetBool("isWalking", false);
+        //}
     }
     private void playerMovement()
     {
+        //animator.SetBool("isWalking", true);
         float xPos = Input.GetAxisRaw("Horizontal");
         float yPos = Input.GetAxisRaw("Vertical");
         flipPlayerSprite(xPos);
         Vector2 pMove = new Vector2(xPos, yPos).normalized;
         moveVelocity = pMove * speed;
+    }
+    private void playerAttack()
+    {
+        if(Input.GetMouseButtonDown(0) && !isSwinging)
+        {
+            isSwinging = true;
+            animator.SetTrigger("attack");
+
+        }
+        else if(Input.GetMouseButton(0) && !isSwinging)
+        {
+            isSwinging = true;
+            animator.SetTrigger("attack");
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -55,5 +93,9 @@ public class BasicMovement : MonoBehaviour
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
+    }
+    public void endOfSwingAnimation()
+    {
+        isSwinging = false;
     }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Spear
   m_EditorClassIdentifier: Assembly-CSharp::WeaponObject
   weaponName: Spear
-  weaponType: Melee
+  weaponType: 2H
   weaponDmg: 2
   attackSpeed: 2
   weaponRange: 2

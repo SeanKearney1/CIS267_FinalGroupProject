@@ -27,6 +27,7 @@ public class UI_Sidebar : MonoBehaviour
     private bool isOrcSelected;
     private bool isDwarvenSelected;
     private bool isElvenSelected;
+    private bool isTowerSelected;
     private int previousSelection;
     private int typeSelection;
 
@@ -44,6 +45,7 @@ public class UI_Sidebar : MonoBehaviour
 
     void Start()
     {
+        isTowerSelected = false;
         placementScript = FindAnyObjectByType<TilePlacment>();
         typeSelection = 0;
         orcTowersSelected();
@@ -54,10 +56,14 @@ public class UI_Sidebar : MonoBehaviour
         {
             towerSelKeyBindings();
             towerTypeKeyBindings();
+            deSelectKeyBindings();
         }
     }
+    //used to pass the sidebar button click index to the tile placement script 
     public void towerSelection(int index)
     {
+        towerSelKeyTextList[index].color = Color.red;
+        isTowerSelected = true; //true = can now build/place a tower
         if (isOrcSelected)
         {
             Debug.Log("Testing Orc: " + index);
@@ -165,7 +171,6 @@ public class UI_Sidebar : MonoBehaviour
         }
         return 0;
     }
-
     private void towerTypeKeyBindings()
     {
         if(Input.GetKeyDown(KeyCode.Tab))
@@ -186,5 +191,33 @@ public class UI_Sidebar : MonoBehaviour
             }
         }
     }
+    //used to deselect the current tower before building it by right clicking
+    private void deSelectKeyBindings()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            isTowerSelected = false;
+        }
+    }
+    public void resetTowerSelText()
+    {
+        //used to reset the text color
+        foreach (TMP_Text text in towerSelKeyTextList)
+        {
+            text.color = Color.white;
+        }
+    }
+
+    //======= SETTERS / GETTERS =========//
+    public void setIsTowerSelected(bool clicked)
+    {
+        isTowerSelected = clicked;
+    }
+    public bool getIsTowerSelected()
+    {
+        return isTowerSelected;
+    }
+
+
 
 }
