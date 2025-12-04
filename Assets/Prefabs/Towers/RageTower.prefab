@@ -356,4 +356,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
   towerName: Rage
+  towerCost: 350
+  towerDmg: 5
+  towerAtkSpeed: 2
+  towerRange: 3
+  towerHealth: 50
+  towerVitality: 1
+  towerResistance: 1
   towerHeadSprite: {fileID: -674519864604969584, guid: 8b4cf65b5240fb849a2f40517f3ed55a, type: 3}

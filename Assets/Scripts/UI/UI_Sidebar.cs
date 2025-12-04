@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine.EventSystems;
 
 public class UI_Sidebar : MonoBehaviour
 {
@@ -19,11 +20,12 @@ public class UI_Sidebar : MonoBehaviour
 
     [Header("--Usable Tower Lists--")]
     public List<GameObject> orcUsableTowerList;
-    public List<GameObject> elvenUsabelTowerList;
+    public List<GameObject> elvenUsableTowerList;
     public List<GameObject> dwarvenUsableTowerList;
 
     //==PRIVATE==//
     private TilePlacment placementScript;
+    private UI_TowerInfoDisplay towerInfoDisplay;
     private bool isOrcSelected;
     private bool isDwarvenSelected;
     private bool isElvenSelected;
@@ -47,16 +49,17 @@ public class UI_Sidebar : MonoBehaviour
     {
         isTowerSelected = false;
         placementScript = FindAnyObjectByType<TilePlacment>();
+        towerInfoDisplay = GetComponent<UI_TowerInfoDisplay>();
         typeSelection = 0;
         orcTowersSelected();
     }
     private void Update()
     {
+        towerTypeKeyBindings();
+        deSelectKeyBindings();
         if(Input.anyKeyDown)
         {
             towerSelKeyBindings();
-            towerTypeKeyBindings();
-            deSelectKeyBindings();
         }
     }
     //used to pass the sidebar button click index to the tile placement script 
@@ -87,6 +90,7 @@ public class UI_Sidebar : MonoBehaviour
         towerTypeTextList[0].color = Color.red;
         towerTypeTextList[1].color = Color.white;
         towerTypeTextList[2].color = Color.white;
+        typeSelection = 0;
         if (orcUsableTowerList != null)
         {
             isOrcSelected = true;
@@ -111,6 +115,7 @@ public class UI_Sidebar : MonoBehaviour
         towerTypeTextList[0].color = Color.white;
         towerTypeTextList[1].color = Color.red;
         towerTypeTextList[2].color = Color.white;
+        typeSelection = 1;
         if (dwarvenUsableTowerList != null)
         {
             isOrcSelected = false;
@@ -135,15 +140,16 @@ public class UI_Sidebar : MonoBehaviour
         towerTypeTextList[0].color = Color.white;
         towerTypeTextList[1].color = Color.white;
         towerTypeTextList[2].color = Color.red;
-        if (elvenUsabelTowerList != null)
+        typeSelection = 2;
+        if (elvenUsableTowerList != null)
         {
             isOrcSelected = false;
             isDwarvenSelected = false;
             isElvenSelected = true;
-            for (int i = 0; i < elvenUsabelTowerList.Count; i++)
+            for (int i = 0; i < elvenUsableTowerList.Count; i++)
             {
-                Sprite towerSprite = elvenUsabelTowerList[i].GetComponent<TowerData>().getTowerHeadSprite();
-                string tName = elvenUsabelTowerList[i].GetComponent<TowerData>().getTowerName();
+                Sprite towerSprite = elvenUsableTowerList[i].GetComponent<TowerData>().getTowerHeadSprite();
+                string tName = elvenUsableTowerList[i].GetComponent<TowerData>().getTowerName();
                 Image tempImg = towerSelectBtnList[i].GetComponent<Image>();
                 Color tempC = tempImg.color;
                 tempC.a = 1f;
@@ -155,7 +161,7 @@ public class UI_Sidebar : MonoBehaviour
         }
     }
     //================================================//
-    private int towerSelKeyBindings()
+    private void towerSelKeyBindings()
     {
         for (int i = 0; i < 4; i++)
         {
@@ -166,16 +172,20 @@ public class UI_Sidebar : MonoBehaviour
                 Debug.Log("SideBar Sel: " + i);
                 towerSelectBtnList[i].onClick.Invoke();
                 towerSelKeyTextList[i].color = Color.red;
-                return i;
+                //return i;
             }
         }
-        return 0;
+        //return 0;
     }
     private void towerTypeKeyBindings()
     {
         if(Input.GetKeyDown(KeyCode.Tab))
         {
             typeSelection++;
+            if(typeSelection > 2)
+            {
+                typeSelection = 0;
+            }
             if(typeSelection == 0)
             {
                 orcTowersSelected();
@@ -187,7 +197,6 @@ public class UI_Sidebar : MonoBehaviour
             else if(typeSelection == 2)
             {
                 elvenTowersSelected();
-                typeSelection = -1;
             }
         }
     }
@@ -206,6 +215,30 @@ public class UI_Sidebar : MonoBehaviour
         {
             text.color = Color.white;
         }
+    }
+
+    public void towerSelOnMouseEnter(int towerIndex)
+    {
+        Debug.Log("towerIndex - " + towerIndex);
+        if (isOrcSelected)
+        {
+            towerInfoDisplay.setTowerData(orcUsableTowerList[towerIndex].GetComponent<TowerData>());
+            towerInfoDisplay.setInfoPanelActivity(true);
+        }
+        else if (isDwarvenSelected)
+        {
+            towerInfoDisplay.setTowerData(dwarvenUsableTowerList[towerIndex].GetComponent<TowerData>());
+            towerInfoDisplay.setInfoPanelActivity(true);
+        }
+        else if(isElvenSelected)
+        {
+            towerInfoDisplay.setTowerData(elvenUsableTowerList[towerIndex].GetComponent<TowerData>());  
+            towerInfoDisplay.setInfoPanelActivity(true);
+        }
+    }
+    public void towerSelOnMouseExit()
+    {
+        towerInfoDisplay.setInfoPanelActivity(false);
     }
 
     //======= SETTERS / GETTERS =========//

@@ -12,6 +12,7 @@ TagManager:
   - Tower
   - Waypoint
   - CityGate
+  - TowerSelBtn
   layers:
   - Default
   - TransparentFX

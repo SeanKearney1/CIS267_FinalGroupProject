@@ -260,6 +260,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
   towerName: Net
+  towerCost: 200
+  towerDmg: 1
+  towerAtkSpeed: 1
+  towerRange: 3
+  towerHealth: 50
+  towerVitality: 1
+  towerResistance: 0
   towerHeadSprite: {fileID: -921370766043575945, guid: 23866ff9421d9e641bce460bf55bc2b6, type: 3}
 --- !u!114 &2795547794552894498
 MonoBehaviour:
@@ -273,7 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fad464dc39390fa4d9f3cdb7b55e8249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthController
-  baseHP: 10
+  baseHP: 50
   resistance: 0
   vitality: 1
 --- !u!1001 &7550122041826276850

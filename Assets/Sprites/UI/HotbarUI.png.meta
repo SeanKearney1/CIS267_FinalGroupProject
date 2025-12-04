@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -138,12 +138,12 @@ TextureImporter:
       name: HotbarUI_1
       rect:
         serializedVersion: 2
-        x: 15
-        y: 294
+        x: 417
+        y: 373
         width: 86
         height: 86
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -160,12 +160,12 @@ TextureImporter:
       name: HotbarUI_2
       rect:
         serializedVersion: 2
-        x: 15
-        y: 201
+        x: 418
+        y: 281
         width: 86
         height: 86
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -182,12 +182,12 @@ TextureImporter:
       name: HotbarUI_3
       rect:
         serializedVersion: 2
-        x: 104
-        y: 200
+        x: 507
+        y: 280
         width: 86
         height: 86
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -248,12 +248,12 @@ TextureImporter:
       name: HotbarUI_6
       rect:
         serializedVersion: 2
-        x: 105
-        y: 294
+        x: 508
+        y: 373
         width: 86
         height: 86
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -262,6 +262,94 @@ TextureImporter:
       bones: []
       spriteID: 6dc901398a0261744a9fe69a7051d92e
       internalID: -195668331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HotbarUI_7
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 308
+        width: 310
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b45f7557b7110224081ef982ea24db02
+      internalID: 1592248954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HotbarUI_8
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 244
+        width: 310
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09bf167703b60994e8823bc08ea0931d
+      internalID: -867862146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HotbarUI_9
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 155
+        width: 310
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91c038726b32a044a817a8aaf3676e11
+      internalID: 1522408070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HotbarUI_10
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 69
+        width: 310
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df178b9f4ad439148beb090dabc23aea
+      internalID: 866451031
       vertices: []
       indices: 
       edges: []
@@ -282,11 +370,15 @@ TextureImporter:
     nameFileIdTable:
       HotbarUI_0: -4508929052904229598
       HotbarUI_1: 1538566218
+      HotbarUI_10: 866451031
       HotbarUI_2: 1668142575
       HotbarUI_3: -1237892939
       HotbarUI_4: 1510686635
       HotbarUI_5: -1385452907
       HotbarUI_6: -195668331
+      HotbarUI_7: 1592248954
+      HotbarUI_8: -867862146
+      HotbarUI_9: 1522408070
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

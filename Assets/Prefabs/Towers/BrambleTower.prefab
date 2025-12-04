@@ -275,6 +275,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
   towerName: Bramble
+  towerCost: 250
+  towerDmg: 0
+  towerAtkSpeed: 0
+  towerRange: 1
+  towerHealth: 100
+  towerVitality: 1
+  towerResistance: 0
   towerHeadSprite: {fileID: 5707208263573514126, guid: f67cbd8f62468b24e9843013e90a94f0, type: 3}
 --- !u!1 &7002984849608183179
 GameObject:

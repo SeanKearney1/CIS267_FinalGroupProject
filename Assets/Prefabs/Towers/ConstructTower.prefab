@@ -168,6 +168,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
   towerName: Construct
+  towerCost: 250
+  towerDmg: 1
+  towerAtkSpeed: 1
+  towerRange: 3
+  towerHealth: 20
+  towerVitality: 1
+  towerResistance: 0
   towerHeadSprite: {fileID: -8045846326204813637, guid: 7d6a288ff7f7d004d9d6dddd2748582c, type: 3}
 --- !u!1001 &1774007423558813462
 PrefabInstance:
