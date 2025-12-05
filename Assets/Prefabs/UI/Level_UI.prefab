@@ -35,6 +35,7 @@ RectTransform:
   - {fileID: 458479052780303533}
   - {fileID: 8775680810631458105}
   - {fileID: 8812308368923439728}
+  - {fileID: 4632867441375100847}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -126,6 +127,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5166909969437280248}
     m_Modifications:
+    - target: {fileID: 675764184902485723, guid: 00319fee6cda59548a18676f90a2c904, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 9138936794180543854}
+    - target: {fileID: 675764184902485723, guid: 00319fee6cda59548a18676f90a2c904, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: testingWaveOver
+      objectReference: {fileID: 0}
+    - target: {fileID: 675764184902485723, guid: 00319fee6cda59548a18676f90a2c904, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UI_WaveTimer, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 675764184902485723, guid: 00319fee6cda59548a18676f90a2c904, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2909870865457323188, guid: 00319fee6cda59548a18676f90a2c904, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2909870865457323188, guid: 00319fee6cda59548a18676f90a2c904, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2909870865457323188, guid: 00319fee6cda59548a18676f90a2c904, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4519167950012240182}
+    - target: {fileID: 2909870865457323188, guid: 00319fee6cda59548a18676f90a2c904, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3032969208718390311, guid: 00319fee6cda59548a18676f90a2c904, type: 3}
       propertyPath: m_Name
       value: HotBar_UI
@@ -331,6 +364,84 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6729186734326229977, guid: 4fec7ae36cff6fc41ae3137b2e49e413, type: 3}
   m_PrefabInstance: {fileID: 6597569086064640656}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7692838214025697718
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5166909969437280248}
+    m_Modifications:
+    - target: {fileID: 3065038181833369113, guid: 4ab25d154ca76d24fbdb0f3fffc45711, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065038181833369113, guid: 4ab25d154ca76d24fbdb0f3fffc45711, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065038181833369113, guid: 4ab25d154ca76d24fbdb0f3fffc45711, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065038181833369113, guid: 4ab25d154ca76d24fbdb0f3fffc45711, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065038181833369113, guid: 4ab25d154ca76d24fbdb0f3fffc45711, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065038181833369113, guid: 4ab25d154ca76d24fbdb0f3fffc45711, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065038181833369113, guid: 4ab25d154ca76d24fbdb0f3fffc45711, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065038181833369113, guid: 4ab25d154ca76d24fbdb0f3fffc45711, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065038181833369113, guid: 4ab25d154ca76d24fbdb0f3fffc45711, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065038181833369113, guid: 4ab25d154ca76d24fbdb0f3fffc45711, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6085837363181914240, guid: 4ab25d154ca76d24fbdb0f3fffc45711, type: 3}
+      propertyPath: m_Name
+      value: NextWaveTimer
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4ab25d154ca76d24fbdb0f3fffc45711, type: 3}
+--- !u!1 &4519167950012240182 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6085837363181914240, guid: 4ab25d154ca76d24fbdb0f3fffc45711, type: 3}
+  m_PrefabInstance: {fileID: 7692838214025697718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4632867441375100847 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3065038181833369113, guid: 4ab25d154ca76d24fbdb0f3fffc45711, type: 3}
+  m_PrefabInstance: {fileID: 7692838214025697718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9138936794180543854 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1447472977341693144, guid: 4ab25d154ca76d24fbdb0f3fffc45711, type: 3}
+  m_PrefabInstance: {fileID: 7692838214025697718}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4519167950012240182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ec771aaa550934b9f1f359aed6e5f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI_WaveTimer
 --- !u!1001 &8400536561138115092
 PrefabInstance:
   m_ObjectHideFlags: 0

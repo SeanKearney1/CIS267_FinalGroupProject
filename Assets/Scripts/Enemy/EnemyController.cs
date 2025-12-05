@@ -14,7 +14,6 @@ public class EnemyController : MonoBehaviour
 
     [Header("--Enemy Data--")]
     public float speed;
-    public float aggroRange;
     public int damage;
 
     private GameObject defaultTarget;
@@ -25,7 +24,8 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        aggroCtrl = gameObject.transform.GetChild(0).GetComponent<AggroController>();
+        //aggroCtrl = gameObject.transform.GetChild(0).GetComponent<AggroController>();
+        aggroCtrl = gameObject.GetComponent<AggroController>();
     }
 
     void FixedUpdate()
