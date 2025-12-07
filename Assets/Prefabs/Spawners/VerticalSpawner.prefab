@@ -171,8 +171,14 @@ MonoBehaviour:
   positiveSideSpawner: {fileID: 1611682641187349079}
   isVerticalSpawner: 1
   maxSpawnerWidth: 1
-  meleeEnemy: {fileID: 5180739013252321792, guid: ff7baaa5a1a6eb64c9579d60990a298c, type: 3}
-  rangedEnemy: {fileID: 5180739013252321792, guid: ff7baaa5a1a6eb64c9579d60990a298c, type: 3}
-  bossEnemy: {fileID: 5180739013252321792, guid: ff7baaa5a1a6eb64c9579d60990a298c, type: 3}
+  tier1BaseCount: 4
+  tier2BaseCount: 4
+  tier3BaseCount: 4
+  tier1EnemyMultiplier: 1
+  tier2EnemyMultiplier: 1
+  tier3EnemyMultiplier: 1
+  tier1Enemy: {fileID: 8053764152922929250, guid: 969a7df58dcdfa048986d79a77da4989, type: 3}
+  tier2Enemy: {fileID: 4490094482610382674, guid: 33b5135ddde87d041bdd0d6915d9c9d2, type: 3}
+  tier3Enemy: {fileID: 4972269638829916358, guid: ad1f19f5b90c3f7428b208c915139cd6, type: 3}
   cityGates: {fileID: 8473468251456501155, guid: e782a4b622358d7429dfb52210cff8d2, type: 3}
-  spawnDelay: 2
+  waypointList: []

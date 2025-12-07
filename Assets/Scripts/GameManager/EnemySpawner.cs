@@ -14,7 +14,7 @@ public class EnemySpawner : MonoBehaviour
     public int maxSpawnerWidth;
 
     //could set other spawn delays here too for differnt enemy types
-    [Header("--Spawn Data--")]
+    //[Header("--Spawn Data--")]
     public float spawnDelay;
     public int tier1BaseCount;
     public int tier2BaseCount;
@@ -120,7 +120,7 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    private void spawnTier1Enemies()
+    private void spawnTier1Enemies() // pass the enemy instead
     {
         Vector2 spawnPos = getSpawnerType();
         GameObject tempMelee = Instantiate(tier1Enemy);
@@ -154,6 +154,10 @@ public class EnemySpawner : MonoBehaviour
         {
             gameObject.transform.localScale = new Vector3(maxSpawnerWidth, 0.2f, 0);
         }
+    }
+    public void setSpawnDelay(int delay)
+    {
+        spawnDelay = delay;
     }
 
     public void nextLevel() // for testing for now

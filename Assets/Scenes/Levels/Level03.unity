@@ -11238,6 +11238,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 766432196}
     - target: {fileID: 8682145359722733433, guid: e4792b04f3e9e474ba705b72766ce00f, type: 3}
+      propertyPath: spawnDelay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682145359722733433, guid: e4792b04f3e9e474ba705b72766ce00f, type: 3}
       propertyPath: tier1Enemy
       value: 
       objectReference: {fileID: 8053764152922929250, guid: 969a7df58dcdfa048986d79a77da4989, type: 3}

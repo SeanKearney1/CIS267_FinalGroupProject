@@ -21,6 +21,7 @@ public class UI_Hotbar : MonoBehaviour
     public Sprite lightHighlightedSlot;
     public Sprite lightNormalSlot;
 
+
     //==PRIVATE==//
     private List<WeaponObject> weaponObjInventoryList = new List<WeaponObject>();
     private WeaponObject repairHammer;
@@ -41,6 +42,7 @@ public class UI_Hotbar : MonoBehaviour
     void Start()
     {
         selectedSlot = 6;
+        //currentWaveCount = 1;
         //gets the default weapon inventory on load and update the hotbar
         setListOfInventory(GameManagerLogic.Instance.getPlayerWeaponInventory());
         highlightSelectedWeapon(1);
