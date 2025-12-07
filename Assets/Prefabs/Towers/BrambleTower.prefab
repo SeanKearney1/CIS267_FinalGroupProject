@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 7917242133488191544}
   - component: {fileID: 5774746248366936063}
   - component: {fileID: 7881909528662645569}
+  - component: {fileID: 7971693239020181804}
   m_Layer: 8
   m_Name: BrambleTower
   m_TagString: Tower
@@ -284,6 +285,18 @@ MonoBehaviour:
   towerVitality: 1
   towerResistance: 0
   towerHeadSprite: {fileID: 5707208263573514126, guid: f67cbd8f62468b24e9843013e90a94f0, type: 3}
+--- !u!114 &7971693239020181804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2310533865948163699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3db09abc2dd0e3f4f82b96b35375149d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::buildableOnDestroy
 --- !u!1 &7002984849608183179
 GameObject:
   m_ObjectHideFlags: 0

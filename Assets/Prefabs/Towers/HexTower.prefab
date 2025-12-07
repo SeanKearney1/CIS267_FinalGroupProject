@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8857014193392782280}
   - component: {fileID: 178462488241006757}
   - component: {fileID: -7055719207805913951}
+  - component: {fileID: -1598269581231339496}
   m_Layer: 8
   m_Name: HexTower
   m_TagString: Tower
@@ -193,6 +194,18 @@ MonoBehaviour:
   baseHP: 50
   resistance: 0
   vitality: 1
+--- !u!114 &-1598269581231339496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4366055668365829673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3db09abc2dd0e3f4f82b96b35375149d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::buildableOnDestroy
 --- !u!1 &6208868915393375240
 GameObject:
   m_ObjectHideFlags: 0
@@ -399,7 +412,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6054694215812091538, guid: 2b9ee708727f92f4bb95d73d34829391, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

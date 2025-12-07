@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6691192097954505709}
   - component: {fileID: 8159984776472448992}
   - component: {fileID: 1039418085814703131}
+  - component: {fileID: -8462349529820989085}
   m_Layer: 8
   m_Name: CatapultTower
   m_TagString: Tower
@@ -147,6 +148,18 @@ MonoBehaviour:
   baseHP: 50
   resistance: 0
   vitality: 1
+--- !u!114 &-8462349529820989085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083082780957328547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3db09abc2dd0e3f4f82b96b35375149d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::buildableOnDestroy
 --- !u!1 &4190408656103959257
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,7 +366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6054694215812091538, guid: 2b9ee708727f92f4bb95d73d34829391, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

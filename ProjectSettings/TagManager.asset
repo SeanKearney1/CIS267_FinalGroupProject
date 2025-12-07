@@ -14,6 +14,7 @@ TagManager:
   - CityGate
   - TowerSelBtn
   - ExtraObject
+  - HealthPotion
   layers:
   - Default
   - TransparentFX
@@ -24,10 +25,10 @@ TagManager:
   - Projectile
   - WorldMap
   - Tower
-  - 
-  - 
-  - 
-  - 
+  - Range
+  - Player
+  - Enemy
+  - EnemyProjectile
   - 
   - 
   - 

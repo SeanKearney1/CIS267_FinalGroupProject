@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class NetField : MonoBehaviour
 {
-    public int damage;
     private Rigidbody2D enemyRB;
     public float lifespan;
     public float pullStrength;
+    public int damage;
+    
+
 
 
     void Start()
@@ -17,11 +19,13 @@ public class NetField : MonoBehaviour
         if (collision.gameObject.CompareTag("enemy"))
         {
             HealthController healthController = collision.gameObject.GetComponent<HealthController>();
+            EnemyController enemyController = collision.gameObject.GetComponent<EnemyController>();
+            enemyRB = collision.gameObject.GetComponent<Rigidbody2D>();
+            //====
+            //====
+            enemyController.applyStagger(1f);
             healthController.takeDamage(damage);
-            // ENEMY MOVEMENT NEEDS TO BE CREATED BEFORE THIS CAN WORK
-            //Vector2 pullDirection = (transform.position - collision.transform.position).normalized;
-            //Rigidbody2D enemyRB = collision.GetComponent<Rigidbody2D>();
-            //enemyRB.AddForce(pullDirection * pullStrength, ForceMode2D.Impulse);
+            enemyRB.linearVelocity = Vector3.zero;
         }
     }
 }

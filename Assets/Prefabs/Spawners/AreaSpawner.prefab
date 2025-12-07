@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f45047fa853d8e54d8950626629b6ee2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AreaEnemySpawner
-  spawnableObjList: []
+  spawnableObjList:
+  - {fileID: 0}
   areaSpawner: {fileID: 2818749528708669153}
   spawnDelay: 2
   baseEnemyCnt: 0

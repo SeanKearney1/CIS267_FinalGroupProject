@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 7049073308664802658}
   - component: {fileID: 8421019709627342278}
   - component: {fileID: 5054400494456598589}
-  - component: {fileID: 7267884859586478037}
   - component: {fileID: 2664437733423895733}
   - component: {fileID: 6006100578469094149}
-  m_Layer: 0
-  m_Name: TestEnemy
+  - component: {fileID: 5579768617693397214}
+  m_Layer: 11
+  m_Name: Beholder
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7516437899090822563, guid: c4b78e06e2d8e7645b8f7bcfe90ecd95, type: 3}
+  m_Sprite: {fileID: -7702511191135307881, guid: 378bcbdeb4ad9e74fba4c9a695b3c517, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -122,8 +122,38 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &7267884859586478037
-CapsuleCollider2D:
+--- !u!114 &2664437733423895733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5180739013252321792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fd3ed93e34b10243a372564d01f9827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyController
+  speed: 1
+  damage: 4
+  aggroType: 2
+--- !u!114 &6006100578469094149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5180739013252321792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad464dc39390fa4d9f3cdb7b55e8249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthController
+  baseHP: 10
+  resistance: 1
+  vitality: 1
+--- !u!58 &5579768617693397214
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -156,39 +186,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.002308309}
-  m_Size: {x: 0.23309864, y: 0.5422584}
-  m_Direction: 0
---- !u!114 &2664437733423895733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5180739013252321792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fd3ed93e34b10243a372564d01f9827, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyController
-  speed: 3
-  aggroRange: 3
-  damage: 2
---- !u!114 &6006100578469094149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5180739013252321792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fad464dc39390fa4d9f3cdb7b55e8249, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HealthController
-  baseHP: 2
-  resistance: 1
-  vitality: 1
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.5
 --- !u!1 &5747272787803972854
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,7 +199,7 @@ GameObject:
   - component: {fileID: 8833812524604001282}
   - component: {fileID: 9022298049416765881}
   - component: {fileID: 3519415768407858254}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AggroRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}

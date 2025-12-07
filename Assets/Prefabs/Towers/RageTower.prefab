@@ -185,6 +185,7 @@ GameObject:
   - component: {fileID: 963634158921601069}
   - component: {fileID: -7844690780778044939}
   - component: {fileID: -5105386955106229577}
+  - component: {fileID: 6517036850736409540}
   m_Layer: 8
   m_Name: RageTower
   m_TagString: Tower
@@ -365,6 +366,18 @@ MonoBehaviour:
   towerVitality: 1
   towerResistance: 1
   towerHeadSprite: {fileID: -674519864604969584, guid: 8b4cf65b5240fb849a2f40517f3ed55a, type: 3}
+--- !u!114 &6517036850736409540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7995471326389559809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3db09abc2dd0e3f4f82b96b35375149d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::buildableOnDestroy
 --- !u!1001 &1038167504122761208
 PrefabInstance:
   m_ObjectHideFlags: 0

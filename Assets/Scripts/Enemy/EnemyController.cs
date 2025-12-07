@@ -21,23 +21,34 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D rb;
     private AggroController aggroCtrl;
 
+    private float staggeredTime=0;
+    private bool isStaggered = false;
+
+    public int aggroType;
+    // 1 = lemming ignore targets
+    // 2 = default approach all things in range// nothing actually checks if 2 yet its basically the default logic
+    // 3 = siege approach and use ranged attack // currently unused
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         //aggroCtrl = gameObject.transform.GetChild(0).GetComponent<AggroController>();
-        aggroCtrl = gameObject.GetComponent<AggroController>();
+        aggroCtrl = gameObject.GetComponentInChildren<AggroController>();
     }
 
     void FixedUpdate()
     {
-        float moveSpeed = speed * Time.fixedDeltaTime;
-        if(aggroCtrl.hasTargetInRange())
+        StaggerCD();
+        if (!isStaggered)
         {
-            moveTowardsTarget(moveSpeed);
-        }
-        else
-        {
-            defaultMovement(moveSpeed);
+            if (aggroCtrl.hasTargetInRange() && aggroType != 1)//has target and is not lemming
+            {
+                moveTowardsTarget(speed);
+            }
+            else
+            {
+                defaultMovement(speed);
+            }
         }
     }
 
@@ -45,24 +56,29 @@ public class EnemyController : MonoBehaviour
     //Or the city gate/default target
     private void defaultMovement(float mSpeed)
     {
-        if(hasWaypoints())
+        if (hasWaypoints())
         {
-            Vector2 moveToPos = Vector2.MoveTowards(rb.position, waypointList[0].transform.position, mSpeed);
+            Vector2 targetPos = waypointList[0].transform.position;
+            Vector2 moveToPos = Vector2.MoveTowards(rb.position, targetPos, speed * Time.fixedDeltaTime);
             rb.MovePosition(moveToPos);
         }
         else if (defaultTarget != null)
         {
-            Vector2 moveToPos = Vector2.MoveTowards(rb.position, defaultTarget.transform.position, mSpeed);
+            Vector2 targetPos = defaultTarget.transform.position;
+            Vector2 moveToPos = Vector2.MoveTowards(rb.position, targetPos, speed * Time.fixedDeltaTime);
             rb.MovePosition(moveToPos);
         }
     }
     //Used to move the enemy towards the first target in range.
     private void moveTowardsTarget(float mSpeed)
     {
-        Vector2 moveToPos = Vector2.MoveTowards(rb.position, aggroCtrl.getTargetPosition(), mSpeed);
-        rb.MovePosition(moveToPos);
+        if(aggroType != 3)// if ranged use ranged attacks
+        {
+            Vector2 targetPos = aggroCtrl.getTargetPosition();
+            Vector2 moveToPos = Vector2.MoveTowards(rb.position, targetPos, mSpeed * Time.fixedDeltaTime);
+            rb.MovePosition(moveToPos);
+        }
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //removes the waypoint once it comes into range
@@ -70,14 +86,18 @@ public class EnemyController : MonoBehaviour
         {
             waypointList.Remove(collision.gameObject);
         }
-
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Tower"))
         {
             collision.gameObject.GetComponent<HealthController>().takeDamage(damage);
-            Destroy(gameObject);
+            applyStagger(0.5f);
+            // enemeis bounce off of thier targer instead of dieing
+            rb.linearVelocity = Vector2.zero;
+            Vector2 direction = (this.transform.position - collision.transform.position).normalized;
+            direction *= 2;
+            rb.AddForce(direction, ForceMode2D.Impulse);
         }
         else if (collision.gameObject.CompareTag("Player"))
         {
@@ -114,6 +134,23 @@ public class EnemyController : MonoBehaviour
             return true;
         }
         return false;
+    }
+    public void applyStagger(float time)
+    {
+        staggeredTime = time;
+        isStaggered = true;
+    }
+    private void StaggerCD()
+    {
+        if (isStaggered)
+        {
+            staggeredTime -= Time.deltaTime;
+            if (staggeredTime < 0 )
+            {
+                staggeredTime = 0;
+                isStaggered=false;
+            }
+        }
     }
 
 }

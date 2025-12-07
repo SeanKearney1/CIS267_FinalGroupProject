@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 4757265279284223686}
   - component: {fileID: 2035451055650920950}
   - component: {fileID: 7475276923801625660}
+  - component: {fileID: 4784216868765886581}
   m_Layer: 8
   m_Name: ClubTower
   m_TagString: Tower
@@ -284,6 +285,18 @@ MonoBehaviour:
   baseHP: 50
   resistance: 0
   vitality: 1
+--- !u!114 &4784216868765886581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2870820750470725616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3db09abc2dd0e3f4f82b96b35375149d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::buildableOnDestroy
 --- !u!1001 &2628697268714500341
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -342,7 +355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6054694215812091538, guid: 2b9ee708727f92f4bb95d73d34829391, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

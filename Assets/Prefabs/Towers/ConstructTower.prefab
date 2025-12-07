@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 188593526410307454}
   - component: {fileID: 7221658681204656328}
   - component: {fileID: 755445252527475954}
+  - component: {fileID: -9218200117976810719}
   m_Layer: 8
   m_Name: ConstructTower
   m_TagString: Tower
@@ -177,6 +178,18 @@ MonoBehaviour:
   towerVitality: 1
   towerResistance: 0
   towerHeadSprite: {fileID: -8045846326204813637, guid: 7d6a288ff7f7d004d9d6dddd2748582c, type: 3}
+--- !u!114 &-9218200117976810719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570570017137599816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3db09abc2dd0e3f4f82b96b35375149d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::buildableOnDestroy
 --- !u!1001 &1709930064309411199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -253,7 +266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1442665960107757242, guid: b04d8578c64c52541a0b165806e01093, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1476159859271142085, guid: b04d8578c64c52541a0b165806e01093, type: 3}
       propertyPath: homePlate
@@ -261,7 +274,7 @@ PrefabInstance:
       objectReference: {fileID: 570570017137599816}
     - target: {fileID: 4203799040643636028, guid: b04d8578c64c52541a0b165806e01093, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7532023297079182151, guid: b04d8578c64c52541a0b165806e01093, type: 3}
       propertyPath: m_LocalPosition.x

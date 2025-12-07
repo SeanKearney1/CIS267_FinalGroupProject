@@ -49,7 +49,8 @@ public class TilePlacment : MonoBehaviour
         if (tile != BarrierTile)// if the selected tile can be placed on
         {
             buildingLayer.SetTile(cellPos, BarrierTile);
-            Instantiate(TowerToPlace[selection], placePos, Quaternion.identity);//create the physical tile
+            GameObject tower = Instantiate(TowerToPlace[selection], placePos, Quaternion.identity);//create the physical tile
+            tower.transform.SetParent(buildingLayer.transform);
         }
     }
     public void switchSelection(int index)//probably place this on ui buttons onclick

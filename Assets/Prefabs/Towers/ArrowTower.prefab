@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4173691887535048150}
   - component: {fileID: 1100286520034550642}
   - component: {fileID: 5708108353526132744}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,6 +185,7 @@ GameObject:
   - component: {fileID: 8534822474541622367}
   - component: {fileID: 1690426350882121786}
   - component: {fileID: 8061242499507525880}
+  - component: {fileID: 9048427167009606106}
   m_Layer: 8
   m_Name: ArrowTower
   m_TagString: Tower
@@ -365,6 +366,18 @@ MonoBehaviour:
   baseHP: 25
   resistance: 0
   vitality: 1
+--- !u!114 &9048427167009606106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7798106345068246147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3db09abc2dd0e3f4f82b96b35375149d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::buildableOnDestroy
 --- !u!1001 &892201556561973643
 PrefabInstance:
   m_ObjectHideFlags: 0

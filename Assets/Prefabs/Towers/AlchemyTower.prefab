@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 4373009851423422149}
   - component: {fileID: 6528434387958551921}
   - component: {fileID: -8223590694128787271}
+  - component: {fileID: -8237161422791424792}
   m_Layer: 8
   m_Name: AlchemyTower
   m_TagString: Tower
@@ -284,6 +285,19 @@ MonoBehaviour:
   baseHP: 50
   resistance: 0
   vitality: 1
+--- !u!114 &-8237161422791424792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5148810376317303988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3db09abc2dd0e3f4f82b96b35375149d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::buildableOnDestroy
+  buildingLayer: {fileID: 0}
 --- !u!1001 &4945963574758186617
 PrefabInstance:
   m_ObjectHideFlags: 0
