@@ -43,17 +43,12 @@ public class WeaponHandler : MonoBehaviour
     private float currWeaponAttackSpeed;
     private float currWeaponRange;
 
-    private List<WeaponObject> listOfWeaponScriptObject;
-    private List<WeaponObject> weaponInventoryList;
+    private List<WeaponObject> listOfWeaponScriptObject = new List<WeaponObject>();
+    private List<WeaponObject> weaponInventoryList = new List<WeaponObject>();
+    private WeaponObject repairHammer = null;
     private GameObject initWeapon;
     private GameObject initShield;
-    private bool hasHammer;
-
-
-    private void Awake()
-    {
-        weaponInventoryList = new List<WeaponObject>();
-    }
+    //private bool hasHammer;
 
     void Start()
     {
@@ -63,10 +58,10 @@ public class WeaponHandler : MonoBehaviour
         // then using game manager or ui_hotbar to keep track of the equipped weapon
         // so if the player dies and respawns the previous 
         // weapon inventory is reload with the player. 
-        listOfWeaponScriptObject = new List<WeaponObject>();
         listOfWeaponScriptObject = GameManagerLogic.Instance.getWeaponScriptObjList();
         WeaponObject defWeapon = GameManagerLogic.Instance.getDefaultWeapon();
         addWeaponToInventory(defWeapon.weaponName);
+        //addHammerToInventory(GameManagerLogic.Instance.getRepairHammerObj().weaponName);
         initializeWeapon(defWeapon);
     }
 
@@ -75,7 +70,7 @@ public class WeaponHandler : MonoBehaviour
         if(Input.anyKeyDown)
         {
             weaponSelect(UI_Hotbar.hbInstance.hotbarSelection());
-
+            //hammerSelected(UI_Hotbar.hbInstance.hotbarSelection());
         }
     }
 
@@ -90,6 +85,15 @@ public class WeaponHandler : MonoBehaviour
             initializeWeapon(weaponInventoryList[sel - 1]);
             UI_Hotbar.hbInstance.highlightSelectedWeapon(sel);
         }
+        else if(sel == 7)
+        {
+            if (repairHammer != null)
+            {
+                Destroy(weaponSpawnLocation.transform.GetChild(0).gameObject);
+                initializeWeapon(repairHammer);
+                UI_Hotbar.hbInstance.highlightSelectedWeapon(sel);
+            }
+        }
     }
 
     // Initializes the passed weapon scriptable object into the game world
@@ -100,7 +104,7 @@ public class WeaponHandler : MonoBehaviour
         {
             GameObject tempWeapon = weapon.weaponPrefab;
             currentWeapon = weapon;
-            weaponTypeCheck(weapon);
+            weaponTypeCheck(weapon); //check if weapon is 1H or 2H - if 1H it initializes a shield too
             initWeaponData(currentWeapon);
             float x = weaponSpawnLocation.transform.position.x;
             float y = weaponSpawnLocation.transform.position.y;
@@ -110,6 +114,7 @@ public class WeaponHandler : MonoBehaviour
             Vector3 oldRotation = initWeapon.transform.rotation.eulerAngles;
             initWeapon.transform.localRotation = Quaternion.FromToRotation(oldRotation, newRotation);
             initWeapon.name = weapon.weaponName;
+            initWeapon.transform.GetChild(0).GetComponent<WeaponController>().setCurWeaponObj(weapon);
             GameManagerLogic.Instance.setEquippedWeapon(initWeapon);
             //return initWeapon;
         }
@@ -141,7 +146,7 @@ public class WeaponHandler : MonoBehaviour
         }
         else if(wObj.weaponType == "2H")
         {
-
+            
         }
         //else // every other weapon type
         //{
@@ -182,7 +187,21 @@ public class WeaponHandler : MonoBehaviour
             UI_Hotbar.hbInstance.setListOfInventory(weaponInventoryList);
         }
     }
-
+    public void addHammerToInventory(string wName)
+    {
+        //if player does not already have the hammer
+        if (!GameManagerLogic.Instance.getHasRepairHammer()) 
+        {
+            WeaponObject tempHammer = convertWeaponNameToObject(wName);
+            if(repairHammer == null)
+            {
+                tempHammer.weaponPrefab.GetComponent<CapsuleCollider2D>().enabled = false;
+                repairHammer = tempHammer;
+                //GameManagerLogic.Instance.setHasRepairHammer(true);
+                UI_Hotbar.hbInstance.setRepairHammerObj(repairHammer);
+            }
+        }
+    }
     // Initializes the equipped weapon data
     // Might not need this
     private void initWeaponData(WeaponObject wObj)

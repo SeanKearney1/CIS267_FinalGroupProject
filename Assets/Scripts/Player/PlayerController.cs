@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BasicMovement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     //==PUBLIC==// 
     [Header("--Player Speed--")]
@@ -21,7 +21,11 @@ public class BasicMovement : MonoBehaviour
         isSwinging = false;
 
     }
-    void Update()
+    //void Update()
+    //{
+
+    //}
+    private void FixedUpdate()
     {
         playerMovement();
         playerAttack();
@@ -34,18 +38,6 @@ public class BasicMovement : MonoBehaviour
         {
             animator.SetBool("isWalking", false);
         }
-    }
-    private void FixedUpdate()
-    {
-        //rb.linearVelocity = moveVelocity;
-        //if (rb.linearVelocity != Vector2.zero)
-        //{
-        //    animator.SetBool("isWalking", true);
-        //}
-        //else
-        //{
-        //    animator.SetBool("isWalking", false);
-        //}
     }
     private void playerMovement()
     {
@@ -79,8 +71,21 @@ public class BasicMovement : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("RepairHammer")) // should repair hammer be static or a reward??
         {
-            GameManagerLogic.Instance.setHasRepairHammer(true);
-            Destroy(collision.gameObject);
+            if(!GameManagerLogic.Instance.getHasRepairHammer())
+            {
+                wHandler.addHammerToInventory(collision.gameObject.name);
+                GameManagerLogic.Instance.setHasRepairHammer(true);
+                Destroy(collision.gameObject);
+            }
+            else
+            {
+                //already has hammer
+                Destroy(collision.gameObject);
+            }
+        }
+        else if(collision.gameObject.CompareTag("ExtraObject"))
+        {
+
         }
     }
     private void flipPlayerSprite(float moveX)

@@ -3,7 +3,7 @@ using UnityEngine;
 public class HealthController : MonoBehaviour
 {
     public int baseHP;//set the base hp for the prefab, also functions as the upper limit
-    private int curHP = 0;// the changing hp ammount
+    private int curHP = 0;// the changing hp ammount 
 
     public int resistance;// falt number that damage is reduced by damage taken = dmg - resitance && > 0
     private bool vulnerable = false;// if true multiply dmg * 1.5 before resistance calculation && divide healing by 2
@@ -70,5 +70,9 @@ public class HealthController : MonoBehaviour
     public int getHealth()
     {
         return curHP;
+    }
+    public int getBaseHealth()
+    {
+        return baseHP;
     }
 }

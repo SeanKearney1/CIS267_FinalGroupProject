@@ -26,7 +26,7 @@ public class GameManagerLogic : MonoBehaviour
 
 
 
-    //==FOR WEAPON HANDLING AND PASSING DATA BETWEEN SCENES==// 
+    //==FOR WEAPON HANDLING AND PASSING DATA BETWEEN SCENES/LEVELS==// 
 
     //==PUBLIC==//
     [Header("--Default Weapon/Shield Objects--")]
@@ -34,8 +34,9 @@ public class GameManagerLogic : MonoBehaviour
     public WeaponObject defaultShield;
     [Header("--Weapon Scriptable Object List--")]
     public List<WeaponObject> weaponScriptObjList;
-    [Header("--Repair Hammer--")]
+    [Header("--Repair Hammer / Extra Object(maybe health pot)--")]
     public WeaponObject repairHammerObj;
+    public WeaponObject extraObject;
 
     //==PRIVATE==//
     private List<WeaponObject> playerWeaponInventory;
@@ -43,6 +44,7 @@ public class GameManagerLogic : MonoBehaviour
 
     //used if we make the hammer a reward rather than already owned
     private bool hasRepairHammer;
+    private bool hasExtraObject;
 
 
     //=====================================================
@@ -175,6 +177,21 @@ public class GameManagerLogic : MonoBehaviour
     {
         return weaponScriptObjList;
     }
+
+    //==Might not need==//
+    public WeaponObject getRepairHammerObj()
+    {
+        return repairHammerObj;
+    }
+    public WeaponObject getExtraObject()
+    {
+        return extraObject;
+    }
+    public void setExtraObject(WeaponObject wo)
+    {
+        extraObject = wo;
+    }
+    //====================//
     public void setHasRepairHammer(bool h)
     {
         hasRepairHammer = h;
@@ -182,6 +199,14 @@ public class GameManagerLogic : MonoBehaviour
     public bool getHasRepairHammer()
     {
         return hasRepairHammer;
+    }
+    public void setHasExtraObject(bool h)
+    {
+        hasExtraObject = h;
+    }
+    public bool getHasExtraObject()
+    {
+        return hasExtraObject;
     }
     //================
     //================

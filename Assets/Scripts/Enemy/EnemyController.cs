@@ -87,6 +87,9 @@ public class EnemyController : MonoBehaviour
         else if(collision.gameObject.CompareTag("CityGate"))
         {
             //add damage to city gate here
+
+            //this needs to be done better. Just testing for now.
+            collision.gameObject.GetComponent<HealthController>().takeDamage(damage);
             Destroy(gameObject);
         }
         else if (collision.gameObject.CompareTag("HitBox"))

@@ -12,13 +12,19 @@ public class UI_Hotbar : MonoBehaviour
     //==PUBLIC==//
     [Header("--Hotbar Slots--")]
     public List<GameObject> quickSlotList; //maybe this could be an array since its a static 6 slots
+    [Header("--Side Slots--")]
+    public GameObject hammerSlot;
+    public GameObject extraSlot;
+    [Header("--Slot Backgrounds--")]
     public Sprite darkHighlighedSlot;
     public Sprite darkNormalSlot;
     public Sprite lightHighlightedSlot;
     public Sprite lightNormalSlot;
 
     //==PRIVATE==//
-    private List<WeaponObject> weaponObjInventoryList;
+    private List<WeaponObject> weaponObjInventoryList = new List<WeaponObject>();
+    private WeaponObject repairHammer;
+    private WeaponObject extraObject;
     private int selectedSlot;
 
    
@@ -30,15 +36,38 @@ public class UI_Hotbar : MonoBehaviour
             return;
         }
         hbInstance = this;
-        weaponObjInventoryList = new List<WeaponObject>();
     }
 
     void Start()
     {
         selectedSlot = 6;
-        //gets the weapon inventory on load and update the hotbar
+        //gets the default weapon inventory on load and update the hotbar
         setListOfInventory(GameManagerLogic.Instance.getPlayerWeaponInventory());
         highlightSelectedWeapon(1);
+    }
+    //used to get which hot bar key was selected 1-10 though only 1-6 is used
+    public int hotbarSelection()
+    {
+        for (int i = 0; i < 7; i++)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha0 + i))
+            {
+                Debug.Log("hotbarSel: " + i);
+                return i;
+            }
+
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Debug.Log("SEVEN");
+            return 7;
+        }
+        else if (Input.GetKeyDown(KeyCode.F))
+        {
+            return 8;
+        }
+        return 0;
+
     }
 
     //used to update the quick slots when a new item is picked up
@@ -58,6 +87,19 @@ public class UI_Hotbar : MonoBehaviour
                 //Debug.Log("updatedQuickSlots");
             }
         }
+        if (repairHammer != null)
+        {
+            Sprite tempSrite = repairHammer.weaponSprite;
+            Image hSlot = hammerSlot.GetComponent<Image>();
+            Color tempC = hSlot.color;
+            tempC.a = 1f;
+            hSlot.color = tempC;
+            hSlot.sprite = tempSrite;
+        }
+        if(extraObject != null)
+        {
+
+        }
     }
 
     public void highlightSelectedWeapon(int sel)
@@ -65,15 +107,46 @@ public class UI_Hotbar : MonoBehaviour
         // only using the dark slot for now but added a light one for the heck of it
         if (sel != selectedSlot)
         {
-            // reset the sprite to the normal slot
-            Image slotImg = quickSlotList[selectedSlot - 1].transform.parent.GetComponentInParent<Image>();
-            slotImg.sprite = darkNormalSlot; //
+            Image slotImg = null;
+            if(selectedSlot == 7)
+            {
+                slotImg = hammerSlot.transform.parent.GetComponent<Image>();
+                slotImg.sprite = darkNormalSlot;
+            }
+            else if(selectedSlot == 8)
+            {
+                slotImg = extraSlot.transform.parent.GetComponent<Image>();
+                slotImg.sprite = darkNormalSlot;
+            }
+            else
+            {
+                // reset the sprite to the normal slot
+                slotImg = quickSlotList[selectedSlot - 1].transform.parent.GetComponentInParent<Image>();
+                slotImg.sprite = darkNormalSlot;
+            }
+            if (sel == 7)
+            {
+                // highlights the repair hammer
+                slotImg = hammerSlot.transform.parent.GetComponentInParent<Image>();
+                slotImg.sprite = darkHighlighedSlot;
+                selectedSlot = sel;
+            }
+            else if (sel == 8)
+            {
+                //hightlight extra slot
+                // highlights the repair hammer
+                slotImg = extraSlot.transform.parent.GetComponentInParent<Image>();
+                slotImg.sprite = darkHighlighedSlot;
+                selectedSlot = sel;
+            }
+            else
+            {
+                // set the sprite to the highlighted spot
+                slotImg = quickSlotList[sel - 1].transform.parent.GetComponentInParent<Image>();
+                slotImg.sprite = darkHighlighedSlot;
+                selectedSlot = sel;
 
-
-            // set the sprite to the highlighted spot
-            slotImg = quickSlotList[sel - 1].transform.parent.GetComponentInParent<Image>();
-            slotImg.sprite = darkHighlighedSlot;
-            selectedSlot = sel;
+            }
         }
     }
 
@@ -83,16 +156,10 @@ public class UI_Hotbar : MonoBehaviour
         updateQuickSlots();
         //Debug.Log("setListOfInventory.count: " + quickSlotList.Count);
     }
-    public int hotbarSelection()
+    public void setRepairHammerObj(WeaponObject hammer)
     {
-        for (int i = 0; i < 10; i++)
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha0 + i))
-            {
-                Debug.Log("hotbarSel: " + i);
-                return i;
-            }
-        }
-        return 0;
+        repairHammer = hammer;
+        updateQuickSlots();
+        //update the side slot
     }
 }

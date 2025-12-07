@@ -6533,6 +6533,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1074201856705984898, guid: 72aed7df2814a8f4d88d7f64c69150fe, type: 3}
+      propertyPath: shieldSpawnLocation
+      value: 
+      objectReference: {fileID: 1870721974}
     - target: {fileID: 4892860523345381456, guid: 72aed7df2814a8f4d88d7f64c69150fe, type: 3}
       propertyPath: m_Name
       value: Player
@@ -6582,6 +6586,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72aed7df2814a8f4d88d7f64c69150fe, type: 3}
+--- !u!1 &1870721974 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1249332318132435152, guid: 72aed7df2814a8f4d88d7f64c69150fe, type: 3}
+  m_PrefabInstance: {fileID: 1870721973}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2073624417
 GameObject:
   m_ObjectHideFlags: 0

@@ -10348,6 +10348,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 677040773465404945, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 677040773465404945, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 677040773465404945, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 677040773465404945, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 677040773465404945, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 680427917412378334, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
       propertyPath: m_SizeDelta.x
       value: 70
@@ -10372,6 +10392,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlotOneTxt
       objectReference: {fileID: 0}
+    - target: {fileID: 1283086365843595262, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 1283086365843595262, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 1283086365843595262, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 1283086365843595262, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 1283086365843595262, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1324790604823737688, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 1324790604823737688, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 1324790604823737688, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 1324790604823737688, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 1324790604823737688, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 1416477764702817825, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
       propertyPath: m_Name
       value: WSlotSixPanel
@@ -10383,6 +10443,26 @@ PrefabInstance:
     - target: {fileID: 1674375930432438004, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
       propertyPath: m_Name
       value: WSlotThreePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064214430045332594, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064214430045332594, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064214430045332594, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064214430045332594, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 2064214430045332594, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 2216148327184087668, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
       propertyPath: m_Name
@@ -10563,6 +10643,46 @@ PrefabInstance:
     - target: {fileID: 5987470346634659470, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
       propertyPath: m_Name
       value: SlotOne
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055615225437730537, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055615225437730537, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055615225437730537, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055615225437730537, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 6055615225437730537, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6360236371023215385, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 6360236371023215385, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 6360236371023215385, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 6360236371023215385, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 6360236371023215385, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 6363604015549803478, guid: 3414dd002f5c32a49b59b3e39479db66, type: 3}
       propertyPath: m_SizeDelta.x
@@ -10865,6 +10985,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 554606940}
     m_Modifications:
+    - target: {fileID: 3874084258095651936, guid: e782a4b622358d7429dfb52210cff8d2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 3874084258095651936, guid: e782a4b622358d7429dfb52210cff8d2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.63
+      objectReference: {fileID: 0}
     - target: {fileID: 8473468251456501155, guid: e782a4b622358d7429dfb52210cff8d2, type: 3}
       propertyPath: m_Name
       value: TempCityGate

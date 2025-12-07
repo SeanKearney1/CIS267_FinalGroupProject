@@ -609,6 +609,10 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 2854141144248478922, guid: d760dcd2bf5c7f146ba9e4a04a06902c, type: 3}
+      propertyPath: extraObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 77bd22d497bb71246a6682ffddbd96c4, type: 2}
+    - target: {fileID: 2854141144248478922, guid: d760dcd2bf5c7f146ba9e4a04a06902c, type: 3}
       propertyPath: defaultShield
       value: 
       objectReference: {fileID: 11400000, guid: 6a3e884fbb37af04bbdbd28536343429, type: 2}
@@ -622,7 +626,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: c07cc0d9638e9f74d94b12c0a7a621c5, type: 2}
     - target: {fileID: 2854141144248478922, guid: d760dcd2bf5c7f146ba9e4a04a06902c, type: 3}
       propertyPath: weaponScriptObjList.Array.size
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2854141144248478922, guid: d760dcd2bf5c7f146ba9e4a04a06902c, type: 3}
       propertyPath: 'weaponScriptObjList.Array.data[0]'
@@ -651,7 +655,11 @@ PrefabInstance:
     - target: {fileID: 2854141144248478922, guid: d760dcd2bf5c7f146ba9e4a04a06902c, type: 3}
       propertyPath: 'weaponScriptObjList.Array.data[6]'
       value: 
-      objectReference: {fileID: 11400000, guid: 9d8bd89366d2a9e449f72c7da82aa889, type: 2}
+      objectReference: {fileID: 11400000, guid: c07cc0d9638e9f74d94b12c0a7a621c5, type: 2}
+    - target: {fileID: 2854141144248478922, guid: d760dcd2bf5c7f146ba9e4a04a06902c, type: 3}
+      propertyPath: 'weaponScriptObjList.Array.data[7]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 77bd22d497bb71246a6682ffddbd96c4, type: 2}
     - target: {fileID: 8949551089628891383, guid: d760dcd2bf5c7f146ba9e4a04a06902c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
