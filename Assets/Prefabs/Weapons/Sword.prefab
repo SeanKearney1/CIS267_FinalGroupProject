@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5925110381128182218}
   - component: {fileID: 2582451837619731506}
   - component: {fileID: 2739579877354932476}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Sword
   m_TagString: PlayerWeapon
   m_Icon: {fileID: 0}
@@ -138,40 +138,44 @@ PrefabInstance:
     m_TransformParent: {fileID: 5925110381128182218}
     m_Modifications:
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
-      value: 0.03583334
+      value: 0.048127238
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
-      value: 0.6386265
+      value: 0.6780964
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
-      value: -0.023809452
+      value: -0.027691778
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
-      value: 0.63920707
+      value: 0.67608875
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
-      value: -0.06092537
+      value: -0.076454505
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
-      value: 0.57391
+      value: 0.6004389
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
-      value: -0.052518453
+      value: -0.06804758
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
-      value: 0.13160111
+      value: 0.1451891
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].x
@@ -191,23 +195,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].x
-      value: 0.054433558
+      value: 0.07513903
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].y
-      value: 0.13469395
+      value: 0.14698786
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[7].x
-      value: 0.067683354
+      value: 0.08321249
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[7].y
-      value: 0.56158435
+      value: 0.59458375
       objectReference: {fileID: 0}
     - target: {fileID: 4649768102939382549, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Name
       value: HitBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 4649768102939382549, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6075934508529615081, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_LocalScale.x

@@ -16,10 +16,13 @@ public class UI_WaveTimer : MonoBehaviour
     private int tempWaveCntdown;
     private int tempCompleteCntdown;
     private bool isCounting;
+    private bool isFirstWave;
 
 
     void Start()
     {
+        isFirstWave = true;
+        WaveManager.wmInstance.setWaveTimerScript(this);
         nextWavePanel.SetActive(false);
         waveCompletePanel.SetActive(false);
         resetCountdown();
@@ -27,22 +30,30 @@ public class UI_WaveTimer : MonoBehaviour
 
     void Update()
     {
-        if(isCounting)
+        if (!WaveManager.wmInstance.getIsSpawningWave())
         {
             time += Time.deltaTime;
-            if(time >= 1f)
+            if (time >= 1f)
             {
                 tempWaveCntdown--;
                 tempCompleteCntdown++;
                 time = 0f;
             }
-            waveCompleteCntdownCheck();
             nextWaveCntdownCheck();
+            waveCompleteCntdownCheck();
+
+        }
+        else
+        {
+            nextWavePanel.SetActive(false);
+            waveCompletePanel.SetActive(false);
+            resetCountdown();
         }
     }
+    // checking if timer for the wave complete panel is done or not
     private void waveCompleteCntdownCheck()
     {
-        if(tempCompleteCntdown <= waveCompleteCntDown)
+        if (tempCompleteCntdown <= waveCompleteCntDown && !isFirstWave)
         {
             waveCompletePanel.SetActive(true);
         }
@@ -51,6 +62,7 @@ public class UI_WaveTimer : MonoBehaviour
             waveCompletePanel.SetActive(false);
         }
     }
+    // checking if timer for next wave panel is complete or not
     private void nextWaveCntdownCheck()
     {
         if (tempWaveCntdown >= 0)
@@ -60,24 +72,24 @@ public class UI_WaveTimer : MonoBehaviour
         }
         else
         {
-            resetCountdown();
+            //resetCountdown();
             waveCntdownTxt.text = tempWaveCntdown.ToString();
             nextWavePanel.SetActive(false);
+            isFirstWave = false;
+            WaveManager.wmInstance.startWave();
         }
     }
 
-
     private void resetCountdown()
     {
-        isCounting = false;
+        //isCounting = false;
         tempWaveCntdown = nextWaveCntdown;
         tempCompleteCntdown = 0;
         time = 0f;
     }
 
-    public void testingWaveOver()
+    public void setIsCounting(bool isC)
     {
-        isCounting = true;
+        isCounting = isC;
     }
-
 }

@@ -21,7 +21,7 @@ public class AreaSpawner : MonoBehaviour
 
     [Header("--Spawner Data--")]
     public float spawnDelay;
-    public int baseEnemyCnt; //used 
+    public int baseEnemyCnt; 
     [Header("--Spawn at once or over time--")]
     public bool isAllAtOnce;
 
@@ -52,7 +52,7 @@ public class AreaSpawner : MonoBehaviour
         calculateAreaEdges();
         if (isAllAtOnce)
         {
-            spawnSetAmount(baseEnemyCnt);
+            spawnSetAmount(baseEnemyCnt, (baseEnemyCnt / 2));
         }
     }
 
@@ -63,6 +63,7 @@ public class AreaSpawner : MonoBehaviour
             time += Time.deltaTime;
             if (time >= spawnDelay)
             {
+                //only spawns the first enemy for now
                 spawnOverTime();
                 time = 0;
             }
@@ -94,11 +95,15 @@ public class AreaSpawner : MonoBehaviour
         tempMelee.transform.position = spawnPos;
     }
 
-    private void spawnSetAmount(int cnt)
+    private void spawnSetAmount(int cntOne, int cntTwo)
     {
-        for (int i = 0; i < cnt; i++)
+        for (int i = 0; i < cntOne; i++)
         {
             spawnSingleObject(spawnableObjList[0]);
+        }
+        for(int i = 0; i < cntTwo; i++)
+        {
+            spawnSingleObject(spawnableObjList[1]);
         }
     }
 }

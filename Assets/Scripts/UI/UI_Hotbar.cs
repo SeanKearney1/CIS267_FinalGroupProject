@@ -1,14 +1,15 @@
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 //using UnityEngine.UIElements;
 using UnityEngine.UI;
-using System.Collections.Generic;
 
 
 public class UI_Hotbar : MonoBehaviour
 {
     // UI_Hotbar Singleton 
-    public static UI_Hotbar hbInstance {  get; private set; }
-    
+    public static UI_Hotbar hbInstance { get; private set; }
+
     //==PUBLIC==//
     [Header("--Hotbar Slots--")]
     public List<GameObject> quickSlotList; //maybe this could be an array since its a static 6 slots
@@ -21,6 +22,9 @@ public class UI_Hotbar : MonoBehaviour
     public Sprite lightHighlightedSlot;
     public Sprite lightNormalSlot;
 
+    [Header("--Wave Txt--")]
+    public TMP_Text waveCntTxt;
+
 
     //==PRIVATE==//
     private List<WeaponObject> weaponObjInventoryList = new List<WeaponObject>();
@@ -28,7 +32,7 @@ public class UI_Hotbar : MonoBehaviour
     private WeaponObject extraObject;
     private int selectedSlot;
 
-   
+
     private void Awake()
     {   // Ensuring this hbInstance is the only one
         if (hbInstance != null && hbInstance != this)
@@ -42,6 +46,7 @@ public class UI_Hotbar : MonoBehaviour
     void Start()
     {
         selectedSlot = 6;
+        waveCntTxt.text = "1";
         //currentWaveCount = 1;
         //gets the default weapon inventory on load and update the hotbar
         setListOfInventory(GameManagerLogic.Instance.getPlayerWeaponInventory());
@@ -54,14 +59,14 @@ public class UI_Hotbar : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Alpha0 + i))
             {
-                Debug.Log("hotbarSel: " + i);
+                //Debug.Log("hotbarSel: " + i);
                 return i;
             }
 
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
-            Debug.Log("SEVEN");
+            //Debug.Log("SEVEN");
             return 7;
         }
         else if (Input.GetKeyDown(KeyCode.F))
@@ -75,9 +80,9 @@ public class UI_Hotbar : MonoBehaviour
     //used to update the quick slots when a new item is picked up
     private void updateQuickSlots()
     {
-        if(weaponObjInventoryList != null)
+        if (weaponObjInventoryList != null)
         {
-            for(int i = 0; i <  weaponObjInventoryList.Count; i++)
+            for (int i = 0; i < weaponObjInventoryList.Count; i++)
             {
                 Sprite tempSprite = weaponObjInventoryList[i].weaponSprite;
                 Image quickSlot = quickSlotList[i].GetComponent<Image>();
@@ -98,7 +103,7 @@ public class UI_Hotbar : MonoBehaviour
             hSlot.color = tempC;
             hSlot.sprite = tempSrite;
         }
-        if(extraObject != null)
+        if (extraObject != null)
         {
 
         }
@@ -110,12 +115,12 @@ public class UI_Hotbar : MonoBehaviour
         if (sel != selectedSlot)
         {
             Image slotImg = null;
-            if(selectedSlot == 7)
+            if (selectedSlot == 7)
             {
                 slotImg = hammerSlot.transform.parent.GetComponent<Image>();
                 slotImg.sprite = darkNormalSlot;
             }
-            else if(selectedSlot == 8)
+            else if (selectedSlot == 8)
             {
                 slotImg = extraSlot.transform.parent.GetComponent<Image>();
                 slotImg.sprite = darkNormalSlot;
@@ -151,7 +156,10 @@ public class UI_Hotbar : MonoBehaviour
             }
         }
     }
-
+    public void setWaveCount(int waveCount)
+    {
+        waveCntTxt.text = waveCount.ToString();
+    }
     public void setListOfInventory(List<WeaponObject> list)
     {
         weaponObjInventoryList = list;

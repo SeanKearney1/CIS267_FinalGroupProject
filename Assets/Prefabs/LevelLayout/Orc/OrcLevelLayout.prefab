@@ -41,9 +41,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6979834782858075668}
     m_Modifications:
+    - target: {fileID: 1179479504092435881, guid: a33f4047b387ad64dbf71c4c6b94c3e6, type: 3}
+      propertyPath: m_SortingOrder
+      value: -8
+      objectReference: {fileID: 0}
     - target: {fileID: 3174340338334722448, guid: a33f4047b387ad64dbf71c4c6b94c3e6, type: 3}
       propertyPath: m_Name
       value: OrcLevel3Grid
+      objectReference: {fileID: 0}
+    - target: {fileID: 4066367621535840623, guid: a33f4047b387ad64dbf71c4c6b94c3e6, type: 3}
+      propertyPath: m_SortingOrder
+      value: -9
       objectReference: {fileID: 0}
     - target: {fileID: 6100276357914865192, guid: a33f4047b387ad64dbf71c4c6b94c3e6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7570,6 +7578,10 @@ PrefabInstance:
     - target: {fileID: 7490420172630443864, guid: 710ea6b46b5c24440badf88c555fb0b4, type: 3}
       propertyPath: m_Name
       value: OrcBarrierWalls
+      objectReference: {fileID: 0}
+    - target: {fileID: 8494989141525663352, guid: 710ea6b46b5c24440badf88c555fb0b4, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

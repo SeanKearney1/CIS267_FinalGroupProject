@@ -4,57 +4,34 @@ using System.Collections.Generic;
 public class EnemySpawner : MonoBehaviour
 {
     //==PUBLIC==//
-    [Header("--Spawners--")]
+    [Header("--Spawner Objects--")]
     public GameObject negativeSideSpawner;
     public GameObject positiveSideSpawner;
+    public GameObject enemyHolder;
     public bool isVerticalSpawner;
 
     [Header("Spawner Width: 1 should = 1 square")]
     [Range(1, 10)]
     public int maxSpawnerWidth;
 
-    //could set other spawn delays here too for differnt enemy types
-    //[Header("--Spawn Data--")]
-    public float spawnDelay;
-    public int tier1BaseCount;
-    public int tier2BaseCount;
-    public int tier3BaseCount;
-    public float tier1EnemyMultiplier;
-    public float tier2EnemyMultiplier;
-    public float tier3EnemyMultiplier;
-
-    [Header("--Eneimes To Spawn In--")]
-    public GameObject tier1Enemy;
-    public GameObject tier2Enemy;
-    public GameObject tier3Enemy;
-
-
     [Header("--Gatehouse and Path Waypoints Points--")]
     public GameObject cityGates;
     public List<GameObject> waypointList;
 
     //==PRIVATE==//
-    private int currentLevel; //get this from the game manager
+    private List<GameObject> tier1EnemyList = new List<GameObject>();
+    private List<GameObject> tier2EnemyList = new List<GameObject>();
+    private List<GameObject> tier3EnemyList = new List<GameObject>();
+    private List<GameObject> tier4EnemyList = new List<GameObject>();
     private float time;
-    //These keep track of how many enemy of each type will spawn this round
-    //adding to it or multiplying it by X amount
-    private float currentTier1Cnt;
-    private float currentTier2Cnt;
-    private float currentTier3Cnt;
     private bool isSpawningWave;
-    private int tempT1Cnt;
-    private int tempT2Cnt;
-    private int tempT3Cnt;
-
-
+    private float spawnDelay;
 
     void Start()
     {
         setSpawnerWidth();
-        resetSpawnData();
-        updateEnemyCounts();
+        isSpawningWave = false;
     }
-
     void Update()
     {
         if (isSpawningWave)
@@ -62,72 +39,28 @@ public class EnemySpawner : MonoBehaviour
             time += Time.deltaTime;
             if (time >= spawnDelay)
             {
-                //spawnTier1Enemies();
-                spawnNextLevel();
+                spawnTier1Enemies();
+                spawnTier2Enemies();
+                spawnTier3Enemies();
+                spawnTier4Enemies();
                 time = 0;
             }
         }
-    }
-    private void resetSpawnData()
-    {
-        currentLevel = 1;
-        isSpawningWave = false;
-        tempT1Cnt = 0;
-        tempT2Cnt = 0;
-        tempT3Cnt = 0;
-    }
-
-    private void updateEnemyCounts()
-    {
-        if (currentLevel == 1)
+        if (enemyHolder.transform.childCount <= 0 && tier1EnemyList.Count <= 0)
         {
-            //no multipliers
-            currentTier1Cnt = tier1BaseCount;
-            currentTier2Cnt = tier2BaseCount;
-            currentTier3Cnt = tier3BaseCount;
-        }
-        else if(currentLevel >= 2)
-        {
-            //add multipliers
-            currentTier1Cnt = Mathf.RoundToInt(currentTier1Cnt * tier1EnemyMultiplier);
-            currentTier2Cnt = Mathf.RoundToInt(currentTier2Cnt * tier2EnemyMultiplier);
-            currentTier3Cnt = Mathf.RoundToInt(currentTier3Cnt * tier3EnemyMultiplier);
+            isSpawningWave = false;
+            WaveManager.wmInstance.setIsSpawningWave(false);
         }
     }
 
-
-
-    private void spawnNextLevel()
+    public void setWaveData(float delay, List<GameObject> t1List, List<GameObject> t2List, List<GameObject> t3List, List<GameObject> t4List, bool isS)
     {
-
-        if (tempT1Cnt < currentTier1Cnt)
-        {
-            spawnTier1Enemies();
-            //tempT1Cnt++;
-        }
-        else if(tempT1Cnt >= currentTier1Cnt)
-        {
-            resetSpawnData();
-        }
-        if (currentTier2Cnt > tempT2Cnt)
-        {
-
-            tempT2Cnt++;
-        }
-        if (currentTier3Cnt > tempT3Cnt)
-        {
-            tempT3Cnt++;
-        }
-    }
-
-    private void spawnTier1Enemies() // pass the enemy instead
-    {
-        Vector2 spawnPos = getSpawnerType();
-        GameObject tempMelee = Instantiate(tier1Enemy);
-        tempMelee.GetComponent<EnemyController>().setDefaultTarget(cityGates);
-        tempMelee.GetComponent<EnemyController>().setPathWaypoints(waypointList);
-        tempMelee.transform.position = spawnPos;
-        tempT1Cnt++;
+        spawnDelay = delay;
+        tier1EnemyList = t1List;
+        tier2EnemyList = t2List;
+        tier3EnemyList = t3List;
+        tier4EnemyList = t4List;
+        isSpawningWave = isS;
     }
 
     private Vector2 getSpawnerType()
@@ -155,21 +88,52 @@ public class EnemySpawner : MonoBehaviour
             gameObject.transform.localScale = new Vector3(maxSpawnerWidth, 0.2f, 0);
         }
     }
-    public void setSpawnDelay(int delay)
+    private void spawnTier1Enemies() // pass the enemy instead
     {
-        spawnDelay = delay;
+        if (tier1EnemyList.Count > 0)
+        {
+            Vector2 spawnPos = getSpawnerType();
+            GameObject tempMelee = Instantiate(tier1EnemyList[0], enemyHolder.transform, true);
+            tier1EnemyList.RemoveAt(0);
+            tempMelee.GetComponent<EnemyController>().setDefaultTarget(cityGates);
+            tempMelee.GetComponent<EnemyController>().setPathWaypoints(waypointList);
+            tempMelee.transform.position = spawnPos;
+        }
     }
-
-    public void nextLevel() // for testing for now
+    private void spawnTier2Enemies()
     {
-        currentLevel++;
+        if (tier2EnemyList.Count > 0)
+        {
+            Vector2 spawnPos = getSpawnerType();
+            GameObject tempMelee = Instantiate(tier2EnemyList[0], enemyHolder.transform, true);
+            tier2EnemyList.RemoveAt(0);
+            tempMelee.GetComponent<EnemyController>().setDefaultTarget(cityGates);
+            tempMelee.GetComponent<EnemyController>().setPathWaypoints(waypointList);
+            tempMelee.transform.position = spawnPos;
+        }
     }
-
-
-    public void testNextLevel()
+    private void spawnTier3Enemies()
     {
-        currentLevel++;
-        isSpawningWave = true;
-        updateEnemyCounts();
+        if (tier3EnemyList.Count > 0)
+        {
+            Vector2 spawnPos = getSpawnerType();
+            GameObject tempMelee = Instantiate(tier3EnemyList[0], enemyHolder.transform, true);
+            tier3EnemyList.RemoveAt(0);
+            tempMelee.GetComponent<EnemyController>().setDefaultTarget(cityGates);
+            tempMelee.GetComponent<EnemyController>().setPathWaypoints(waypointList);
+            tempMelee.transform.position = spawnPos;
+        }
+    }
+    private void spawnTier4Enemies()
+    {
+        if (tier4EnemyList.Count > 0)
+        {
+            Vector2 spawnPos = getSpawnerType();
+            GameObject tempMelee = Instantiate(tier4EnemyList[0], enemyHolder.transform, true);
+            tier4EnemyList.RemoveAt(0);
+            tempMelee.GetComponent<EnemyController>().setDefaultTarget(cityGates);
+            tempMelee.GetComponent<EnemyController>().setPathWaypoints(waypointList);
+            tempMelee.transform.position = spawnPos;
+        }
     }
 }

@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70ec771aaa550934b9f1f359aed6e5f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI_WaveTimer
-  nextWaveCntdown: 30
+  nextWaveCntdown: 5
   waveCompleteCntDown: 3
   nextWavePanel: {fileID: 5757529927109605167}
   waveCompletePanel: {fileID: 262984763736612883}

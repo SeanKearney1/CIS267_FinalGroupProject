@@ -945,6 +945,7 @@ MonoBehaviour:
   darkNormalSlot: {fileID: 1538566218, guid: 14fd42eaeca770842ac845f10b37ec39, type: 3}
   lightHighlightedSlot: {fileID: -1237892939, guid: 14fd42eaeca770842ac845f10b37ec39, type: 3}
   lightNormalSlot: {fileID: -195668331, guid: 14fd42eaeca770842ac845f10b37ec39, type: 3}
+  waveCntTxt: {fileID: 1966151606795148931}
 --- !u!1 &3167497373428596186
 GameObject:
   m_ObjectHideFlags: 0
@@ -3054,6 +3055,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2518485377597699739}
   m_SourcePrefab: {fileID: 100100000, guid: 0183a5aadc5fe134e84256e265e84740, type: 3}
+--- !u!114 &1966151606795148931 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3875936125152151580, guid: 0183a5aadc5fe134e84256e265e84740, type: 3}
+  m_PrefabInstance: {fileID: 3351587585953289887}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!114 &2634793629370245562 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 726084487079376677, guid: 0183a5aadc5fe134e84256e265e84740, type: 3}

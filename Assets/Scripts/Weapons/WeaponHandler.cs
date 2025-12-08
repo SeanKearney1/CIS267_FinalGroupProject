@@ -74,9 +74,14 @@ public class WeaponHandler : MonoBehaviour
         }
     }
 
+    public void resetPlayerInventory()
+    {
+        weaponInventoryList = GameManagerLogic.Instance.getPlayerWeaponInventory();
+        UI_Hotbar.hbInstance.setListOfInventory(weaponInventoryList);
+    }
 
     //used to switch from the old equipped weapon to the new one
-    private void weaponSelect(int sel)
+    public void weaponSelect(int sel)
     {
         //theres probably a better way to error check this
         if (weaponInventoryList.Count >= sel && sel != 0)
@@ -114,7 +119,10 @@ public class WeaponHandler : MonoBehaviour
             Vector3 oldRotation = initWeapon.transform.rotation.eulerAngles;
             initWeapon.transform.localRotation = Quaternion.FromToRotation(oldRotation, newRotation);
             initWeapon.name = weapon.weaponName;
-            initWeapon.transform.GetChild(0).GetComponent<WeaponController>().setCurWeaponObj(weapon);
+            if(weapon.weaponType != "Ranged")
+            {
+                initWeapon.transform.GetChild(0).GetComponent<WeaponController>().setCurWeaponObj(weapon);
+            }
             GameManagerLogic.Instance.setEquippedWeapon(initWeapon);
             //return initWeapon;
         }
@@ -207,15 +215,11 @@ public class WeaponHandler : MonoBehaviour
     private void initWeaponData(WeaponObject wObj)
     {
         currWeaponName = wObj.weaponName;
-        //currWeaponType = wObj.weaponType;
+        currWeaponType = wObj.weaponType;
         currWeaponDamage = wObj.weaponDmg;
         currWeaponAttackSpeed = wObj.attackSpeed;
         currWeaponRange = wObj.weaponRange;
     }
-    //private void initShieldData(WeaponObject sObj)
-    //{
-
-    //}
     public WeaponObject getCurrentShieldObj()
     {
         return currentShield;

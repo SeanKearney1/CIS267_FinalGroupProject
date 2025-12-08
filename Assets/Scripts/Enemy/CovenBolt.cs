@@ -15,7 +15,7 @@ public class CovenBolt : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("player") || collision.gameObject.CompareTag("Tower"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Tower"))
         {
             HealthController healthController = collision.gameObject.GetComponent<HealthController>();
             healthController.takeDamage(damage);
