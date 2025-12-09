@@ -218,7 +218,7 @@ TextureImporter:
         width: 660
         height: 463
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -227,6 +227,28 @@ TextureImporter:
       bones: []
       spriteID: 6070237524c019644932ee1edbd2dcfb
       internalID: -715318059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MenuGui_5
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 271
+        width: 226
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e72fe646d8eef8438d8595e67fa4d9d
+      internalID: 282960239
       vertices: []
       indices: 
       edges: []
@@ -250,6 +272,7 @@ TextureImporter:
       MenuGui_2: -7852854647932695394
       MenuGui_3: -4415851995821621690
       MenuGui_4: -715318059
+      MenuGui_5: 282960239
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

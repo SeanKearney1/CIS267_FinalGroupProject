@@ -350,6 +350,7 @@ GameObject:
   - component: {fileID: 6002542384963482505}
   - component: {fileID: -1074201856705984898}
   - component: {fileID: 7439759046838100865}
+  - component: {fileID: 4427126142513122974}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -502,6 +503,19 @@ MonoBehaviour:
   baseHP: 25
   resistance: 0
   vitality: 1
+--- !u!114 &4427126142513122974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4892860523345381456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f9f16527be32f43ae40d5dc4dc917e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UseHealthPot
+  healthPotData: {fileID: 11400000, guid: 77bd22d497bb71246a6682ffddbd96c4, type: 2}
 --- !u!1 &6152854554454464486
 GameObject:
   m_ObjectHideFlags: 0

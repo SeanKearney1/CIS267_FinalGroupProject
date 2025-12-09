@@ -15,7 +15,7 @@ public class UI_Hotbar : MonoBehaviour
     public List<GameObject> quickSlotList; //maybe this could be an array since its a static 6 slots
     [Header("--Side Slots--")]
     public GameObject hammerSlot;
-    public GameObject extraSlot;
+    public GameObject healthSlot;
     [Header("--Slot Backgrounds--")]
     public Sprite darkHighlighedSlot;
     public Sprite darkNormalSlot;
@@ -29,7 +29,7 @@ public class UI_Hotbar : MonoBehaviour
     //==PRIVATE==//
     private List<WeaponObject> weaponObjInventoryList = new List<WeaponObject>();
     private WeaponObject repairHammer;
-    private WeaponObject extraObject;
+    private WeaponObject healthPot;
     private int selectedSlot;
 
 
@@ -71,6 +71,7 @@ public class UI_Hotbar : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.F))
         {
+            // healtPotCnt-- in GameManagerLogic
             return 8;
         }
         return 0;
@@ -96,15 +97,24 @@ public class UI_Hotbar : MonoBehaviour
         }
         if (repairHammer != null)
         {
-            Sprite tempSrite = repairHammer.weaponSprite;
+            Sprite tempSprite = repairHammer.weaponSprite;
             Image hSlot = hammerSlot.GetComponent<Image>();
             Color tempC = hSlot.color;
             tempC.a = 1f;
             hSlot.color = tempC;
-            hSlot.sprite = tempSrite;
+            hSlot.sprite = tempSprite;
         }
-        if (extraObject != null)
+        if (healthPot != null)
         {
+            if (GameManagerLogic.Instance.getHealthPotCount() > 0)
+            {
+                Sprite tempSprite = healthPot.weaponSprite;
+                Image hSlot = healthSlot.GetComponent<Image>();
+                Color tempC = hSlot.color;
+                tempC.a = 1f;
+                hSlot.color = tempC;
+                hSlot.sprite = tempSprite;
+            }
 
         }
     }
@@ -120,11 +130,6 @@ public class UI_Hotbar : MonoBehaviour
                 slotImg = hammerSlot.transform.parent.GetComponent<Image>();
                 slotImg.sprite = darkNormalSlot;
             }
-            else if (selectedSlot == 8)
-            {
-                slotImg = extraSlot.transform.parent.GetComponent<Image>();
-                slotImg.sprite = darkNormalSlot;
-            }
             else
             {
                 // reset the sprite to the normal slot
@@ -135,14 +140,6 @@ public class UI_Hotbar : MonoBehaviour
             {
                 // highlights the repair hammer
                 slotImg = hammerSlot.transform.parent.GetComponentInParent<Image>();
-                slotImg.sprite = darkHighlighedSlot;
-                selectedSlot = sel;
-            }
-            else if (sel == 8)
-            {
-                //hightlight extra slot
-                // highlights the repair hammer
-                slotImg = extraSlot.transform.parent.GetComponentInParent<Image>();
                 slotImg.sprite = darkHighlighedSlot;
                 selectedSlot = sel;
             }
@@ -171,5 +168,18 @@ public class UI_Hotbar : MonoBehaviour
         repairHammer = hammer;
         updateQuickSlots();
         //update the side slot
+    }
+    public void setHealthPotObj(WeaponObject hPot)
+    {
+        healthPot = hPot;
+        updateQuickSlots();
+    }
+    public void setOutOfHealthPots()
+    {
+        Image hSlot = healthSlot.GetComponent<Image>();
+        hSlot.sprite = null;
+        Color tempC = hSlot.color;
+        tempC.a = 0f;
+        hSlot.color = tempC;
     }
 }

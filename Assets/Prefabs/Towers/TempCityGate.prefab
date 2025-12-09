@@ -102,6 +102,7 @@ GameObject:
   - component: {fileID: 4964879013371354746}
   - component: {fileID: 8093690987270257562}
   - component: {fileID: 5896563590508154412}
+  - component: {fileID: 7245482351042476189}
   m_Layer: 0
   m_Name: TempCityGate
   m_TagString: CityGate
@@ -245,6 +246,18 @@ MonoBehaviour:
   baseHP: 50
   resistance: 0
   vitality: 1
+--- !u!114 &7245482351042476189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8473468251456501155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e46016bea80e634994629f92261ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnGateDestroyed
 --- !u!1001 &8645871688807635539
 PrefabInstance:
   m_ObjectHideFlags: 0

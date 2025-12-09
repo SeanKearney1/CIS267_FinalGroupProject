@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8060950302179638489}
   - component: {fileID: 2664437733423895733}
   - component: {fileID: 6006100578469094149}
+  - component: {fileID: -3684956005434384915}
   m_Layer: 11
   m_Name: Demon
   m_TagString: enemy
@@ -189,6 +190,20 @@ MonoBehaviour:
   baseHP: 7
   resistance: 0
   vitality: 1
+--- !u!114 &-3684956005434384915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5180739013252321792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e014aa4b2c51748b1122dc35ffe030, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DropOnDeath
+  itemToDrop: {fileID: 1305982238288081902, guid: b92224f9c7fb5b542be1f05ef2d76181, type: 3}
+  dropRate: 5
 --- !u!1 &5747272787803972854
 GameObject:
   m_ObjectHideFlags: 0

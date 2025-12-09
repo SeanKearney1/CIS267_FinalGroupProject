@@ -83,9 +83,11 @@ public class PlayerController : MonoBehaviour
                 Destroy(collision.gameObject);
             }
         }
-        else if(collision.gameObject.CompareTag("ExtraObject"))
+        else if(collision.gameObject.CompareTag("HealthPotion"))
         {
-
+            GameManagerLogic.Instance.addHealthPotion();
+            wHandler.addHealthPotToInventory(collision.gameObject.tag);
+            Destroy(collision.gameObject);
         }
     }
     private void flipPlayerSprite(float moveX)

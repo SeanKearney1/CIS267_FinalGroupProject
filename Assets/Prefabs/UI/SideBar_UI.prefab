@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnMouseHover
   buttonIndex: 2
+  isSideBar: 1
 --- !u!1 &1203149755448626017
 GameObject:
   m_ObjectHideFlags: 0
@@ -853,6 +854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnMouseHover
   buttonIndex: 1
+  isSideBar: 1
 --- !u!1 &3470618581399765568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1963,6 +1965,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnMouseHover
   buttonIndex: 0
+  isSideBar: 1
 --- !u!1 &7357007359537153164
 GameObject:
   m_ObjectHideFlags: 0
@@ -2247,6 +2250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OnMouseHover
   buttonIndex: 3
+  isSideBar: 1
 --- !u!1 &7857092259599243583
 GameObject:
   m_ObjectHideFlags: 0
@@ -2954,6 +2958,10 @@ PrefabInstance:
     - target: {fileID: 4585521492540794568, guid: 7fa0c0c78b60ed94fb2cd21ebbf1974c, type: 3}
       propertyPath: m_Name
       value: TowerInfoPopUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585521492540794568, guid: 7fa0c0c78b60ed94fb2cd21ebbf1974c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5195650409400742524, guid: 7fa0c0c78b60ed94fb2cd21ebbf1974c, type: 3}
       propertyPath: m_Pivot.x

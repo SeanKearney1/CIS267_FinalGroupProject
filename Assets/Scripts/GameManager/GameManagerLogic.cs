@@ -34,9 +34,9 @@ public class GameManagerLogic : MonoBehaviour
     public WeaponObject defaultShield;
     [Header("--Weapon Scriptable Object List--")]
     public List<WeaponObject> weaponScriptObjList;
-    [Header("--Repair Hammer / Extra Object(maybe health pot)--")]
-    public WeaponObject repairHammerObj;
-    public WeaponObject extraObject;
+    //[Header("--Repair Hammer / Extra Object(maybe health pot)--")]
+    //public WeaponObject repairHammerObj;
+    //public WeaponObject healthPotObj;
 
     //==PRIVATE==//
     private List<WeaponObject> playerWeaponInventory;
@@ -44,7 +44,9 @@ public class GameManagerLogic : MonoBehaviour
 
     //used if we make the hammer a reward rather than already owned
     private bool hasRepairHammer;
-    private bool hasExtraObject;
+    private int healthPotCount;
+    private bool isGameOver;
+    private bool isGamePaused;
 
 
     //=====================================================
@@ -66,6 +68,7 @@ public class GameManagerLogic : MonoBehaviour
     }
     void Start()
     {
+        resetGameData();
         DontDestroyOnLoad(gameObject);
     }
     void OnEnable()
@@ -129,13 +132,16 @@ public class GameManagerLogic : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             // Un-pause game
-            if (PauseMenuGameObject.activeSelf) {
-                PauseMenuGameObject.SetActive(false); 
+            if (PauseMenuGameObject.activeSelf) 
+            {
+                isGamePaused = false;
+                PauseMenuGameObject.SetActive(false);
                 Time.timeScale = 1.0f;
             }
             // Pause game
             else
             {
+                isGamePaused = true;
                 PauseMenuGameObject.SetActive(true);
                 Time.timeScale = 0.0f;
             }
@@ -143,6 +149,13 @@ public class GameManagerLogic : MonoBehaviour
     }
 
 
+    public void resetGameData()
+    {
+        hasRepairHammer = false;
+        healthPotCount = 0;
+        isGameOver = false;
+        isGamePaused = false;
+    }
 
     //=======================
     //  GETTER AND SETTERS
@@ -178,19 +191,18 @@ public class GameManagerLogic : MonoBehaviour
         return weaponScriptObjList;
     }
 
-    //==Might not need==//
-    public WeaponObject getRepairHammerObj()
-    {
-        return repairHammerObj;
-    }
-    public WeaponObject getExtraObject()
-    {
-        return extraObject;
-    }
-    public void setExtraObject(WeaponObject wo)
-    {
-        extraObject = wo;
-    }
+    //public WeaponObject getRepairHammerObj()
+    //{
+    //    return repairHammerObj;
+    //}
+    //public WeaponObject getHealthPotObj()
+    //{
+    //    return healthPotObj;
+    //}
+    //public void setHealthPotObj(WeaponObject wo)
+    //{
+    //    healthPotObj = wo;
+    //}
     //====================//
     public void setHasRepairHammer(bool h)
     {
@@ -200,13 +212,37 @@ public class GameManagerLogic : MonoBehaviour
     {
         return hasRepairHammer;
     }
-    public void setHasExtraObject(bool h)
+    public void addHealthPotion()
     {
-        hasExtraObject = h;
+        healthPotCount++;
     }
-    public bool getHasExtraObject()
+    public void subHealthPotion()
     {
-        return hasExtraObject;
+        healthPotCount--;
+    }
+    public int getHealthPotCount()
+    {
+        return healthPotCount;
+    }
+    public void setHealthPotCount(int cnt)
+    {
+        healthPotCount = cnt;
+    }
+    public bool getIsGameOver()
+    {
+        return isGameOver;
+    }
+    public void setIsGameOver(bool isGO)
+    {
+        isGameOver = isGO;
+    }
+    public bool getIsGamePaused()
+    {
+        return isGamePaused;
+    }
+    public void setIsGamePaused(bool isGP)
+    {
+        isGamePaused = isGP;
     }
     //================
     //================

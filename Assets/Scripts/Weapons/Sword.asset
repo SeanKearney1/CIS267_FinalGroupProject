@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeaponObject
   weaponName: Sword
   weaponType: 1H
-  weaponDmg: 2
+  weaponDmg: 4
   attackSpeed: 2
-  weaponRange: 1
+  weaponRange: 2
   weaponSound: {fileID: 0}
   weaponPrefab: {fileID: 5410309301429675486, guid: 924a9cbe61f7946488dbe5789ea5866f, type: 3}
   weaponSprite: {fileID: -6754282350768061134, guid: 05a41d6e739dbed42b0e160d8b745fd8, type: 3}

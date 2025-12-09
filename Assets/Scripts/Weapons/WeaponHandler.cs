@@ -46,6 +46,7 @@ public class WeaponHandler : MonoBehaviour
     private List<WeaponObject> listOfWeaponScriptObject = new List<WeaponObject>();
     private List<WeaponObject> weaponInventoryList = new List<WeaponObject>();
     private WeaponObject repairHammer = null;
+    private WeaponObject healthPot = null;
     private GameObject initWeapon;
     private GameObject initShield;
     //private bool hasHammer;
@@ -64,7 +65,6 @@ public class WeaponHandler : MonoBehaviour
         //addHammerToInventory(GameManagerLogic.Instance.getRepairHammerObj().weaponName);
         initializeWeapon(defWeapon);
     }
-
     private void Update()
     {
         if(Input.anyKeyDown)
@@ -73,13 +73,11 @@ public class WeaponHandler : MonoBehaviour
             //hammerSelected(UI_Hotbar.hbInstance.hotbarSelection());
         }
     }
-
     public void resetPlayerInventory()
     {
         weaponInventoryList = GameManagerLogic.Instance.getPlayerWeaponInventory();
         UI_Hotbar.hbInstance.setListOfInventory(weaponInventoryList);
     }
-
     //used to switch from the old equipped weapon to the new one
     public void weaponSelect(int sel)
     {
@@ -100,7 +98,6 @@ public class WeaponHandler : MonoBehaviour
             }
         }
     }
-
     // Initializes the passed weapon scriptable object into the game world
     // Spawning the weapon into the player's "hands" 
     private void initializeWeapon(WeaponObject weapon)
@@ -166,7 +163,6 @@ public class WeaponHandler : MonoBehaviour
         //    }
         //}
     }
-
     private WeaponObject convertWeaponNameToObject(string name)
     {
         foreach(WeaponObject wo in listOfWeaponScriptObject)
@@ -178,7 +174,6 @@ public class WeaponHandler : MonoBehaviour
         }
         return null;
     }
-
     public void addWeaponToInventory(string wName)
     {
         WeaponObject tempObj = convertWeaponNameToObject(wName);
@@ -210,6 +205,15 @@ public class WeaponHandler : MonoBehaviour
             }
         }
     }
+    public void addHealthPotToInventory(string wName)
+    {
+        if(healthPot == null)
+        {
+            WeaponObject tempHealthPot = convertWeaponNameToObject(wName);
+            healthPot = tempHealthPot;
+            UI_Hotbar.hbInstance.setHealthPotObj(healthPot);
+        }
+    }
     // Initializes the equipped weapon data
     // Might not need this
     private void initWeaponData(WeaponObject wObj)
@@ -227,6 +231,10 @@ public class WeaponHandler : MonoBehaviour
     public WeaponObject getCurrentWeaponObj()
     {
         return currentWeapon;
+    }
+    public void setHealthPotObj(WeaponObject wo)
+    {
+        healthPot = wo;
     }
 
 
