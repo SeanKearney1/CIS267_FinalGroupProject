@@ -16,6 +16,10 @@ public class TilePlacment : MonoBehaviour
 
     public GameObject[] TowerToPlace;// the first in this array is selection = 0, ++0 for each subsequent selection
 
+    private TowerData curTowerData;
+
+    private int cost;
+
     private int selection=0;// this is the  selection of tileToPlace[selection]
     private void Update()
     {
@@ -44,13 +48,16 @@ public class TilePlacment : MonoBehaviour
     }
     private void placeTower(Vector3Int cellPos)
     {
-        TileBase tile = buildingLayer.GetTile(cellPos);
-        Vector3 placePos = buildingLayer.GetCellCenterWorld(cellPos);//get centre of the cell
-        if (tile != BarrierTile)// if the selected tile can be placed on
+        if(EconManager.cost(cost))
         {
-            buildingLayer.SetTile(cellPos, BarrierTile);
-            GameObject tower = Instantiate(TowerToPlace[selection], placePos, Quaternion.identity);//create the physical tile
-            tower.transform.SetParent(buildingLayer.transform);
+            TileBase tile = buildingLayer.GetTile(cellPos);
+            Vector3 placePos = buildingLayer.GetCellCenterWorld(cellPos);//get centre of the cell
+            if (tile != BarrierTile)// if the selected tile can be placed on
+            {
+                buildingLayer.SetTile(cellPos, BarrierTile);
+                GameObject tower = Instantiate(TowerToPlace[selection], placePos, Quaternion.identity);//create the physical tile
+                tower.transform.SetParent(buildingLayer.transform);
+            }
         }
     }
     public void switchSelection(int index)//probably place this on ui buttons onclick
@@ -58,6 +65,8 @@ public class TilePlacment : MonoBehaviour
         if (index >= 0 && index < TowerToPlace.Length)
         {
             selection = index;
+            curTowerData = TowerToPlace[index].GetComponent<TowerData>();
+            cost = curTowerData.getTowerCost();
         }
         else
         {
