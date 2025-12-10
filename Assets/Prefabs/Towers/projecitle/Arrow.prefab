@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::arrowProjectile
   speed: 12
-  damage: 1
+  damage: 5
   lifespan: 3
 --- !u!50 &344549564309558401
 Rigidbody2D:

@@ -277,9 +277,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
   towerName: Bramble
-  towerCost: 250
-  towerDmg: 0
-  towerAtkSpeed: 0
+  towerCost: 350
+  towerDmg: 1
+  towerAtkSpeed: 1
   towerRange: 1
   towerHealth: 100
   towerVitality: 1

@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8c8f2f7308644248b66ceff39604587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlchemyPool
-  rate: 0.5
+  rate: 0.9
   lifetime: 3
   damage: 1
   damageBubble: {fileID: 5190596332117508894, guid: ffd7f8d54a5a9f3479ebd8258a6c3da1, type: 3}

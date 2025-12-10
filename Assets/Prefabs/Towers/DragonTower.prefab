@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ArrowTower
   arrowProjectile: {fileID: 4968016144927873842, guid: 57bc49fbce3375c4a9e89cd35ac5e672, type: 3}
-  rate: 0.25
+  rate: 0.333
   towerHead: {fileID: 4596607231405173946}
 --- !u!114 &8789592904905144410
 MonoBehaviour:
@@ -172,10 +172,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
   towerName: Dragon
-  towerCost: 250
+  towerCost: 200
   towerDmg: 1
-  towerAtkSpeed: 0.25
-  towerRange: 3
+  towerAtkSpeed: 0.33
+  towerRange: 4
   towerHealth: 50
   towerVitality: 1
   towerResistance: 0
@@ -367,6 +367,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4225196577804061599}
     m_Modifications:
+    - target: {fileID: 1176857304900794109, guid: 2b9ee708727f92f4bb95d73d34829391, type: 3}
+      propertyPath: m_Radius
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4553528918278222810, guid: 2b9ee708727f92f4bb95d73d34829391, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

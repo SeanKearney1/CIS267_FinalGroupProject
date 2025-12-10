@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fad464dc39390fa4d9f3cdb7b55e8249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthController
-  baseHP: 20
+  baseHP: 50
   resistance: 0
   vitality: 1
 --- !u!114 &755445252527475954
@@ -170,11 +170,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
   towerName: Construct
-  towerCost: 250
+  towerCost: 350
   towerDmg: 1
   towerAtkSpeed: 1
   towerRange: 3
-  towerHealth: 20
+  towerHealth: 50
   towerVitality: 1
   towerResistance: 0
   towerHeadSprite: {fileID: -8045846326204813637, guid: 7d6a288ff7f7d004d9d6dddd2748582c, type: 3}
@@ -260,13 +260,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7571441636920663209}
     m_Modifications:
+    - target: {fileID: 190046325003280630, guid: b04d8578c64c52541a0b165806e01093, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1442665960107757242, guid: b04d8578c64c52541a0b165806e01093, type: 3}
       propertyPath: m_Name
       value: TempConstruct_0
       objectReference: {fileID: 0}
     - target: {fileID: 1442665960107757242, guid: b04d8578c64c52541a0b165806e01093, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1476159859271142085, guid: b04d8578c64c52541a0b165806e01093, type: 3}
       propertyPath: homePlate

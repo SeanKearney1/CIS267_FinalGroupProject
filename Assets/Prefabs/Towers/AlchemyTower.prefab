@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ArrowTower
   arrowProjectile: {fileID: 2862463482350598350, guid: 24af0d0ff12f86c458dcc11db9f9c8e4, type: 3}
-  rate: 5
+  rate: 3
   towerHead: {fileID: 2094381834534917663}
 --- !u!114 &6528434387958551921
 MonoBehaviour:
@@ -262,10 +262,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
   towerName: Alchemy
-  towerCost: 100
-  towerDmg: 1
-  towerAtkSpeed: 0.5
-  towerRange: 3
+  towerCost: 150
+  towerDmg: 3
+  towerAtkSpeed: 3
+  towerRange: 5
   towerHealth: 50
   towerVitality: 1
   towerResistance: 0
@@ -297,7 +297,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3db09abc2dd0e3f4f82b96b35375149d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::buildableOnDestroy
-  buildingLayer: {fileID: 0}
 --- !u!1001 &4945963574758186617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -368,6 +367,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 932871124480740771}
     m_Modifications:
+    - target: {fileID: 1176857304900794109, guid: 2b9ee708727f92f4bb95d73d34829391, type: 3}
+      propertyPath: m_Radius
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4553528918278222810, guid: 2b9ee708727f92f4bb95d73d34829391, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

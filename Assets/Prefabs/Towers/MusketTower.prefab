@@ -262,11 +262,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
   towerName: Musket
-  towerCost: 500
-  towerDmg: 10
-  towerAtkSpeed: 5
+  towerCost: 100
+  towerDmg: 20
+  towerAtkSpeed: 7
   towerRange: 6
-  towerHealth: 50
+  towerHealth: 25
   towerVitality: 1
   towerResistance: 0
   towerHeadSprite: {fileID: -8940198679668421409, guid: bc919154e90a53849a157627a1fb6920, type: 3}
@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fad464dc39390fa4d9f3cdb7b55e8249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthController
-  baseHP: 50
+  baseHP: 25
   resistance: 0
   vitality: 1
 --- !u!114 &4278543913825992526
@@ -307,7 +307,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1176857304900794109, guid: 2b9ee708727f92f4bb95d73d34829391, type: 3}
       propertyPath: m_Radius
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4553528918278222810, guid: 2b9ee708727f92f4bb95d73d34829391, type: 3}
       propertyPath: m_LocalPosition.x

@@ -6,11 +6,11 @@ public class HealthController : MonoBehaviour
     private int curHP = 0;// the changing hp ammount 
 
     public int resistance;// falt number that damage is reduced by damage taken = dmg - resitance && > 0
-    private bool vulnerable = false;// if true multiply dmg * 1.5 before resistance calculation && divide healing by 2
+    private bool vulnerable = false;// if true multiply dmg * 2 before resistance calculation && divide healing by 2
     private bool onFire = false;
     public int vitality = 1;// multiplier to ammount healed 
 
-    private float tickRate = 2;
+    private float tickRate = 1;
     private float tickIncrement = 0;
 
     private void Start()
@@ -33,7 +33,7 @@ public class HealthController : MonoBehaviour
     {
         if (vulnerable)// apply vulnerability
         {
-            dmg = Mathf.RoundToInt(dmg * 1.5f);
+            dmg = Mathf.RoundToInt(dmg * 2);
         }
         dmg -= resistance;// apply resistance
         if (dmg < 0)// dmg cannot be less than 0

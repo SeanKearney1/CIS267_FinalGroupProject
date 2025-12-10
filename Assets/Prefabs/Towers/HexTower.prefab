@@ -171,10 +171,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
   towerName: Hex
-  towerCost: 250
+  towerCost: 200
   towerDmg: 1
   towerAtkSpeed: 0.5
-  towerRange: 3
+  towerRange: 4
   towerHealth: 50
   towerVitality: 1
   towerResistance: 0
@@ -366,6 +366,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5374971087044838637}
     m_Modifications:
+    - target: {fileID: 1176857304900794109, guid: 2b9ee708727f92f4bb95d73d34829391, type: 3}
+      propertyPath: m_Radius
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4553528918278222810, guid: 2b9ee708727f92f4bb95d73d34829391, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -6,7 +6,6 @@ public class AlchemyPool : MonoBehaviour
     public float rate;
     private float timeIncrement;
     public float lifetime;
-    public int damage;
 
     public GameObject damageBubble;
 

@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CannonTower
   CannonballExplosion: {fileID: 4111901499546697014, guid: e948f696bdf39ce41be00790a7e8cafd, type: 3}
-  rate: 4
+  rate: 3
   towerHead: {fileID: 259160915695648979}
 --- !u!114 &5990516224846009080
 MonoBehaviour:
@@ -262,10 +262,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
   towerName: Cannon
-  towerCost: 100
-  towerDmg: 2
-  towerAtkSpeed: 4
-  towerRange: 4
+  towerCost: 150
+  towerDmg: 3
+  towerAtkSpeed: 3
+  towerRange: 5
   towerHealth: 50
   towerVitality: 1
   towerResistance: 0
@@ -365,7 +365,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 4
+  m_Radius: 5
 --- !u!114 &3259342240721267928
 MonoBehaviour:
   m_ObjectHideFlags: 0

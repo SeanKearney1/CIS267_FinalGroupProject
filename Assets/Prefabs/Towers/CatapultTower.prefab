@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ArrowTower
   arrowProjectile: {fileID: 1855414661328696351, guid: 86439033406c1754d80c8fe2276e36e7, type: 3}
-  rate: 2
+  rate: 3
   towerHead: {fileID: 4190408656103959257}
 --- !u!114 &8159984776472448992
 MonoBehaviour:
@@ -125,10 +125,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
   towerName: Catapult
-  towerCost: 200
+  towerCost: 150
   towerDmg: 3
-  towerAtkSpeed: 2
-  towerRange: 3
+  towerAtkSpeed: 3
+  towerRange: 5
   towerHealth: 50
   towerVitality: 1
   towerResistance: 0
@@ -320,6 +320,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7011179353440554232}
     m_Modifications:
+    - target: {fileID: 1176857304900794109, guid: 2b9ee708727f92f4bb95d73d34829391, type: 3}
+      propertyPath: m_Radius
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4553528918278222810, guid: 2b9ee708727f92f4bb95d73d34829391, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

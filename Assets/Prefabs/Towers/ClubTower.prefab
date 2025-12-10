@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CannonTower
   CannonballExplosion: {fileID: 7359467935524200764, guid: 9ba65ae6a06077f41ae4ccb30ff20ee9, type: 3}
-  rate: 3
+  rate: 1
   towerHead: {fileID: 14117166961448953}
 --- !u!114 &2035451055650920950
 MonoBehaviour:
@@ -263,12 +263,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerData
   towerName: Club
   towerCost: 100
-  towerDmg: 5
-  towerAtkSpeed: 3
-  towerRange: 2.5
-  towerHealth: 50
+  towerDmg: 8
+  towerAtkSpeed: 1
+  towerRange: 3
+  towerHealth: 25
   towerVitality: 1
-  towerResistance: 0
+  towerResistance: 1
   towerHeadSprite: {fileID: 6640111971853735880, guid: 6abf0c8baab5d0a4c8f22bf60fb93682, type: 3}
 --- !u!114 &7475276923801625660
 MonoBehaviour:
@@ -282,8 +282,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fad464dc39390fa4d9f3cdb7b55e8249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthController
-  baseHP: 50
-  resistance: 0
+  baseHP: 25
+  resistance: 1
   vitality: 1
 --- !u!114 &4784216868765886581
 MonoBehaviour:
@@ -307,7 +307,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1176857304900794109, guid: 2b9ee708727f92f4bb95d73d34829391, type: 3}
       propertyPath: m_Radius
-      value: 2.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4553528918278222810, guid: 2b9ee708727f92f4bb95d73d34829391, type: 3}
       propertyPath: m_LocalPosition.x

@@ -23,7 +23,7 @@ public class NetField : MonoBehaviour
             enemyRB = collision.gameObject.GetComponent<Rigidbody2D>();
             //====
             //====
-            enemyController.applyStagger(1f);
+            enemyController.applyStagger(1.5f);
             healthController.takeDamage(damage);
             enemyRB.linearVelocity = Vector3.zero;
         }

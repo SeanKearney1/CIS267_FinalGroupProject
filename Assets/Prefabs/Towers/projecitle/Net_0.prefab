@@ -106,7 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NetField
   lifespan: 0.75
   pullStrength: 1
-  damage: 1
+  damage: 3
 --- !u!58 &2244739912059212844
 CircleCollider2D:
   m_ObjectHideFlags: 0

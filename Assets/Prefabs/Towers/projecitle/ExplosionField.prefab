@@ -104,8 +104,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfb0f2b250b978447825bbf5da2f4243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExplosionField
-  damage: 2
-  lifespan: 0.5
+  damage: 3
+  lifespan: 0.3
 --- !u!58 &2820339535541372111
 CircleCollider2D:
   m_ObjectHideFlags: 0
