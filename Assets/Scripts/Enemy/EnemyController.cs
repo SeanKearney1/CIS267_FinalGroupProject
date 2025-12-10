@@ -108,7 +108,7 @@ public class EnemyController : MonoBehaviour
         {
             //add damage to city gate here
 
-            //this needs to be done better. Just testing for now.
+            //this needs to be done better. Just startNewGame for now.
             collision.gameObject.GetComponent<HealthController>().takeDamage(damage);
             Destroy(gameObject);
         }

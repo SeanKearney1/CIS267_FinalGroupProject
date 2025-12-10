@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI_PauseMenu
   menuHeaderText: {fileID: 743004909110974269}
+  newOrResumeGameBtn: {fileID: 1104860384237436328}
 --- !u!114 &5379110379598939937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -299,9 +300,53 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4837560514035707525, guid: 09262c1f70aa9d8428988f89d7046265, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837560514035707525, guid: 09262c1f70aa9d8428988f89d7046265, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837560514035707525, guid: 09262c1f70aa9d8428988f89d7046265, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837560514035707525, guid: 09262c1f70aa9d8428988f89d7046265, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 106825735919626347}
+    - target: {fileID: 4837560514035707525, guid: 09262c1f70aa9d8428988f89d7046265, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 11500000, guid: 356c39606b5626845a26be07b5f7f43f, type: 3}
+    - target: {fileID: 4837560514035707525, guid: 09262c1f70aa9d8428988f89d7046265, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837560514035707525, guid: 09262c1f70aa9d8428988f89d7046265, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837560514035707525, guid: 09262c1f70aa9d8428988f89d7046265, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: startNewGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837560514035707525, guid: 09262c1f70aa9d8428988f89d7046265, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UI_NewGame, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837560514035707525, guid: 09262c1f70aa9d8428988f89d7046265, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7391038602431167107, guid: 09262c1f70aa9d8428988f89d7046265, type: 3}
       propertyPath: m_Name
       value: PauseMenu_UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 7391038602431167107, guid: 09262c1f70aa9d8428988f89d7046265, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8943940153074197212, guid: 09262c1f70aa9d8428988f89d7046265, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -312,6 +357,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09262c1f70aa9d8428988f89d7046265, type: 3}
+--- !u!114 &106825735919626347 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5552008645485116230, guid: 09262c1f70aa9d8428988f89d7046265, type: 3}
+  m_PrefabInstance: {fileID: 5509933152355898157}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94fb55577a374b14f939e135c75e8523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI_NewGame
 --- !u!114 &743004909110974269 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5059961330266276880, guid: 09262c1f70aa9d8428988f89d7046265, type: 3}
@@ -323,6 +379,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!114 &1104860384237436328 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4837560514035707525, guid: 09262c1f70aa9d8428988f89d7046265, type: 3}
+  m_PrefabInstance: {fileID: 5509933152355898157}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1 &3090887101425232302 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7391038602431167107, guid: 09262c1f70aa9d8428988f89d7046265, type: 3}

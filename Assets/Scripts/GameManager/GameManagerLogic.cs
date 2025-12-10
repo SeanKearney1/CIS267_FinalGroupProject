@@ -39,6 +39,8 @@ public class GameManagerLogic : MonoBehaviour
     //public WeaponObject healthPotObj;
 
     //==PRIVATE==//
+    //used to keep track of random order of play for new game
+    private List<int> listOfRandomSceneOrder; 
     private List<WeaponObject> playerWeaponInventory;
     private GameObject equippedWeapon;
 
@@ -243,6 +245,14 @@ public class GameManagerLogic : MonoBehaviour
     public void setIsGamePaused(bool isGP)
     {
         isGamePaused = isGP;
+    }
+    public List<int> getListOfSceneOrder()
+    {
+        return listOfRandomSceneOrder;
+    }
+    public void setListOfSceneOrder(List<int> order)
+    {
+        listOfRandomSceneOrder = order;
     }
     //================
     //================
