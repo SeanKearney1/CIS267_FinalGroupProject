@@ -46,7 +46,7 @@ public class EnemySpawner : MonoBehaviour
                 time = 0;
             }
         }
-        if (enemyHolder.transform.childCount <= 0 && tier1EnemyList.Count <= 0)
+        if (enemyHolder.transform.childCount <= 0 && tier1EnemyList.Count <= 0 && tier2EnemyList.Count <= 0 && tier3EnemyList.Count <= 0 && tier4EnemyList.Count <= 0)
         {
             isSpawningWave = false;
             WaveManager.wmInstance.setIsSpawningWave(false);

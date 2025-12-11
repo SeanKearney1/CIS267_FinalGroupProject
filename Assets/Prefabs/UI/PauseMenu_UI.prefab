@@ -1871,6 +1871,7 @@ GameObject:
   - component: {fileID: 4837560514035707525}
   - component: {fileID: 4356311053410327450}
   - component: {fileID: 5552008645485116230}
+  - component: {fileID: 8320163798866058655}
   m_Layer: 5
   m_Name: NewGameBtn
   m_TagString: Untagged
@@ -2004,6 +2005,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94fb55577a374b14f939e135c75e8523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI_NewGame
+--- !u!114 &8320163798866058655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7650169738671904957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adc58f503fa88ef488f008942d951e37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI_Scene_Selector
+  LevelIndex: 0
 --- !u!1 &8302302018478535731
 GameObject:
   m_ObjectHideFlags: 0
@@ -2426,6 +2440,7 @@ GameObject:
   - component: {fileID: 1985563674444465133}
   - component: {fileID: 5980217528319998927}
   - component: {fileID: 4875886718906389884}
+  - component: {fileID: 1837538428115280065}
   m_Layer: 5
   m_Name: ExitBtn
   m_TagString: Untagged
@@ -2535,3 +2550,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1837538428115280065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8874907972571156708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e08531c6a4414a4686ca095a443cba2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ExitGame

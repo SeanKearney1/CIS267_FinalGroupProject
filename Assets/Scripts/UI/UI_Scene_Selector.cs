@@ -16,4 +16,9 @@ public class UI_Scene_Selector : MonoBehaviour
         Time.timeScale = 1.0f; 
     }
 
+    //used with new game/next level to set the level index
+    public void setLevelIndex(int lvl)
+    {
+        LevelIndex = lvl;
+    }
 }

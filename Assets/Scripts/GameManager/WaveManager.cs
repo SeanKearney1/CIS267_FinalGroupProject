@@ -27,12 +27,13 @@ public class WaveManager : MonoBehaviour
     public int tier2StartWave;
     public int tier3StartWave;
     public int tier4StartWave;
+    public int endOfLevelCap;
 
     private List<GameObject> tier1EnemyList = new List<GameObject>();
     private List<GameObject> tier2EnemyList = new List<GameObject>();
     private List<GameObject> tier3EnemyList = new List<GameObject>();
     private List<GameObject> tier4EnemyList = new List<GameObject>();
-    private int currentLevel; //get this from the game manager
+    private int currentLevel; 
     //private EnemySpawner tempSpawner;
     //private float time;
     private UI_WaveTimer waveTimer;
@@ -41,10 +42,10 @@ public class WaveManager : MonoBehaviour
     private int currentTier3Cnt;
     private int currentTier4Cnt;
     private bool isSpawningWave;
-    private int tempT1Cnt;
-    private int tempT2Cnt;
-    private int tempT3Cnt;
-    private int tempT4Cnt;
+    //private int tempT1Cnt;
+    //private int tempT2Cnt;
+    //private int tempT3Cnt;
+    //private int tempT4Cnt;
 
     private void Awake()
     {
@@ -113,6 +114,10 @@ public class WaveManager : MonoBehaviour
     public void setIsSpawningWave(bool isS)
     {
         isSpawningWave = isS;
+        if (currentLevel == 15) // levle complete
+        {
+            GameManagerLogic.Instance.setIsLevelOver(true);
+        }
     }
     public bool getIsSpawningWave()
     {
@@ -158,5 +163,10 @@ public class WaveManager : MonoBehaviour
                 currentTier3Cnt = Mathf.RoundToInt(currentTier3Cnt * tier3EnemyMultiplier);
             }
         }
+    }
+    public void testing()
+    {
+        currentLevel = 14;
+        GameManagerLogic.Instance.setIsGameWon(true);
     }
 }

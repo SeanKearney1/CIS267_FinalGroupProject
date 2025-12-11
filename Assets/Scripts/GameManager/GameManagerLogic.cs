@@ -40,15 +40,17 @@ public class GameManagerLogic : MonoBehaviour
 
     //==PRIVATE==//
     //used to keep track of random order of play for new game
-    private List<int> listOfRandomSceneOrder; 
+    private List<int> listOfRandomSceneOrder = new List<int> { 1, 2, 3 };
     private List<WeaponObject> playerWeaponInventory;
     private GameObject equippedWeapon;
 
     //used if we make the hammer a reward rather than already owned
     private bool hasRepairHammer;
     private int healthPotCount;
+    private bool isGameWon;
     private bool isGameOver;
     private bool isGamePaused;
+    private bool isLevelOver;
 
 
     //=====================================================
@@ -157,6 +159,7 @@ public class GameManagerLogic : MonoBehaviour
         healthPotCount = 0;
         isGameOver = false;
         isGamePaused = false;
+        isLevelOver = false;
     }
 
     //=======================
@@ -253,6 +256,22 @@ public class GameManagerLogic : MonoBehaviour
     public void setListOfSceneOrder(List<int> order)
     {
         listOfRandomSceneOrder = order;
+    }
+    public void setIsLevelOver(bool isLO)
+    {
+        isLevelOver = isLO;
+    }
+    public bool getIsLevelOver()
+    {
+        return isLevelOver;
+    }
+    public void setIsGameWon(bool isGW)
+    {
+        isGameWon = isGW;
+    }
+    public bool getIsGameWon()
+    {
+        return isGameWon;
     }
     //================
     //================
