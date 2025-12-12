@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class IncomeOnBuilding : MonoBehaviour
 {
-    [Header("100 for t1 175 for t2 250 for t3")]
+    [Header("100 for t1 150 for t2 200 for t3")]
     public int incomeCoef;// probably do 100 for t1, 175 for t2, 250 for t3
     public bool startBought;
     [Header("100 for t1 200 for t2 300 for t3")]
@@ -22,6 +22,7 @@ public class IncomeOnBuilding : MonoBehaviour
     {
         if (startBought)
         {
+            EconManager.upgradeIncome(incomeCoef);
             numUpgrades++;
         }
     }
