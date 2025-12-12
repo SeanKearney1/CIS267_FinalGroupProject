@@ -4,12 +4,12 @@ public class OnGateDestroyed : MonoBehaviour
 {
     private void Start()
     {
-        GameManagerLogic.Instance.setIsGameOver(false);
+        //GameManagerLogic.Instance.setIsGameOver(false);
     }
     private void OnDestroy()
     {
-        Debug.Log("gate Destroyed");
-        GameManagerLogic.Instance.setIsGameOver(true);
+        //Debug.Log("gate Destroyed");
+        //GameManagerLogic.Instance.setIsGameOver(true);
     }
 
     private void gateHealthCheck()

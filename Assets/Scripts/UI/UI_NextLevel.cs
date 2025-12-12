@@ -32,9 +32,14 @@ public class UI_NextLevel : MonoBehaviour
     private void updateNextLevelGUI()
     {
         gameObject.GetComponent<Button>().onClick.RemoveAllListeners();
+        GameManagerLogic.Instance.addLevelWon();
+        if (GameManagerLogic.Instance.getNumOfLevelsWon() >= 3)
+        {
+            GameManagerLogic.Instance.setIsGameWon(true);
+        }
         if(GameManagerLogic.Instance.getIsGameWon())
         {
-            headerTxt.text = "You've Completed the game. \r\nClick the button below to play again";
+            headerTxt.text = "You've survied and beat back the enemy hordes. \r\nClick the button below to play again";
             buttonText.text = "New Game";
             newGameScript = GetComponent<UI_NewGame>();
             gameObject.GetComponent<Button>().onClick.AddListener(newGameScript.startNewGame);

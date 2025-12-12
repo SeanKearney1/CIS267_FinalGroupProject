@@ -55,6 +55,7 @@ public class WaveManager : MonoBehaviour
             return;
         }
         wmInstance = this;
+        GameManagerLogic.Instance.setIsLevelOver(false);
     }
 
     void Start()

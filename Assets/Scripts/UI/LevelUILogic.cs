@@ -27,6 +27,11 @@ public class LevelUILogic : MonoBehaviour
             nextLevelUI.SetActive(true);
             Time.timeScale = 0f;
         }
+        else //<<might not need
+        {
+            nextLevelUI.SetActive(false);
+            Time.timeScale = 1f;
+        }
     }
 
 }

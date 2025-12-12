@@ -8,7 +8,8 @@ public class UI_NewGame : MonoBehaviour
 
     public void startNewGame()
     {
-
+        GameManagerLogic.Instance.resetGameData();
+        GameManagerLogic.Instance.shuffleSceneOrder();
         int sceneNum = GameManagerLogic.Instance.updateSceneList();
         GetComponent<UI_Scene_Selector>().setLevelIndex(sceneNum);
         GetComponent<UI_Scene_Selector>().SelectLevel();

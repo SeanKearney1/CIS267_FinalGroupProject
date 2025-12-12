@@ -43,7 +43,7 @@ public class PlayerRespawn : MonoBehaviour
         GameObject tempPlayer = Instantiate(playerObj, spawnPoint.transform, true);
         tempPlayer.transform.position = spawnPos;
         camFollower.Target.TrackingTarget = tempPlayer.transform;
-        tempPlayer.GetComponent<WeaponHandler>().resetPlayerInventory();
+        tempPlayer.GetComponent<WeaponHandler>().respawnPlayerInventory();
 
     }
 }

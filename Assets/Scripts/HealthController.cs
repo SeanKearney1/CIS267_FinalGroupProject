@@ -50,7 +50,14 @@ public class HealthController : MonoBehaviour
                 //Debug.Log("H: " + gameObject.tag);
                 gameObject.GetComponent<DropOnDeath>().randomizeDrop();
             }
-            Destroy(this.gameObject);
+            else if (gameObject.tag == "CityGate")
+            {
+                GameManagerLogic.Instance.setIsGameOver(true);
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
     public void rejuvinate(int heal)

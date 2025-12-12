@@ -73,7 +73,7 @@ public class WeaponHandler : MonoBehaviour
             //hammerSelected(UI_Hotbar.hbInstance.hotbarSelection());
         }
     }
-    public void resetPlayerInventory()
+    public void respawnPlayerInventory()
     {
         weaponInventoryList = GameManagerLogic.Instance.getPlayerWeaponInventory();
         UI_Hotbar.hbInstance.setListOfInventory(weaponInventoryList);

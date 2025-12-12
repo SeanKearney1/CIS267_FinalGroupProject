@@ -54,7 +54,7 @@ public class GameManagerLogic : MonoBehaviour
     private bool isLevelOver = false;
     private bool isNewGame = true;
     private int curScene = -1;
-
+    private int numOfLevelsWon = 0;
 
     //=====================================================
     //=====================================================
@@ -76,7 +76,7 @@ public class GameManagerLogic : MonoBehaviour
     }
     void Start()
     {
-        if(isNewGame)
+        if (isNewGame)
         {
             resetGameData();
             shuffleSceneOrder();
@@ -113,7 +113,7 @@ public class GameManagerLogic : MonoBehaviour
     void Update()
     {
         PauseMenu();
- 
+
     }
 
 
@@ -148,7 +148,7 @@ public class GameManagerLogic : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             // Un-pause game
-            if (PauseMenuGameObject.activeSelf) 
+            if (PauseMenuGameObject.activeSelf)
             {
                 isGamePaused = false;
                 PauseMenuGameObject.SetActive(false);
@@ -174,6 +174,7 @@ public class GameManagerLogic : MonoBehaviour
         isGameWon = false;
         isLevelOver = false;
         curScene = -1;
+        numOfLevelsWon = 0;
         //shuffleSceneOrder();
     }
 
@@ -299,6 +300,18 @@ public class GameManagerLogic : MonoBehaviour
     public bool getIsGameWon()
     {
         return isGameWon;
+    }
+    public void addLevelWon()
+    {
+        numOfLevelsWon++;
+    }
+    public void resetNumOfLevelsWon()
+    {
+        numOfLevelsWon = 0;
+    }
+    public int getNumOfLevelsWon()
+    {
+        return numOfLevelsWon;
     }
     //================
     //================
