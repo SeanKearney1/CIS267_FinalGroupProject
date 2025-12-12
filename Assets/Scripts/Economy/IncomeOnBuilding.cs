@@ -2,56 +2,45 @@ using UnityEngine;
 
 public class IncomeOnBuilding : MonoBehaviour
 {
-    public int incomeCoef;// probably do 1 for t1, 3 for t2, 5 for t3
+    [Header("100 for t1 175 for t2 250 for t3")]
+    public int incomeCoef;// probably do 100 for t1, 175 for t2, 250 for t3
+    public bool startBought;
+    [Header("100 for t1 200 for t2 300 for t3")]
+    public int cost;//
 
 
-    private int numProduced = 1;
-    private float defaultDelay = 10;
-    private float incomeDelayTimeIncrement = 0;
+    private int maxNumUpgrades;
+    private int numUpgrades=0;
+
+
+
 
     private int givenGold;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        if (startBought)
+        {
+            numUpgrades++;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeIncome();
+        
     }
-    private void timeIncome()
+    
+    public void upgrade()
     {
-        incomeDelayTimeIncrement += Time.deltaTime;
-        if (incomeDelayTimeIncrement > defaultDelay )
+        if (EconManager.cost(cost))
         {
-            incomeDelayTimeIncrement = 0;
-            paycheck();
-        }
-
-
-    }
-    private void paycheck()
-    {
-        givenGold = incomeCoef;// base val
-        givenGold *= numProduced;//multiplier
-        EconManager.Income(givenGold);
-    }
-    public void upgrade(int number)
-    {
-        if (number ==1 )
-        {//upgrade rate
-            defaultDelay -= 5f;//-5sec
-        }
-        else if (number == 2)
-        {// upgrade base ammount 
-            incomeCoef++;//+1 per
-        }
-        else if (number == 3)
-        {// upgrade qtty produced
-            numProduced++;
+            if (numUpgrades != maxNumUpgrades)
+            {
+                numUpgrades++;
+                EconManager.upgradeIncome(incomeCoef);
+            }
         }
     }
 

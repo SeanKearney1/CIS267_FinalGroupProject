@@ -4,28 +4,44 @@ using UnityEngine;
 using UnityEngine.PlayerLoop;
 public static class EconManager // BUG FOUND, i know that when you change between levels it wont default to the base ammount, 
 {//////////////////////////////// probably can add a reset ammt function to this, then call it on load in the gamemanager
-    private static int gold = 100;
+    private static int gold = 300;
+    private static int income = 0;
+
+
+
     public static int GiveGold()
     {
         return gold;
     }
-    public static void Income(int ammt)
+    public static void generateIncome()
     {
-        gold += ammt;
+        gold += income;
     }
-    public static bool cost(int ammt)// when using any gold use "if(EconManager.cost(COSTOFWHATYOUAREDOING))
+    public static void Income(int amnt)
+    {
+        gold += amnt;
+    }
+    public static void upgradeIncome(int amnt)
+    {
+        income += amnt;
+    }
+    public static bool cost(int amnt)// when using any gold use "if(EconManager.cost(COSTOFWHATYOUAREDOING))
     {////////////////////////////////// if the player can afford it it takes the money away automatically and returns true otherwise the transaction is denied return false
-        if (gold < ammt)
+        if (gold < amnt)
         {
             return false;
         }
         else
         {
-            gold -= ammt;
+            gold -= amnt;
             return true;
         }
     }
-
+    public static void resetAll()
+    {
+        gold = 300;
+        income = 0;
+    }
 
 
 
