@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1018944764594897372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6441845942038434005}
+  - component: {fileID: 2909883859425294077}
+  m_Layer: 0
+  m_Name: PotionHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6441845942038434005
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018944764594897372}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8308219500998165390}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2909883859425294077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018944764594897372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bd4b90d13f28d845b9dedc1272234e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EmptyObjectsHolder
 --- !u!1 &3088505920726900386
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,6 +109,7 @@ Transform:
   - {fileID: 5024624793236747345}
   - {fileID: 7966516391800882100}
   - {fileID: 8963792459099639892}
+  - {fileID: 6441845942038434005}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7482522841473166313
@@ -98,6 +143,7 @@ MonoBehaviour:
   tier2StartWave: 3
   tier3StartWave: 5
   tier4StartWave: 8
+  endOfLevelCap: 0
 --- !u!1001 &1907683136675845463
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -178,6 +224,10 @@ PrefabInstance:
       propertyPath: enemyHolder
       value: 
       objectReference: {fileID: 3088505920726900386}
+    - target: {fileID: 8682145359722733433, guid: e4792b04f3e9e474ba705b72766ce00f, type: 3}
+      propertyPath: potionHolder
+      value: 
+      objectReference: {fileID: 1018944764594897372}
     - target: {fileID: 8682145359722733433, guid: e4792b04f3e9e474ba705b72766ce00f, type: 3}
       propertyPath: tier1BaseCount
       value: 5
@@ -313,6 +363,10 @@ PrefabInstance:
       propertyPath: enemyHolder
       value: 
       objectReference: {fileID: 3088505920726900386}
+    - target: {fileID: 3492702208873226086, guid: 7bda9ad903d33e24888d7fc72d26e198, type: 3}
+      propertyPath: potionHolder
+      value: 
+      objectReference: {fileID: 1018944764594897372}
     - target: {fileID: 3492702208873226086, guid: 7bda9ad903d33e24888d7fc72d26e198, type: 3}
       propertyPath: tier1BaseCount
       value: 5

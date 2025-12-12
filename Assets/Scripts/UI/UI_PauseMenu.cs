@@ -17,14 +17,12 @@ public class UI_PauseMenu : MonoBehaviour
             menuHeaderText.text = "Game Over";
             TMP_Text tempText = newOrResumeGameBtn.transform.GetComponentInChildren<TMP_Text>();
             tempText.text = "New Game";
-            //newOrResumeGameBtn.onClick.AddListener();
         }
         else
         {
             menuHeaderText.text = "Game Paused";
             TMP_Text tempText = newOrResumeGameBtn.transform.GetComponentInChildren<TMP_Text>();
             tempText.text = "Resume Game";
-            //newOrResumeGameBtn.onClick.AddListener();
         }    
     }
 }

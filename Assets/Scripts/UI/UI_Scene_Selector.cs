@@ -11,7 +11,6 @@ public class UI_Scene_Selector : MonoBehaviour
     public void SelectLevel()
     {
         SceneManager.LoadScene(LevelIndex);
-
         //needed to unpause the game on scene change
         Time.timeScale = 1.0f; 
     }

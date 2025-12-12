@@ -119,6 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &269700055 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2854141144248478922, guid: d760dcd2bf5c7f146ba9e4a04a06902c, type: 3}
+  m_PrefabInstance: {fileID: 4207582775850680082}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8530c995b8ae5b4cbd343befa370af5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManagerLogic
 --- !u!1 &343956310
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,6 +480,34 @@ PrefabInstance:
       propertyPath: m_SpriteState.m_SelectedSprite
       value: 
       objectReference: {fileID: -4346800879975669456, guid: 13e82d3cc0895e4409ee188bff868617, type: 3}
+    - target: {fileID: 5602326178168409252, guid: 7fa72d48a1b572547a9ae932c2895bd7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5602326178168409252, guid: 7fa72d48a1b572547a9ae932c2895bd7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5602326178168409252, guid: 7fa72d48a1b572547a9ae932c2895bd7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 269700055}
+    - target: {fileID: 5602326178168409252, guid: 7fa72d48a1b572547a9ae932c2895bd7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5602326178168409252, guid: 7fa72d48a1b572547a9ae932c2895bd7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: resetGameData
+      objectReference: {fileID: 0}
+    - target: {fileID: 5602326178168409252, guid: 7fa72d48a1b572547a9ae932c2895bd7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GameManagerLogic, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5602326178168409252, guid: 7fa72d48a1b572547a9ae932c2895bd7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5766317103741941083, guid: 7fa72d48a1b572547a9ae932c2895bd7, type: 3}
       propertyPath: m_SpriteState.m_SelectedSprite
       value: 

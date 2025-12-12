@@ -40,17 +40,20 @@ public class GameManagerLogic : MonoBehaviour
 
     //==PRIVATE==//
     //used to keep track of random order of play for new game
-    private List<int> listOfRandomSceneOrder = new List<int> { 1, 2, 3 };
+    private List<int> listOfOriginalSceneOrder = new List<int> { 1, 2, 3 };
+    private List<int> listOfRandomSceneOrder = new List<int>();
     private List<WeaponObject> playerWeaponInventory;
     private GameObject equippedWeapon;
 
     //used if we make the hammer a reward rather than already owned
     private bool hasRepairHammer;
     private int healthPotCount;
-    private bool isGameWon;
-    private bool isGameOver;
-    private bool isGamePaused;
-    private bool isLevelOver;
+    private bool isGameWon = false;
+    private bool isGameOver = false;
+    private bool isGamePaused = false;
+    private bool isLevelOver = false;
+    private bool isNewGame = true;
+    private int curScene = -1;
 
 
     //=====================================================
@@ -69,10 +72,16 @@ public class GameManagerLogic : MonoBehaviour
             return;
         }
         Instance = this;
+
     }
     void Start()
     {
-        resetGameData();
+        if(isNewGame)
+        {
+            resetGameData();
+            shuffleSceneOrder();
+            isNewGame = false;
+        }
         DontDestroyOnLoad(gameObject);
     }
     void OnEnable()
@@ -104,6 +113,7 @@ public class GameManagerLogic : MonoBehaviour
     void Update()
     {
         PauseMenu();
+ 
     }
 
 
@@ -114,11 +124,13 @@ public class GameManagerLogic : MonoBehaviour
     // Initiliazes general level elements and logic.
     public void Init_Level()
     {
+
         LevelUIPrefabGameObject = Instantiate(LevelUIPrefab);
 
         PauseMenuGameObject = LevelUIPrefabGameObject.GetComponent<LevelUILogic>().PauseMenu;
 
         PauseMenuGameObject.SetActive(false);
+
     }
 
     //===========================================
@@ -159,7 +171,36 @@ public class GameManagerLogic : MonoBehaviour
         healthPotCount = 0;
         isGameOver = false;
         isGamePaused = false;
+        isGameWon = false;
         isLevelOver = false;
+        curScene = -1;
+        //shuffleSceneOrder();
+    }
+
+    //shuffle the list of scenes randomizing their order
+    public void shuffleSceneOrder()
+    {
+        listOfRandomSceneOrder.Clear();
+        List<int> tempList = new List<int>();
+        tempList.AddRange(listOfOriginalSceneOrder);
+
+        for (int i = 0; i < listOfOriginalSceneOrder.Count; i++)
+        {
+            int ran = Random.Range(0, tempList.Count);
+            listOfRandomSceneOrder.Add(tempList[ran]);
+            tempList.RemoveAt(ran);
+        }
+        for (int i = 0; i < listOfRandomSceneOrder.Count; i++)
+        {
+            Debug.Log("B-order: " + listOfRandomSceneOrder[i]);
+        }
+    }
+
+    public int updateSceneList()
+    {
+        curScene++;
+        Debug.Log("CurScene: " + curScene + " - sceneNum: " + listOfRandomSceneOrder[curScene]);
+        return listOfRandomSceneOrder[curScene];
     }
 
     //=======================
@@ -195,20 +236,6 @@ public class GameManagerLogic : MonoBehaviour
     {
         return weaponScriptObjList;
     }
-
-    //public WeaponObject getRepairHammerObj()
-    //{
-    //    return repairHammerObj;
-    //}
-    //public WeaponObject getHealthPotObj()
-    //{
-    //    return healthPotObj;
-    //}
-    //public void setHealthPotObj(WeaponObject wo)
-    //{
-    //    healthPotObj = wo;
-    //}
-    //====================//
     public void setHasRepairHammer(bool h)
     {
         hasRepairHammer = h;

@@ -7,34 +7,39 @@ public class DropOnDeath : MonoBehaviour
 
     [Header("--Item to Drop--")]
     public GameObject itemToDrop;
+
     [Header("--Item drop rate 10 = 10%--")]
     public int dropRate;
 
+    private GameObject potionHolderObj;
     private Vector2 dropPos;
 
     private void Update()
     {
-        dropPos = gameObject.transform.position;
+        //dropPos = gameObject.transform.position;
     }
 
-    private void OnDestroy()
-    {
-        randomizeDrop();
-    }
 
     private void dropItem()
     {
-        Instantiate(itemToDrop);
+        dropPos = gameObject.transform.position;
+        Debug.Log("potionObj: " + potionHolderObj.name);
+        Instantiate(itemToDrop, potionHolderObj.transform, true);
         itemToDrop.transform.position = dropPos;
     }
 
-    private void randomizeDrop()
+    public void randomizeDrop()
     {
         int randomNum = Random.Range(0, 100);
-        if(randomNum <= dropRate)
+        if (randomNum <= dropRate)
         {
             dropItem();
         }
+    }
+
+    public void setPotionHolderObj(GameObject pHolder)
+    {
+        potionHolderObj = pHolder;
     }
 
 }

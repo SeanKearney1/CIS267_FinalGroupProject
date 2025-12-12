@@ -67,7 +67,7 @@ public class WaveManager : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log("current lvl: " + currentLevel);
+        //Debug.Log("current lvl: " + currentLevel);
     }
     public void setWaveTimerScript(UI_WaveTimer wTimer)
     {
@@ -167,6 +167,6 @@ public class WaveManager : MonoBehaviour
     public void testing()
     {
         currentLevel = 14;
-        GameManagerLogic.Instance.setIsGameWon(true);
+        //GameManagerLogic.Instance.setIsGameWon(true);
     }
 }

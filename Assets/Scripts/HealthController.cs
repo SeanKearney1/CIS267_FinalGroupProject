@@ -43,6 +43,13 @@ public class HealthController : MonoBehaviour
         curHP -= dmg;//take damage
         if (curHP <= 0)// die
         {
+            //used to make sure the object being destroyed is the enemy
+            //before triggering the item drop
+            if (gameObject.tag == "enemy")
+            {
+                //Debug.Log("H: " + gameObject.tag);
+                gameObject.GetComponent<DropOnDeath>().randomizeDrop();
+            }
             Destroy(this.gameObject);
         }
     }

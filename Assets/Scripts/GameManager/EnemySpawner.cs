@@ -8,6 +8,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject negativeSideSpawner;
     public GameObject positiveSideSpawner;
     public GameObject enemyHolder;
+    public GameObject potionHolder; 
     public bool isVerticalSpawner;
 
     [Header("Spawner Width: 1 should = 1 square")]
@@ -97,6 +98,7 @@ public class EnemySpawner : MonoBehaviour
             tier1EnemyList.RemoveAt(0);
             tempMelee.GetComponent<EnemyController>().setDefaultTarget(cityGates);
             tempMelee.GetComponent<EnemyController>().setPathWaypoints(waypointList);
+            tempMelee.GetComponent<DropOnDeath>().setPotionHolderObj(potionHolder);
             tempMelee.transform.position = spawnPos;
         }
     }
@@ -109,6 +111,7 @@ public class EnemySpawner : MonoBehaviour
             tier2EnemyList.RemoveAt(0);
             tempMelee.GetComponent<EnemyController>().setDefaultTarget(cityGates);
             tempMelee.GetComponent<EnemyController>().setPathWaypoints(waypointList);
+            tempMelee.GetComponent<DropOnDeath>().setPotionHolderObj(potionHolder);
             tempMelee.transform.position = spawnPos;
         }
     }
@@ -121,6 +124,7 @@ public class EnemySpawner : MonoBehaviour
             tier3EnemyList.RemoveAt(0);
             tempMelee.GetComponent<EnemyController>().setDefaultTarget(cityGates);
             tempMelee.GetComponent<EnemyController>().setPathWaypoints(waypointList);
+            tempMelee.GetComponent<DropOnDeath>().setPotionHolderObj(potionHolder);
             tempMelee.transform.position = spawnPos;
         }
     }
@@ -133,6 +137,7 @@ public class EnemySpawner : MonoBehaviour
             tier4EnemyList.RemoveAt(0);
             tempMelee.GetComponent<EnemyController>().setDefaultTarget(cityGates);
             tempMelee.GetComponent<EnemyController>().setPathWaypoints(waypointList);
+            tempMelee.GetComponent<DropOnDeath>().setPotionHolderObj(potionHolder);
             tempMelee.transform.position = spawnPos;
         }
     }

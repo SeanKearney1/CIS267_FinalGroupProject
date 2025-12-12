@@ -13,26 +13,25 @@ public class UI_NextLevel : MonoBehaviour
     private UI_NewGame newGameScript;
 
 
+
+
     private void Start()
     {
         buttonText = gameObject.transform.GetComponentInChildren<TMP_Text>();
-    }
-    private void Update()
-    {
-        isGameOverCheck();
+        updateNextLevelGUI();
     }
 
     public void goToNextLevel()
     {
-        List<int> tempSceneOrder = GameManagerLogic.Instance.getListOfSceneOrder();
-        gameObject.GetComponent<UI_Scene_Selector>().setLevelIndex(tempSceneOrder[0]);
-        gameObject.GetComponent<UI_Scene_Selector>().SelectLevel();
-        tempSceneOrder.RemoveAt(0);
-        GameManagerLogic.Instance.setListOfSceneOrder(tempSceneOrder);
+        int sceneNum = GameManagerLogic.Instance.updateSceneList();
+        GetComponent<UI_Scene_Selector>().setLevelIndex(sceneNum);
+        GetComponent<UI_Scene_Selector>().SelectLevel();
+
     }
 
-    private void isGameOverCheck()
+    private void updateNextLevelGUI()
     {
+        gameObject.GetComponent<Button>().onClick.RemoveAllListeners();
         if(GameManagerLogic.Instance.getIsGameWon())
         {
             headerTxt.text = "You've Completed the game. \r\nClick the button below to play again";
@@ -40,7 +39,7 @@ public class UI_NextLevel : MonoBehaviour
             newGameScript = GetComponent<UI_NewGame>();
             gameObject.GetComponent<Button>().onClick.AddListener(newGameScript.startNewGame);
         }
-        else
+        else if(GameManagerLogic.Instance.getIsLevelOver())
         {
             headerTxt.text = "You've Completed the level. \r\nClick the button below to proceed to the next level";
             buttonText.text = "Next Level";

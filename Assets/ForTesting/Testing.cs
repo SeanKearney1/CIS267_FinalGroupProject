@@ -7,4 +7,10 @@ public class Testing : MonoBehaviour
     {
         GameManagerLogic.Instance.setIsGameOver(true);
     }
+
+    public void testing()
+    {
+        WaveManager.wmInstance.testing();
+        //GameManagerLogic.Instance.setIsGameWon(true);
+    }
 }
