@@ -38,12 +38,16 @@ public class GameManagerLogic : MonoBehaviour
     //public WeaponObject repairHammerObj;
     //public WeaponObject healthPotObj;
 
+    [Header("-Audio Clips--")]
+    public AudioClip audio_pause;
+    public AudioClip audio_unpause;
     //==PRIVATE==//
     //used to keep track of random order of play for new game
     private List<int> listOfOriginalSceneOrder = new List<int> { 1, 2, 3 };
     private List<int> listOfRandomSceneOrder = new List<int>();
     private List<WeaponObject> playerWeaponInventory;
     private GameObject equippedWeapon;
+    private AudioSource audioSource;
 
     //used if we make the hammer a reward rather than already owned
     private bool hasRepairHammer;
@@ -83,6 +87,7 @@ public class GameManagerLogic : MonoBehaviour
             isNewGame = false;
         }
         DontDestroyOnLoad(gameObject);
+        audioSource = GetComponent<AudioSource>();
     }
     void OnEnable()
     {
@@ -153,6 +158,8 @@ public class GameManagerLogic : MonoBehaviour
                 isGamePaused = false;
                 PauseMenuGameObject.SetActive(false);
                 Time.timeScale = 1.0f;
+                audioSource.clip = audio_unpause;
+                audioSource.Play();
             }
             // Pause game
             else
@@ -160,6 +167,8 @@ public class GameManagerLogic : MonoBehaviour
                 isGamePaused = true;
                 PauseMenuGameObject.SetActive(true);
                 Time.timeScale = 0.0f;
+                audioSource.clip = audio_pause;
+                audioSource.Play();
             }
         }
     }

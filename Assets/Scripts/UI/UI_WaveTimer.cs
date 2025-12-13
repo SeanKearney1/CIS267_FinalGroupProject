@@ -11,21 +11,28 @@ public class UI_WaveTimer : MonoBehaviour
     public GameObject waveCompletePanel;
     public TMP_Text waveCntdownTxt;
 
+    [Header("--Audio Clips--")]
+    public AudioClip audio_countdown;
+    public AudioClip audio_countdown_final;
     //==PRIVATE==//
     private float time;
     private int tempWaveCntdown;
     private int tempCompleteCntdown;
     private bool isCounting;
     private bool isFirstWave;
+    private AudioSource audioSource;
 
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         isFirstWave = true;
         WaveManager.wmInstance.setWaveTimerScript(this);
         nextWavePanel.SetActive(false);
         waveCompletePanel.SetActive(false);
         resetCountdown();
+        audioSource.clip = audio_countdown;
+        audioSource.Play();
     }
 
     void Update()
@@ -38,6 +45,16 @@ public class UI_WaveTimer : MonoBehaviour
                 tempWaveCntdown--;
                 tempCompleteCntdown++;
                 time = 0f;
+                if (tempWaveCntdown >= 0)
+                {
+                    audioSource.clip = audio_countdown;
+                    audioSource.Play();
+                }
+                else
+                {
+                    audioSource.clip = audio_countdown_final;
+                    audioSource.Play();
+                }
             }
             nextWaveCntdownCheck();
             waveCompleteCntdownCheck();
