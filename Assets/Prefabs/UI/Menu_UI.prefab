@@ -262,9 +262,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4508311552041277437}
-        m_TargetAssemblyTypeName: UI_button_sounds, Assembly-CSharp
-        m_MethodName: OnClick
+      - m_Target: {fileID: 3410625543551446855}
+        m_TargetAssemblyTypeName: ExitGame, Assembly-CSharp
+        m_MethodName: exitGameBtnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2257,9 +2257,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9118862640304126341}
-        m_TargetAssemblyTypeName: UI_button_sounds, Assembly-CSharp
-        m_MethodName: OnClick
+      - m_Target: {fileID: 4000587331356884884}
+        m_TargetAssemblyTypeName: UI_NewGame, Assembly-CSharp
+        m_MethodName: startNewGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2269,9 +2269,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4000587331356884884}
-        m_TargetAssemblyTypeName: UI_NewGame, Assembly-CSharp
-        m_MethodName: startNewGame
+      - m_Target: {fileID: 9118862640304126341}
+        m_TargetAssemblyTypeName: UI_button_sounds, Assembly-CSharp
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

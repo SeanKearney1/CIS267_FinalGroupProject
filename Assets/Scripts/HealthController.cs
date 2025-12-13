@@ -49,6 +49,7 @@ public class HealthController : MonoBehaviour
             {
                 //Debug.Log("H: " + gameObject.tag);
                 gameObject.GetComponent<DropOnDeath>().randomizeDrop();
+                Destroy(gameObject);
             }
             else if (gameObject.tag == "CityGate")
             {

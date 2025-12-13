@@ -1237,8 +1237,8 @@ GameObject:
   - component: {fileID: 7863028592186535028}
   - component: {fileID: 198989112108030897}
   - component: {fileID: 6965346212424555330}
-  - component: {fileID: 7386484596733899893}
   - component: {fileID: 5617614312960685112}
+  - component: {fileID: 7386484596733899893}
   - component: {fileID: 1192210209840038572}
   - component: {fileID: 7453422687818259874}
   m_Layer: 5
@@ -1350,9 +1350,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6965346212424555330}
-        m_TargetAssemblyTypeName: UI_NextLevel, Assembly-CSharp
-        m_MethodName: goToNextLevel
+      - m_Target: {fileID: 1192210209840038572}
+        m_TargetAssemblyTypeName: UI_button_sounds, Assembly-CSharp
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1362,9 +1362,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1192210209840038572}
-        m_TargetAssemblyTypeName: UI_button_sounds, Assembly-CSharp
-        m_MethodName: OnClick
+      - m_Target: {fileID: 6965346212424555330}
+        m_TargetAssemblyTypeName: UI_NextLevel, Assembly-CSharp
+        m_MethodName: goToNextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1387,6 +1387,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI_NextLevel
   headerTxt: {fileID: 3777662832330400031}
+--- !u!114 &5617614312960685112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7209748998702916326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94fb55577a374b14f939e135c75e8523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI_NewGame
 --- !u!114 &7386484596733899893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1400,18 +1412,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI_Scene_Selector
   LevelIndex: 0
---- !u!114 &5617614312960685112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7209748998702916326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94fb55577a374b14f939e135c75e8523, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UI_NewGame
 --- !u!114 &1192210209840038572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1534,6 +1534,7 @@ GameObject:
   - component: {fileID: 1169324746930474231}
   - component: {fileID: 8648742540075191635}
   - component: {fileID: 2899079540572932981}
+  - component: {fileID: 6793795030830181086}
   m_Layer: 5
   m_Name: NextLevel_UI
   m_TagString: Untagged
@@ -1603,3 +1604,15 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6793795030830181086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9070181004433596999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d64fd49e0a694c46851ed26c9b456bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnEnablePause

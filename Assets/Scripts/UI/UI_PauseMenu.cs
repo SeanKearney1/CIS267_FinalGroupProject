@@ -12,17 +12,25 @@ public class UI_PauseMenu : MonoBehaviour
 
     private void Update()
     {
-        if(GameManagerLogic.Instance.getIsGameOver())
+        gameOverCheck();
+    }
+
+    private void gameOverCheck()
+    {
+        if (!GameManagerLogic.Instance.getIsGameWon())
         {
-            menuHeaderText.text = "Game Over";
-            TMP_Text tempText = newOrResumeGameBtn.transform.GetComponentInChildren<TMP_Text>();
-            tempText.text = "New Game";
+            if (GameManagerLogic.Instance.getIsGameOver())
+            {
+                menuHeaderText.text = "Game Over";
+                TMP_Text tempText = newOrResumeGameBtn.transform.GetComponentInChildren<TMP_Text>();
+                tempText.text = "New Game";
+            }
+            else
+            {
+                menuHeaderText.text = "Game Paused";
+                TMP_Text tempText = newOrResumeGameBtn.transform.GetComponentInChildren<TMP_Text>();
+                tempText.text = "Resume Game";
+            }
         }
-        else
-        {
-            menuHeaderText.text = "Game Paused";
-            TMP_Text tempText = newOrResumeGameBtn.transform.GetComponentInChildren<TMP_Text>();
-            tempText.text = "Resume Game";
-        }    
     }
 }

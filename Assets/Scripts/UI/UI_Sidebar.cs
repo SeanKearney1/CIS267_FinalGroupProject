@@ -69,17 +69,14 @@ public class UI_Sidebar : MonoBehaviour
         isTowerSelected = true; //true = can now build/place a tower
         if (isOrcSelected)
         {
-            Debug.Log("Testing Orc: " + index);
             placementScript.switchSelection(index);
         }
         else if (isDwarvenSelected)
         {
-            Debug.Log("Testing Dwarven: " + (index + orcUsableTowerList.Count));
             placementScript.switchSelection(index + orcUsableTowerList.Count);
         }
         else if (isElvenSelected)
         {
-            Debug.Log("Testing Elven: " + (index + orcUsableTowerList.Count + dwarvenUsableTowerList.Count));
             placementScript.switchSelection(index + orcUsableTowerList.Count + dwarvenUsableTowerList.Count);
         }
     }

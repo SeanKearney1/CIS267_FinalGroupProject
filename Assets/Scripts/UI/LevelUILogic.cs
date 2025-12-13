@@ -13,10 +13,11 @@ public class LevelUILogic : MonoBehaviour
 
     private void gameOverCheck()
     {
-        if(GameManagerLogic.Instance.getIsGameOver())
+        if(GameManagerLogic.Instance.getIsGameOver() && !GameManagerLogic.Instance.getIsGameWon())
         {
             PauseMenu.SetActive(true);
-            Time.timeScale = 0f;
+            //Time.timeScale = 0f;
+            //GameManagerLogic.Instance.pauseTime();
         }
     }
 
@@ -25,12 +26,14 @@ public class LevelUILogic : MonoBehaviour
         if(GameManagerLogic.Instance.getIsLevelOver())
         {
             nextLevelUI.SetActive(true);
-            Time.timeScale = 0f;
+            //Time.timeScale = 0f;
+            //GameManagerLogic.Instance.pauseTime();
         }
         else //<<might not need
         {
             nextLevelUI.SetActive(false);
-            Time.timeScale = 1f;
+            //Time.timeScale = 1f;
+            //GameManagerLogic.Instance.startTime();
         }
     }
 

@@ -12,7 +12,8 @@ public class UI_Scene_Selector : MonoBehaviour
     {
         SceneManager.LoadScene(LevelIndex);
         //needed to unpause the game on scene change
-        Time.timeScale = 1.0f; 
+        //Time.timeScale = 1.0f; 
+        GameManagerLogic.Instance.startTime();
     }
 
     //used with new game/next level to set the level index
