@@ -1,44 +1,24 @@
-using NUnit.Framework;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using System.Collections.Generic;
+using UnityEngine.EventSystems;
 
 public class UI_NewGame : MonoBehaviour
 {
 
     public void startNewGame()
     {
-        GameManagerLogic.Instance.resetGameData();
-        GameManagerLogic.Instance.shuffleSceneOrder();
-        int sceneNum = GameManagerLogic.Instance.updateSceneList();
-        GetComponent<UI_Scene_Selector>().setLevelIndex(sceneNum);
-        GetComponent<UI_Scene_Selector>().SelectLevel();
+        if(!GameManagerLogic.Instance.getIsSceneButtonClicked())
+        {
+            //GameManagerLogic.Instance.resetSceneCounter();
+            GameManagerLogic.Instance.setIsSceneButtonClicked(true);
+            GameManagerLogic.Instance.resetGameData();
+            GameManagerLogic.Instance.shuffleSceneOrder();
+            //GameManagerLogic.Instance.nextScene();
+            int sceneNum = GameManagerLogic.Instance.getCurrentSceneNumber();
+            GetComponent<UI_Scene_Selector>().setLevelIndex(sceneNum);
+            GetComponent<UI_Scene_Selector>().SelectLevel();
+            //gets rid of the eventsystems selected object
+            //in order to prevent the new button from being called more than once when clicked.
+            //EventSystem.current.SetSelectedGameObject(null);
+        }
     }
-
-    ////create the list of scenes in order from 1 to 3 
-    //private List<int> setTempSceneList(int cnt)
-    //{
-    //    List<int> tempList = new List<int>();
-    //    for (int i = 1; i < cnt; i++)
-    //    {
-    //        tempList.Add(i);
-    //    }
-    //    return tempList;
-    //}
-    ////shuffle the list of scenes randomizing their order
-    //private List<int> shuffleSceneOrder(List<int> originalList)
-    //{
-    //    List<int> tempList = new List<int>();
-    //    List<int> randomList = new List<int>();
-    //    tempList.AddRange(originalList);
-
-    //    for(int i = 0; i < originalList.Count; i++)
-    //    {
-    //        int ran = Random.Range(0, tempList.Count);
-    //        randomList.Add(tempList[ran]);
-    //        tempList.RemoveAt(ran);
-    //    }
-    //    return randomList;
-    //}
-
 }

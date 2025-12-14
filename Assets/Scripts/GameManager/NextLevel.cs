@@ -35,7 +35,8 @@ public class NextLevel : MonoBehaviour
     private void doubleCheckPlayerChoice()
     {
         popUpWindow.SetActive(true);
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
+        GameManagerLogic.Instance.pauseTime();
     }
     public void yesButtonClick()
     {
@@ -44,6 +45,7 @@ public class NextLevel : MonoBehaviour
     public void noButtonClick()
     {
         popUpWindow.SetActive(false);
-        Time.timeScale = 1f;
+        //Time.timeScale = 1f;
+        GameManagerLogic.Instance.startTime();
     }
 }

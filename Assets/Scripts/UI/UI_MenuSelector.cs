@@ -7,6 +7,20 @@ public class UI_MenuSelector : MonoBehaviour
     public GameObject settingsMenu;
     public GameObject guideMenu;
 
+    private void OnEnable()
+    {
+        openMainMenu();
+        //Time.timeScale = 0f;
+        GameManagerLogic.Instance.pauseTime();
+        //GameManagerLogic.Instance.setIsGamePaused(true);
+    }
+
+    private void OnDisable()
+    {
+        //Time.timeScale = 1f;
+        GameManagerLogic.Instance.startTime();
+        //GameManagerLogic.Instance.setIsGamePaused(false);
+    }
 
     public void openGuideMenu()
     {

@@ -25,6 +25,7 @@ public class WeaponHandler : MonoBehaviour
     [Header("--Weapon/Shield Spawn--")]
     public GameObject weaponSpawnLocation;
     public GameObject shieldSpawnLocation;
+    public GameObject weaponSights;
 
 
 
@@ -48,7 +49,7 @@ public class WeaponHandler : MonoBehaviour
     private WeaponObject repairHammer = null;
     private WeaponObject healthPot = null;
     private GameObject initWeapon;
-    private GameObject initShield;
+    private GameObject initSights;
     //private bool hasHammer;
 
     void Start()
@@ -58,8 +59,9 @@ public class WeaponHandler : MonoBehaviour
         // default for first ever load
         // then using game manager or ui_hotbar to keep track of the equipped weapon
         // so if the player dies and respawns the previous 
-        // weapon inventory is reload with the player. 
+        // weapon inventory is reload with the player.
         listOfWeaponScriptObject = GameManagerLogic.Instance.getWeaponScriptObjList();
+        //respawnPlayerInventory();
         WeaponObject defWeapon = GameManagerLogic.Instance.getDefaultWeapon();
         addWeaponToInventory(defWeapon.weaponName);
         //addHammerToInventory(GameManagerLogic.Instance.getRepairHammerObj().weaponName);
@@ -132,11 +134,11 @@ public class WeaponHandler : MonoBehaviour
         float x = shieldSpawnLocation.transform.position.x;
         float y = shieldSpawnLocation.transform.position.y;
         Vector3 pos = new Vector3(x, y, 0f);
-        initShield = Instantiate(tempShield, pos, Quaternion.identity, shieldSpawnLocation.transform);
+        initSights = Instantiate(tempShield, pos, Quaternion.identity, shieldSpawnLocation.transform);
         Vector3 newRotation = new Vector3(0f, 0f, 0f);
         Vector3 oldRotation = new Vector3(0f, 0f, 0f);
-        initShield.transform.localRotation = Quaternion.FromToRotation(oldRotation, newRotation);
-        initShield.name = shield.weaponName;
+        initSights.transform.localRotation = Quaternion.FromToRotation(oldRotation, newRotation);
+        initSights.name = shield.weaponName;
     }
     private void weaponTypeCheck(WeaponObject wObj)
     {
@@ -149,19 +151,27 @@ public class WeaponHandler : MonoBehaviour
         {
             initializeShield(GameManagerLogic.Instance.getDefaultShield());
         }
-        else if(wObj.weaponType == "2H")
+        else if(wObj.weaponType == "Ranged")
         {
-            
+            //initializeSights(wObj);
+            PlayerController pController = GetComponent<PlayerController>();
+            pController.setIsSwinging(false);
+            GameObject tempMuzzle = wObj.weaponPrefab.transform.GetChild(0).gameObject;
+            tempMuzzle.transform.GetChild(0).gameObject.SetActive(true);
+            Debug.Log("typeCheck - active?: " + tempMuzzle.transform.GetChild(0).gameObject.activeSelf);
         }
-        //else // every other weapon type
-        //{
-        //    //check if player has a shield equipped already - if so destroy it
-        //    if (shieldSpawnLocation.transform.childCount > 0)
-        //    {
-        //        GameObject shield = shieldSpawnLocation.transform.GetChild(0).gameObject;
-        //        Destroy(shield);
-        //    }
-        //}
+    }
+    private void initializeSights(WeaponObject weaponObj)
+    {
+        GameObject tempMuzzle = weaponObj.weaponPrefab.transform.GetChild(0).gameObject;
+        float x = tempMuzzle.transform.position.x;
+        float y = tempMuzzle.transform.position.y;
+        Vector3 pos = new Vector3((x + 1.5f), y, 0f);
+        initSights = Instantiate(weaponSights, pos, Quaternion.identity);//, tempMuzzle.transform);
+        Vector3 newRotation = new Vector3(0f, 0f, 0f);
+        Vector3 oldRotation = new Vector3(0f, 0f, 0f);
+        initSights.transform.localRotation = Quaternion.FromToRotation(oldRotation, newRotation);
+        //initSights.name = weaponObj.name;
     }
     private WeaponObject convertWeaponNameToObject(string name)
     {
@@ -215,7 +225,6 @@ public class WeaponHandler : MonoBehaviour
         }
     }
     // Initializes the equipped weapon data
-    // Might not need this
     private void initWeaponData(WeaponObject wObj)
     {
         currWeaponName = wObj.weaponName;

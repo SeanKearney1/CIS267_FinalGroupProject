@@ -6,18 +6,23 @@ public class PlayerController : MonoBehaviour
     [Header("--Player Speed--")]
     public float speed;
 
+    [Header("--Sounds--")]
+    public AudioClip audio_attack;
+    public AudioClip audio_walk;
     //==PRIVATE==//
     private Rigidbody2D rb;
     private WeaponHandler wHandler;
     private Vector2 moveVelocity;
     private Animator animator;
     private bool isSwinging;
+    private AudioSource audioSource;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         wHandler = GetComponent<WeaponHandler>();
+        audioSource = GetComponent<AudioSource>();
         isSwinging = false;
 
     }
@@ -33,6 +38,10 @@ public class PlayerController : MonoBehaviour
         if (rb.linearVelocity != Vector2.zero)
         {
             animator.SetBool("isWalking", true);
+            audioSource.clip = audio_walk;
+            if (!audioSource.isPlaying) {
+                audioSource.Play();
+            }
         }
         else
         {
@@ -54,12 +63,16 @@ public class PlayerController : MonoBehaviour
         {
             isSwinging = true;
             animator.SetTrigger("attack");
+            audioSource.clip = audio_attack;
+            audioSource.Play();
 
         }
-        else if(Input.GetMouseButton(0) && !isSwinging)
+        else if (Input.GetMouseButton(0) && !isSwinging)
         {
             isSwinging = true;
             animator.SetTrigger("attack");
+            audioSource.clip = audio_attack;
+            audioSource.Play();
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -95,14 +108,23 @@ public class PlayerController : MonoBehaviour
         if (moveX < 0)
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
+            gameObject.transform.GetChild(0).eulerAngles = new Vector3(0, 0, 0);
+            gameObject.transform.GetChild(0).localPosition = new Vector3(-0.6f, 1.175f, 0);
         }
         else if (moveX > 0)
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
+            gameObject.transform.GetChild(0).eulerAngles = new Vector3(0, 0, 0);
+            gameObject.transform.GetChild(0).localPosition = new Vector3(0.6f, 1.175f, 0);
         }
     }
     public void endOfSwingAnimation()
     {
         isSwinging = false;
+    }
+    public void setIsSwinging(bool isS)
+    {
+        isSwinging = isS;
+        //animator.enabled
     }
 }

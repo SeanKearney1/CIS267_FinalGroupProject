@@ -38,22 +38,27 @@ public class GameManagerLogic : MonoBehaviour
     //public WeaponObject repairHammerObj;
     //public WeaponObject healthPotObj;
 
+    [Header("-Audio Clips--")]
+    public AudioClip audio_pause;
+    public AudioClip audio_unpause;
     //==PRIVATE==//
     //used to keep track of random order of play for new game
     private List<int> listOfOriginalSceneOrder = new List<int> { 1, 2, 3 };
     private List<int> listOfRandomSceneOrder = new List<int>();
     private List<WeaponObject> playerWeaponInventory;
     private GameObject equippedWeapon;
+    private AudioSource audioSource;
 
     //used if we make the hammer a reward rather than already owned
     private bool hasRepairHammer;
     private int healthPotCount;
     private bool isGameWon = false;
     private bool isGameOver = false;
-    private bool isGamePaused = false;
+    private bool isGamePaused = false; //<< might not need this
     private bool isLevelOver = false;
     private bool isNewGame = true;
-    private int curScene = -1;
+    private bool isSceneButtonClicked = false;
+    private int curScene = 0;
     private int numOfLevelsWon = 0;
 
     //=====================================================
@@ -79,10 +84,11 @@ public class GameManagerLogic : MonoBehaviour
         if (isNewGame)
         {
             resetGameData();
-            shuffleSceneOrder();
+            //shuffleSceneOrder();
             isNewGame = false;
         }
         DontDestroyOnLoad(gameObject);
+        audioSource = GetComponent<AudioSource>();
     }
     void OnEnable()
     {
@@ -99,7 +105,9 @@ public class GameManagerLogic : MonoBehaviour
     {
         if (scene.name.Contains("Level"))
         {
+            nextScene();
             Init_Level();
+            isSceneButtonClicked = false;
         }
     }
 
@@ -152,14 +160,20 @@ public class GameManagerLogic : MonoBehaviour
             {
                 isGamePaused = false;
                 PauseMenuGameObject.SetActive(false);
-                Time.timeScale = 1.0f;
+                //Time.timeScale = 1.0f;
+                startTime();
+                audioSource.clip = audio_unpause;
+                audioSource.Play();
             }
             // Pause game
             else
             {
                 isGamePaused = true;
                 PauseMenuGameObject.SetActive(true);
-                Time.timeScale = 0.0f;
+                //Time.timeScale = 0.0f;
+                pauseTime();
+                audioSource.clip = audio_pause;
+                audioSource.Play();
             }
         }
     }
@@ -173,8 +187,9 @@ public class GameManagerLogic : MonoBehaviour
         isGamePaused = false;
         isGameWon = false;
         isLevelOver = false;
-        curScene = -1;
+        curScene = 0;
         numOfLevelsWon = 0;
+        Debug.Log("Reset Data CurScene: " + curScene);
         //shuffleSceneOrder();
     }
 
@@ -197,10 +212,32 @@ public class GameManagerLogic : MonoBehaviour
         }
     }
 
-    public int updateSceneList()
+    public bool getIsSceneButtonClicked()
+    {
+        return isSceneButtonClicked;
+    }
+    public void setIsSceneButtonClicked(bool loaded)
+    {
+        isSceneButtonClicked = loaded;
+    }
+    //public void resetSceneCounter()
+    //{
+    //    if(isGameOver || isGameWon)
+    //    {
+    //        curScene = 0;
+    //    }
+    //}
+    public int getCurSceneNum() //<< for testing for now
+    {
+        return curScene;
+    }
+    public void nextScene()
     {
         curScene++;
-        Debug.Log("CurScene: " + curScene + " - sceneNum: " + listOfRandomSceneOrder[curScene]);
+    }    
+    public int getCurrentSceneNumber()
+    {
+        Debug.Log("getCur - CurScene: " + curScene);
         return listOfRandomSceneOrder[curScene];
     }
 
@@ -217,7 +254,7 @@ public class GameManagerLogic : MonoBehaviour
     {
         playerWeaponInventory = weaponList;
     }
-    public GameObject getEquippedWeapon()
+    public GameObject getEquippedWeapon()//<< might not need this
     {
         return equippedWeapon;
     }
@@ -257,7 +294,7 @@ public class GameManagerLogic : MonoBehaviour
     {
         return healthPotCount;
     }
-    public void setHealthPotCount(int cnt)
+    public void setHealthPotCount(int cnt)//<< might not need this
     {
         healthPotCount = cnt;
     }
@@ -269,19 +306,19 @@ public class GameManagerLogic : MonoBehaviour
     {
         isGameOver = isGO;
     }
-    public bool getIsGamePaused()
+    public bool getIsGamePaused()//<< might not need this
     {
         return isGamePaused;
     }
-    public void setIsGamePaused(bool isGP)
+    public void setIsGamePaused(bool isGP)//<< might not need this
     {
         isGamePaused = isGP;
     }
-    public List<int> getListOfSceneOrder()
+    public List<int> getListOfSceneOrder()//<< might not need this
     {
         return listOfRandomSceneOrder;
     }
-    public void setListOfSceneOrder(List<int> order)
+    public void setListOfSceneOrder(List<int> order)//<< might not need this
     {
         listOfRandomSceneOrder = order;
     }
@@ -305,13 +342,25 @@ public class GameManagerLogic : MonoBehaviour
     {
         numOfLevelsWon++;
     }
-    public void resetNumOfLevelsWon()
+    public void resetNumOfLevelsWon()//<< might not need this
     {
         numOfLevelsWon = 0;
     }
     public int getNumOfLevelsWon()
     {
         return numOfLevelsWon;
+    }
+    public void startTime()
+    {
+        Time.timeScale = 1f;
+        isGamePaused = false;
+        //Debug.Log("isGamePaused: " + isGamePaused);
+    }
+    public void pauseTime()
+    {
+        Time.timeScale = 0f;
+        isGamePaused = true;
+        //Debug.Log("isGamePaused: " + isGamePaused);
     }
     //================
     //================
