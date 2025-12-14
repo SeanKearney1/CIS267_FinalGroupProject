@@ -45,16 +45,16 @@ public class GameManagerLogic : MonoBehaviour
     //used to keep track of random order of play for new game
     private List<int> listOfOriginalSceneOrder = new List<int> { 1, 2, 3 };
     private List<int> listOfRandomSceneOrder = new List<int>();
-    private List<WeaponObject> playerWeaponInventory;
+    private List<WeaponObject> playerWeaponInventory = new List<WeaponObject>();
     private GameObject equippedWeapon;
     private AudioSource audioSource;
-
+    private List<AudioSource> listOfAllAudioSources = new List<AudioSource>();
     //used if we make the hammer a reward rather than already owned
     private bool hasRepairHammer;
     private int healthPotCount;
     private bool isGameWon = false;
     private bool isGameOver = false;
-    private bool isGamePaused = false; //<< might not need this
+    private bool isGamePaused = false;
     private bool isLevelOver = false;
     private bool isNewGame = true;
     private bool isSceneButtonClicked = false;
@@ -79,21 +79,22 @@ public class GameManagerLogic : MonoBehaviour
         Instance = this;
 
     }
+    void OnEnable()
+    {
+        Debug.Log(SceneManager.GetActiveScene());
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
     void Start()
     {
         if (isNewGame)
         {
+            addDefaultWeaponToInventory();
             resetGameData();
             //shuffleSceneOrder();
             isNewGame = false;
         }
         DontDestroyOnLoad(gameObject);
         audioSource = GetComponent<AudioSource>();
-    }
-    void OnEnable()
-    {
-        Debug.Log(SceneManager.GetActiveScene());
-        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
 
@@ -141,7 +142,10 @@ public class GameManagerLogic : MonoBehaviour
         PauseMenuGameObject.SetActive(false);
 
     }
-
+    private void addDefaultWeaponToInventory()
+    {
+        playerWeaponInventory.Add(defaultWeapon);
+    }
     //===========================================
     //===========================================
     //===========================================
@@ -221,14 +225,7 @@ public class GameManagerLogic : MonoBehaviour
     {
         isSceneButtonClicked = loaded;
     }
-    //public void resetSceneCounter()
-    //{
-    //    if(isGameOver || isGameWon)
-    //    {
-    //        curScene = 0;
-    //    }
-    //}
-    public int getCurSceneNum() //<< for testing for now
+    public int getCurSceneNum() //<< for waveSkip for now
     {
         return curScene;
     }

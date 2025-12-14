@@ -10,7 +10,7 @@ public class Testing : MonoBehaviour
 
     public void testing()
     {
-        WaveManager.wmInstance.testing();
+        WaveManager.wmInstance.waveSkip();
         //GameManagerLogic.Instance.setIsGameWon(true);
     }
 }

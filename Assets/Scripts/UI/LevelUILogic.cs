@@ -15,11 +15,12 @@ public class LevelUILogic : MonoBehaviour
     {
         if(GameManagerLogic.Instance.getIsGameOver() && !GameManagerLogic.Instance.getIsGameWon())
         {
-            if(!PauseMenu.activeSelf)
-            {
-                showPauseMenu();
-                //Invoke(nameof(showPauseMenu), .5f);
-            }
+            PauseMenu.SetActive(true);
+            //if(!PauseMenu.activeSelf)
+            //{
+            //    showPauseMenu();
+            //    //Invoke(nameof(showPauseMenu), .5f);
+            //}
             //Time.timeScale = 0f;
             //GameManagerLogic.Instance.pauseTime();
         }

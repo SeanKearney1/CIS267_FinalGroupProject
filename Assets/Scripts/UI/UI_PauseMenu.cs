@@ -16,14 +16,17 @@ public class UI_PauseMenu : MonoBehaviour
     private UI_Resume resumeGame;
     private UI_button_sounds sounds;
 
-    private void Start()
-    {
-        newGame = GetComponent<UI_NewGame>();
-        resumeGame = GetComponent<UI_Resume>();
-        sounds = GetComponent<UI_button_sounds>();
-    }
+    //private void Start()
+    //{
+    //    newGame = newOrResumeGameBtn.GetComponent<UI_NewGame>();
+    //    resumeGame = newOrResumeGameBtn.GetComponent<UI_Resume>();
+    //    sounds = newOrResumeGameBtn.GetComponent<UI_button_sounds>();
+    //}
     private void OnEnable()
     {
+        newGame = newOrResumeGameBtn.GetComponent<UI_NewGame>();
+        resumeGame = newOrResumeGameBtn.GetComponent<UI_Resume>();
+        sounds = newOrResumeGameBtn.GetComponent<UI_button_sounds>();
         gameOverCheck();
         
     }

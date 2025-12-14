@@ -167,11 +167,11 @@ MonoBehaviour:
   tier2Enemy: {fileID: 8162185506552362952, guid: b233f172b5760404492433d10ef00f8e, type: 3}
   tier3Enemy: {fileID: 5180739013252321792, guid: c0b40a319bc4eba48a47d11a5ca8c626, type: 3}
   tier4Enemy: {fileID: 5180739013252321792, guid: 0b11874b80ae6d440bf2814507a3e328, type: 3}
-  baseSpawnDelay: 1.5
-  tier1BaseCount: 5
-  tier2BaseCount: 4
-  tier3BaseCount: 3
-  tier4BaseCount: 2
+  baseSpawnDelay: 1
+  tier1BaseCount: 20
+  tier2BaseCount: 15
+  tier3BaseCount: 12
+  tier4BaseCount: 8
   tier1EnemyMultiplier: 1.3
   tier2EnemyMultiplier: 1.25
   tier3EnemyMultiplier: 1.2
@@ -179,7 +179,7 @@ MonoBehaviour:
   tier2StartWave: 3
   tier3StartWave: 5
   tier4StartWave: 8
-  endOfLevelCap: 0
+  endOfLevelCap: 20
 --- !u!1001 &1907683136675845463
 PrefabInstance:
   m_ObjectHideFlags: 0

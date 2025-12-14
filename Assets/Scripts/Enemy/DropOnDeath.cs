@@ -16,13 +16,13 @@ public class DropOnDeath : MonoBehaviour
 
     private void Update()
     {
-        //dropPos = gameObject.transform.position;
+        dropPos = gameObject.transform.position;
     }
 
 
     private void dropItem()
     {
-        dropPos = gameObject.transform.position;
+        //dropPos = gameObject.transform.position;
         Debug.Log("potionObj: " + potionHolderObj.name);
         Instantiate(itemToDrop, potionHolderObj.transform, true);
         itemToDrop.transform.position = dropPos;

@@ -116,7 +116,7 @@ public class WaveManager : MonoBehaviour
     public void setIsSpawningWave(bool isS)
     {
         isSpawningWave = isS;
-        if (currentLevel == 15) // levle complete
+        if (currentLevel == endOfLevelCap) // levle complete
         {
             GameManagerLogic.Instance.setIsLevelOver(true);
         }
@@ -166,9 +166,9 @@ public class WaveManager : MonoBehaviour
             }
         }
     }
-    public void testing()
+    public void waveSkip()
     {
-        currentLevel = 14;
+        currentLevel = endOfLevelCap - 1;
         //GameManagerLogic.Instance.setIsGameWon(true);
     }
 }

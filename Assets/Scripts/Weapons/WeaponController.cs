@@ -39,23 +39,23 @@ public class WeaponController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //if (isHammer && isPlayerAttacking())
-        //{
-        //    if (collision.gameObject.CompareTag("Tower"))
-        //    {
-        //        // repair hammer's damage = its repair amount
-        //        Debug.Log("repairing: " + curWeapon.weaponDmg);
-        //        collision.gameObject.GetComponent<HealthController>().rejuvinate(curWeapon.weaponDmg);
-        //    }
-        //}
-        //else if (isPlayerAttacking())
-        //{
-        //    if (collision.gameObject.CompareTag("enemy"))
-        //    {
-        //        //Destroy(collision.gameObject);
-        //        collision.gameObject.GetComponent<HealthController>().takeDamage(curWeapon.weaponDmg);
-        //    }
-        //}
+        if (isHammer && isPlayerAttacking())
+        {
+            if (collision.gameObject.CompareTag("Tower"))
+            {
+                // repair hammer's damage = its repair amount
+                Debug.Log("repairing: " + curWeapon.weaponDmg);
+                collision.gameObject.GetComponent<HealthController>().rejuvinate(curWeapon.weaponDmg);
+            }
+        }
+        else if (isPlayerAttacking())
+        {
+            if (collision.gameObject.CompareTag("enemy"))
+            {
+                //Destroy(collision.gameObject);
+                collision.gameObject.GetComponent<HealthController>().takeDamage(curWeapon.weaponDmg);
+            }
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Staff
   m_EditorClassIdentifier: Assembly-CSharp::WeaponObject
   weaponName: Staff
-  weaponType: Ranged
+  weaponType: Staff
   weaponDmg: 3
   attackSpeed: 2
   weaponRange: 3

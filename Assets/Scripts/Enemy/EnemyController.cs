@@ -102,6 +102,7 @@ public class EnemyController : MonoBehaviour
         else if (collision.gameObject.CompareTag("Player"))
         {
             //add damage to player here?
+            collision.gameObject.GetComponent<HealthController>().takeDamage(damage);
             Destroy(gameObject);
         }
         else if(collision.gameObject.CompareTag("CityGate"))
@@ -110,12 +111,12 @@ public class EnemyController : MonoBehaviour
 
             //this needs to be done better. Just startNewGame for now.
             collision.gameObject.GetComponent<HealthController>().takeDamage(damage);
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
         else if (collision.gameObject.CompareTag("HitBox"))
         {
             //damage to the enemy health
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
 
     }

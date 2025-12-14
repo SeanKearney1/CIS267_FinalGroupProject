@@ -1,3 +1,4 @@
+using Mono.Cecil.Cil;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -62,10 +63,12 @@ public class WeaponHandler : MonoBehaviour
         // weapon inventory is reload with the player.
         listOfWeaponScriptObject = GameManagerLogic.Instance.getWeaponScriptObjList();
         //respawnPlayerInventory();
-        WeaponObject defWeapon = GameManagerLogic.Instance.getDefaultWeapon();
-        addWeaponToInventory(defWeapon.weaponName);
+        //WeaponObject defWeapon = GameManagerLogic.Instance.getDefaultWeapon();
+        //addWeaponToInventory(defWeapon.weaponName);
         //addHammerToInventory(GameManagerLogic.Instance.getRepairHammerObj().weaponName);
-        initializeWeapon(defWeapon);
+        weaponInventoryList = GameManagerLogic.Instance.getPlayerWeaponInventory();
+        UI_Hotbar.hbInstance.setListOfInventory(weaponInventoryList);
+        initializeWeapon(weaponInventoryList[0]);
     }
     private void Update()
     {
@@ -114,6 +117,7 @@ public class WeaponHandler : MonoBehaviour
             float y = weaponSpawnLocation.transform.position.y;
             Vector3 pos = new Vector3(x, y, 0f);
             initWeapon = Instantiate(tempWeapon, pos, Quaternion.identity, weaponSpawnLocation.transform);
+            //initStaff(weapon, initWeapon);
             Vector3 newRotation = new Vector3(0f, 0f, 0f);
             Vector3 oldRotation = initWeapon.transform.rotation.eulerAngles;
             initWeapon.transform.localRotation = Quaternion.FromToRotation(oldRotation, newRotation);
@@ -151,28 +155,43 @@ public class WeaponHandler : MonoBehaviour
         {
             initializeShield(GameManagerLogic.Instance.getDefaultShield());
         }
-        else if(wObj.weaponType == "Ranged")
-        {
-            //initializeSights(wObj);
-            PlayerController pController = GetComponent<PlayerController>();
-            pController.setIsSwinging(false);
-            GameObject tempMuzzle = wObj.weaponPrefab.transform.GetChild(0).gameObject;
-            tempMuzzle.transform.GetChild(0).gameObject.SetActive(true);
-            Debug.Log("typeCheck - active?: " + tempMuzzle.transform.GetChild(0).gameObject.activeSelf);
-        }
+        //else if(wObj.weaponType == "Staff")
+        //{
+        //    //initializeSights(wObj);
+        //    PlayerController pController = GetComponent<PlayerController>();
+        //    pController.setIsSwinging(false);
+        //    GameObject tempMuzzle = wObj.weaponPrefab.transform.GetChild(0).gameObject;
+        //    tempMuzzle.transform.GetChild(0).gameObject.SetActive(true);
+        //    Debug.Log("typeCheck - active?: " + tempMuzzle.transform.GetChild(0).gameObject.activeSelf);
+        //}
     }
-    private void initializeSights(WeaponObject weaponObj)
+
+    private void initStaff(WeaponObject wObj, GameObject gObj)
     {
-        GameObject tempMuzzle = weaponObj.weaponPrefab.transform.GetChild(0).gameObject;
-        float x = tempMuzzle.transform.position.x;
-        float y = tempMuzzle.transform.position.y;
-        Vector3 pos = new Vector3((x + 1.5f), y, 0f);
-        initSights = Instantiate(weaponSights, pos, Quaternion.identity);//, tempMuzzle.transform);
-        Vector3 newRotation = new Vector3(0f, 0f, 0f);
-        Vector3 oldRotation = new Vector3(0f, 0f, 0f);
-        initSights.transform.localRotation = Quaternion.FromToRotation(oldRotation, newRotation);
-        //initSights.name = weaponObj.name;
+        if (shieldSpawnLocation.transform.childCount > 0)
+        {
+            GameObject shield = shieldSpawnLocation.transform.GetChild(0).gameObject;
+            Destroy(shield);
+        }
+        gObj.transform.GetChild(0).GetComponent<StaffController>().initializeStaff(wObj);
+        PlayerController pController = GetComponent<PlayerController>();
+        pController.setIsSwinging(false);
+        GameObject tempMuzzle = wObj.weaponPrefab.transform.GetChild(0).gameObject;
+        tempMuzzle.transform.GetChild(0).gameObject.SetActive(true);
+        Debug.Log("typeCheck - active?: " + tempMuzzle.transform.GetChild(0).gameObject.activeSelf);
     }
+    //private void initializeSights(WeaponObject weaponObj)
+    //{
+    //    GameObject tempMuzzle = weaponObj.weaponPrefab.transform.GetChild(0).gameObject;
+    //    float x = tempMuzzle.transform.position.x;
+    //    float y = tempMuzzle.transform.position.y;
+    //    Vector3 pos = new Vector3((x + 1.5f), y, 0f);
+    //    initSights = Instantiate(weaponSights, pos, Quaternion.identity);//, tempMuzzle.transform);
+    //    Vector3 newRotation = new Vector3(0f, 0f, 0f);
+    //    Vector3 oldRotation = new Vector3(0f, 0f, 0f);
+    //    initSights.transform.localRotation = Quaternion.FromToRotation(oldRotation, newRotation);
+    //    //initSights.name = weaponObj.name;
+    //}
     private WeaponObject convertWeaponNameToObject(string name)
     {
         foreach(WeaponObject wo in listOfWeaponScriptObject)

@@ -99,7 +99,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5410309301429675486}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -147,35 +147,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
-      value: 0.048127238
+      value: 0.10707037
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
-      value: 0.6780964
+      value: 0.94478565
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
-      value: -0.027691778
+      value: -0.19446072
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
-      value: 0.67608875
+      value: 0.9421117
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
-      value: -0.076454505
+      value: -0.25549987
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
-      value: 0.6004389
+      value: 0.6295616
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
-      value: -0.06804758
+      value: -0.17325997
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
-      value: 0.1451891
+      value: 0.09647966
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].x
@@ -195,19 +195,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].x
-      value: 0.07513903
+      value: 0.18229981
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].y
-      value: 0.14698786
+      value: 0.106071934
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[7].x
-      value: 0.08321249
+      value: 0.21792653
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[7].y
-      value: 0.59458375
+      value: 0.67612123
       objectReference: {fileID: 0}
     - target: {fileID: 4649768102939382549, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Name

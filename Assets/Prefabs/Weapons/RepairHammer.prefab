@@ -100,7 +100,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3030860900568119296}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -160,35 +160,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
-      value: -0.03291251
+      value: 0.033720788
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
-      value: 0.40261108
+      value: 0.51868194
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
-      value: -0.11958107
+      value: -0.10238539
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
-      value: 0.38344064
+      value: 0.50810945
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
-      value: -0.31306893
+      value: -0.31521836
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
-      value: 0.33003977
+      value: 0.4762031
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
-      value: -0.37983587
+      value: -0.39918104
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
-      value: 0.22456875
+      value: 0.2546612
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].x
@@ -232,27 +232,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[9].x
-      value: 0.36418468
+      value: 0.3856793
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[9].y
-      value: 0.18666096
+      value: 0.2124545
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[10].x
-      value: 0.21829629
+      value: 0.31932098
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[10].y
-      value: 0.33773977
+      value: 0.4237182
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[11].x
-      value: 0.10632661
+      value: 0.15791367
       objectReference: {fileID: 0}
     - target: {fileID: 1248686873731231580, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[11].y
-      value: 0.38391823
+      value: 0.4741956
       objectReference: {fileID: 0}
     - target: {fileID: 4649768102939382549, guid: 7f6800a510c0dae408fd2c53f2145b75, type: 3}
       propertyPath: m_Name
