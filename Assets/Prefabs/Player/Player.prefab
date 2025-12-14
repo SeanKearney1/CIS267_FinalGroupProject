@@ -491,6 +491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeaponHandler
   weaponSpawnLocation: {fileID: 3633853532337487883}
   shieldSpawnLocation: {fileID: 1249332318132435152}
+  weaponSights: {fileID: 1239338299500273620, guid: fbbf755a41f438941b6cc63f25f342ce, type: 3}
 --- !u!114 &7439759046838100865
 MonoBehaviour:
   m_ObjectHideFlags: 0

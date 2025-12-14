@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
             audioSource.Play();
 
         }
-        else if(Input.GetMouseButton(0) && !isSwinging)
+        else if (Input.GetMouseButton(0) && !isSwinging)
         {
             isSwinging = true;
             animator.SetTrigger("attack");
@@ -108,14 +108,23 @@ public class PlayerController : MonoBehaviour
         if (moveX < 0)
         {
             transform.eulerAngles = new Vector3(0, 0, 0);
+            gameObject.transform.GetChild(0).eulerAngles = new Vector3(0, 0, 0);
+            gameObject.transform.GetChild(0).localPosition = new Vector3(-0.6f, 1.175f, 0);
         }
         else if (moveX > 0)
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
+            gameObject.transform.GetChild(0).eulerAngles = new Vector3(0, 0, 0);
+            gameObject.transform.GetChild(0).localPosition = new Vector3(0.6f, 1.175f, 0);
         }
     }
     public void endOfSwingAnimation()
     {
         isSwinging = false;
+    }
+    public void setIsSwinging(bool isS)
+    {
+        isSwinging = isS;
+        //animator.enabled
     }
 }

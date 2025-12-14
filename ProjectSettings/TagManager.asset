@@ -16,6 +16,7 @@ TagManager:
   - ExtraObject
   - HealthPotion
   - CameraFollower
+  - Muzzle
   layers:
   - Default
   - TransparentFX
