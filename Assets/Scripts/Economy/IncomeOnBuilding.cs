@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class IncomeOnBuilding : MonoBehaviour
 {
@@ -9,11 +10,12 @@ public class IncomeOnBuilding : MonoBehaviour
     public int cost;//
 
 
-    private int maxNumUpgrades;
+    private int maxNumUpgrades=3;
     private int numUpgrades=0;
 
+    public TMP_Text UpgradeButton;
 
-
+    public TMP_Text DescText;
 
     private int givenGold;
 
@@ -25,6 +27,7 @@ public class IncomeOnBuilding : MonoBehaviour
             EconManager.upgradeIncome(incomeCoef);
             numUpgrades++;
         }
+        DescText.text = $"{incomeCoef} g per round for {cost}";
     }
 
     // Update is called once per frame
@@ -41,6 +44,10 @@ public class IncomeOnBuilding : MonoBehaviour
             {
                 numUpgrades++;
                 EconManager.upgradeIncome(incomeCoef);
+            }
+            else
+            {
+                UpgradeButton.text = "MAXXED!";
             }
         }
     }

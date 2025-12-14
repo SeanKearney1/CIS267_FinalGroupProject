@@ -42,7 +42,4 @@ public static class EconManager // BUG FOUND, i know that when you change betwee
         gold = 300;
         income = 0;
     }
-
-
-
 }

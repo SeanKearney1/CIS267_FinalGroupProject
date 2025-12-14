@@ -103,6 +103,7 @@ public class GameManagerLogic : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        EconManager.resetAll();// put this in here to reset econommy instead of having carry over
         if (scene.name.Contains("Level"))
         {
             nextScene();
@@ -362,6 +363,7 @@ public class GameManagerLogic : MonoBehaviour
         isGamePaused = true;
         //Debug.Log("isGamePaused: " + isGamePaused);
     }
+
     //================
     //================
     //================
