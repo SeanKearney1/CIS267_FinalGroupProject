@@ -72,7 +72,6 @@ public class WaveManager : MonoBehaviour
     }
     public void setWaveTimerScript(UI_WaveTimer wTimer)
     {
-        EconManager.generateIncome();
         waveTimer = wTimer;
     }
     private List<GameObject> setEnemySpawnList(GameObject enemy, int cnt)
@@ -127,6 +126,7 @@ public class WaveManager : MonoBehaviour
     }
     public void startWave()
     {
+        EconManager.generateIncome();
         setNextWave();
         UI_Hotbar.hbInstance.setWaveCount(currentLevel);
         isSpawningWave = true;

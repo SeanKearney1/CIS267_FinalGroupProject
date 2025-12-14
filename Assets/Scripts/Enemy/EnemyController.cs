@@ -101,17 +101,23 @@ public class EnemyController : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Player"))
         {
-            //add damage to player here?
             collision.gameObject.GetComponent<HealthController>().takeDamage(damage);
-            Destroy(gameObject);
+            applyStagger(0.5f);
+            // enemeis bounce off of thier targer instead of dieing
+            rb.linearVelocity = Vector2.zero;
+            Vector2 direction = (this.transform.position - collision.transform.position).normalized;
+            direction *= 2;
+            rb.AddForce(direction, ForceMode2D.Impulse);
         }
         else if(collision.gameObject.CompareTag("CityGate"))
         {
-            //add damage to city gate here
-
-            //this needs to be done better. Just startNewGame for now.
             collision.gameObject.GetComponent<HealthController>().takeDamage(damage);
-            //Destroy(gameObject);
+            applyStagger(0.5f);
+            // enemeis bounce off of thier targer instead of dieing
+            rb.linearVelocity = Vector2.zero;
+            Vector2 direction = (this.transform.position - collision.transform.position).normalized;
+            direction *= 2;
+            rb.AddForce(direction, ForceMode2D.Impulse);
         }
         else if (collision.gameObject.CompareTag("HitBox"))
         {
