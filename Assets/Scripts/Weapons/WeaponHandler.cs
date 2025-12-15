@@ -1,4 +1,3 @@
-using Mono.Cecil.Cil;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -166,20 +165,20 @@ public class WeaponHandler : MonoBehaviour
         //}
     }
 
-    private void initStaff(WeaponObject wObj, GameObject gObj)
-    {
-        if (shieldSpawnLocation.transform.childCount > 0)
-        {
-            GameObject shield = shieldSpawnLocation.transform.GetChild(0).gameObject;
-            Destroy(shield);
-        }
-        gObj.transform.GetChild(0).GetComponent<StaffController>().initializeStaff(wObj);
-        PlayerController pController = GetComponent<PlayerController>();
-        pController.setIsSwinging(false);
-        GameObject tempMuzzle = wObj.weaponPrefab.transform.GetChild(0).gameObject;
-        tempMuzzle.transform.GetChild(0).gameObject.SetActive(true);
-        Debug.Log("typeCheck - active?: " + tempMuzzle.transform.GetChild(0).gameObject.activeSelf);
-    }
+    //private void initStaff(WeaponObject wObj, GameObject gObj)
+    //{
+    //    if (shieldSpawnLocation.transform.childCount > 0)
+    //    {
+    //        GameObject shield = shieldSpawnLocation.transform.GetChild(0).gameObject;
+    //        Destroy(shield);
+    //    }
+    //    gObj.transform.GetChild(0).GetComponent<StaffController>().initializeStaff(wObj);
+    //    PlayerController pController = GetComponent<PlayerController>();
+    //    pController.setIsSwinging(false);
+    //    GameObject tempMuzzle = wObj.weaponPrefab.transform.GetChild(0).gameObject;
+    //    tempMuzzle.transform.GetChild(0).gameObject.SetActive(true);
+    //    Debug.Log("typeCheck - active?: " + tempMuzzle.transform.GetChild(0).gameObject.activeSelf);
+    //}
     //private void initializeSights(WeaponObject weaponObj)
     //{
     //    GameObject tempMuzzle = weaponObj.weaponPrefab.transform.GetChild(0).gameObject;
