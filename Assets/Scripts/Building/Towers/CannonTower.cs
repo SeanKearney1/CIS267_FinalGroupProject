@@ -8,10 +8,14 @@ public class CannonTower : MonoBehaviour
     private RangeController rangeController;
     public GameObject towerHead;
 
+    public AudioClip audio_shoot;
+    private AudioSource audioSource;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rangeController = GetComponentInChildren<RangeController>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -32,6 +36,8 @@ public class CannonTower : MonoBehaviour
             timeIncrement = 0;
             Vector3 targetPos = rangeController.enemyPosition();
             Instantiate(CannonballExplosion, targetPos, transform.rotation);// spawn the explosion right on top of the enemy
+            audioSource.clip = audio_shoot;
+            audioSource.Play();
         }
     }
     private void aimHead()

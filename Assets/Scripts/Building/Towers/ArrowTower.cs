@@ -10,10 +10,14 @@ public class ArrowTower : MonoBehaviour
     private RangeController rangeController;
     public GameObject towerHead;
 
+    public AudioClip audio_shoot;
+    private AudioSource audioSource;
+
 
     void Start()
     {
         rangeController = GetComponentInChildren<RangeController>();
+        audioSource = GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -35,6 +39,8 @@ public class ArrowTower : MonoBehaviour
             Vector2 direction = new Vector2(direction3.x, direction3.y);
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;// convert to angle
             Instantiate(arrowProjectile, transform.position, Quaternion.Euler(0, 0, angle));// create with given angle
+            audioSource.clip = audio_shoot;
+            audioSource.Play();
         }
     }
     private void aimHead()

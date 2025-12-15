@@ -44858,6 +44858,10 @@ PrefabInstance:
       value: TilePlacementScript
       objectReference: {fileID: 0}
     - target: {fileID: 2944449687762423736, guid: 8bbf49a3a35ba034fadbb2caf8d6eeec, type: 3}
+      propertyPath: audio_place
+      value: 
+      objectReference: {fileID: 8300000, guid: 6b5beb199b31e974fb0de75c44281ef8, type: 3}
+    - target: {fileID: 2944449687762423736, guid: 8bbf49a3a35ba034fadbb2caf8d6eeec, type: 3}
       propertyPath: buildingLayer
       value: 
       objectReference: {fileID: 1008780597}

@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 6528434387958551921}
   - component: {fileID: -8223590694128787271}
   - component: {fileID: -8237161422791424792}
+  - component: {fileID: 420933532739021904}
   m_Layer: 8
   m_Name: AlchemyTower
   m_TagString: Tower
@@ -249,6 +250,7 @@ MonoBehaviour:
   arrowProjectile: {fileID: 2862463482350598350, guid: 24af0d0ff12f86c458dcc11db9f9c8e4, type: 3}
   rate: 3
   towerHead: {fileID: 2094381834534917663}
+  audio_shoot: {fileID: 8300000, guid: 958eec9ef2ddc8e44b291a35613a23b0, type: 3}
 --- !u!114 &6528434387958551921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,6 +287,8 @@ MonoBehaviour:
   baseHP: 50
   resistance: 0
   vitality: 1
+  audio_damage: {fileID: 0}
+  audio_death: {fileID: 8300000, guid: 5004539501a5c3642a20356590aedb95, type: 3}
 --- !u!114 &-8237161422791424792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,6 +301,103 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3db09abc2dd0e3f4f82b96b35375149d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::buildableOnDestroy
+--- !u!82 &420933532739021904
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5148810376317303988}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &4945963574758186617
 PrefabInstance:
   m_ObjectHideFlags: 0

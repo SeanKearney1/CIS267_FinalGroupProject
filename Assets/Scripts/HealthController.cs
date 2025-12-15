@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HealthController : MonoBehaviour
@@ -10,12 +11,18 @@ public class HealthController : MonoBehaviour
     private bool onFire = false;
     public int vitality = 1;// multiplier to ammount healed 
 
+
+
+    public AudioClip audio_damage;
+    public AudioClip audio_death;
+    private AudioSource audioSource;
     private float tickRate = 1;
     private float tickIncrement = 0;
 
     private void Start()
     {
         curHP = baseHP;
+        audioSource = GetComponent<AudioSource>();
     }
     private void FixedUpdate()
     {
@@ -43,10 +50,13 @@ public class HealthController : MonoBehaviour
         curHP -= dmg;//take damage
         if (curHP <= 0)// die
         {
+            audioSource.clip = audio_death;
+            audioSource.Play();
             //used to make sure the object being destroyed is the enemy
             //before triggering the item drop
             if (gameObject.tag == "enemy")
             {
+
                 //Debug.Log("H: " + gameObject.tag);
                 gameObject.GetComponent<DropOnDeath>().randomizeDrop();
                 Destroy(gameObject);
@@ -59,6 +69,12 @@ public class HealthController : MonoBehaviour
             {
                 Destroy(this.gameObject);
             }
+        }
+        else
+        {
+
+            audioSource.clip = audio_damage;
+            audioSource.Play();
         }
     }
     public void rejuvinate(int heal)

@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 
 public class TilePlacment : MonoBehaviour
 {
+    public AudioClip audio_place;
     
     public Tilemap buildingLayer;
 
@@ -20,7 +21,15 @@ public class TilePlacment : MonoBehaviour
 
     private int cost;
 
+    private AudioSource audioSource;
+
     private int selection=0;// this is the  selection of tileToPlace[selection]
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+
     private void Update()
     {
         placeTileOnMousePoint();
@@ -57,6 +66,8 @@ public class TilePlacment : MonoBehaviour
                 buildingLayer.SetTile(cellPos, BarrierTile);
                 GameObject tower = Instantiate(TowerToPlace[selection], placePos, Quaternion.identity);//create the physical tile
                 tower.transform.SetParent(buildingLayer.transform);
+                audioSource.clip = audio_place;
+                audioSource.Play();
             }
         }
     }

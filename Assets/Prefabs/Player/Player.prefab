@@ -507,6 +507,8 @@ MonoBehaviour:
   baseHP: 25
   resistance: 0
   vitality: 1
+  audio_damage: {fileID: 8300000, guid: 14d8b82b5f29f624e96c0a7f318de340, type: 3}
+  audio_death: {fileID: 8300000, guid: 997fac2150ca7734cba2d6fad9e6a434, type: 3}
 --- !u!114 &4427126142513122974
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,12 +10,16 @@ public class Rage : MonoBehaviour
     private RangeController rangeController;
     public GameObject towerHead;
 
+    public AudioClip audio_shoot;
+    private AudioSource audioSource;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         healthController = this.gameObject.GetComponent<HealthController>();
         rangeController = GetComponentInChildren<RangeController>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -33,6 +37,8 @@ public class Rage : MonoBehaviour
             CDtimescale = 0;
             Instantiate(ragePulse, transform.position,transform.rotation);
             healthController.rejuvinate(1);
+            audioSource.clip = audio_shoot;
+            audioSource.Play();
         }
     }
     private void setMult()
