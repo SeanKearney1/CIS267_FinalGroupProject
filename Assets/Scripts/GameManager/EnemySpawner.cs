@@ -25,6 +25,7 @@ public class EnemySpawner : MonoBehaviour
     private List<GameObject> tier3EnemyList = new List<GameObject>();
     private List<GameObject> tier4EnemyList = new List<GameObject>();
     private float time;
+    private float runningTime;
     private bool isSpawningWave;
     private float spawnDelay;
 
@@ -38,13 +39,18 @@ public class EnemySpawner : MonoBehaviour
         if (isSpawningWave)
         {
             time += Time.deltaTime;
+            runningTime += Time.deltaTime;
             if (time >= spawnDelay)
-            {
+           {
                 spawnTier1Enemies();
                 spawnTier2Enemies();
                 spawnTier3Enemies();
                 spawnTier4Enemies();
                 time = 0;
+            }
+            if (runningTime >= 30)
+            {
+                spawnDelay = .4f;
             }
         }
         if (enemyHolder.transform.childCount <= 0 && tier1EnemyList.Count <= 0 && tier2EnemyList.Count <= 0 && tier3EnemyList.Count <= 0 && tier4EnemyList.Count <= 0)
@@ -101,6 +107,10 @@ public class EnemySpawner : MonoBehaviour
             tempMelee.GetComponent<DropOnDeath>().setPotionHolderObj(potionHolder);
             tempMelee.transform.position = spawnPos;
         }
+        else if(tier1EnemyList.Count <= 0)
+        {
+            runningTime = 0;
+        }
     }
     private void spawnTier2Enemies()
     {
@@ -141,4 +151,5 @@ public class EnemySpawner : MonoBehaviour
             tempMelee.transform.position = spawnPos;
         }
     }
+
 }
